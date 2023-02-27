@@ -28,7 +28,7 @@ public class ResumeSteps extends RandomArrayElement {
         $x("//input[@class='upload__control']").uploadFile(cvPhoto);
         return this;
     }
-    @Step(value = "Подтвеждение фото")
+    @Step(value = "Загрузка фото")
     public ResumeSteps uploadPhoto(){
         $x("//button[@class='group-container__item button']").click();
         return this;
