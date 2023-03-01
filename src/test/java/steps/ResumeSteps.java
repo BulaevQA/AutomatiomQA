@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$x;
 public class ResumeSteps extends RandomArrayElement {
     UrlComparator urlComparison = new UrlComparator();
     RandomArrayElement randomArrayElement = new RandomArrayElement();
-    @Step(value = "Закрыть всплывающее уведомление")
+    @Step(value = "Закрыть уведомление")
     public ResumeSteps buttonCloseCookie(){
         $x("//div[@class='col-12 col-md-3 col-lg-2']").click();
         return this;
@@ -87,13 +87,11 @@ public class ResumeSteps extends RandomArrayElement {
         return this;
     }
     @Step(value = "Навигация")
-    public ResumeSteps navigation(){
+    public void navigation(){
         randomArrayElement.arrayElements("//div[@class='navigation__list']//a[@href]");
-        return this;
     }
     @Step(value = "Проверка УРЛ")
-    public ResumeSteps urlCheck(){
+    public void urlCheck(){
         urlComparison.urlCompare("https://hotfix.rtportal.show.pbs.bftcom.com/auth/candidate/cvs");
-        return this;
     }
 }
