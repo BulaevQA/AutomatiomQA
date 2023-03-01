@@ -81,7 +81,7 @@ public class ResumeSteps extends RandomArrayElement {
         $x("//button[@class='button group-container__item']").click();
         return this;
     }
-    @Step(value = "Проверка перехода на страницу Мои резюме")
+    @Step(value = "Проверка перехода на страницу мои резюме")
     public ResumeSteps pageMyResume(){
         $x("//span//span[@itemprop='name']").shouldBe(Condition.text("Мои резюме"));
         return this;
