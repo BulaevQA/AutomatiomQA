@@ -51,7 +51,7 @@ public class ResumeSteps extends RandomArrayElement {
         randomArrayElement.randomArrayElementClick("//select[@id='professionSphereId']//option[@value]");
         return this;
     }
-    @Step(value = "Заполнение З/П")
+    @Step(value = "Заполнение з/п")
     public ResumeSteps salary(String value){
         $x("//input[@name='salary']").setValue(value);
         return this;

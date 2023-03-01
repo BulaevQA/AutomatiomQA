@@ -19,13 +19,13 @@ public class CvConstructorTest {
     @Test
     @DisplayName("Тест создание резюме")
     public void cvConstructorTest() {
-        prrUrl.openBrowser(); // Авторизация
+        prrUrl.openBrowser();
         authPrr.clickLogIn()
                 .clickESIA()
                 .setLogin(ownerData.loginCv)
                 .setPassword(ownerData.passCv)
                 .clickCV();
-        createCv.buttonCloseCookie() // Создание резюме
+        createCv.buttonCloseCookie()
                 .buttonCV()
                 .positionName()
                 .clickPhoto()
