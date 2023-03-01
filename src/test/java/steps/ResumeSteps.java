@@ -3,10 +3,13 @@ package steps;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 import settings.RandomArrayElement;
+import settings.UrlComparator;
 import java.io.File;
 import static com.codeborne.selenide.Selenide.$x;
-public class ResumeSteps extends RandomArrayElement {
 
+public class ResumeSteps extends RandomArrayElement {
+    UrlComparator urlComparison = new UrlComparator();
+    RandomArrayElement randomArrayElement = new RandomArrayElement();
     @Step(value = "Закрыть всплывающее уведомление")
     public ResumeSteps buttonCloseCookie(){
         $x("//div[@class='col-12 col-md-3 col-lg-2']").click();
@@ -24,7 +27,7 @@ public class ResumeSteps extends RandomArrayElement {
     }
     @Step(value = "Импорт фото из файла")
     public ResumeSteps importPhoto(){
-        File cvPhoto = new File("src/test/resources/config/cvPhoto.jpg");
+        File cvPhoto = new File("src/test/resources/cvPhoto.jpg");
         $x("//input[@class='upload__control']").uploadFile(cvPhoto);
         return this;
     }
@@ -45,7 +48,7 @@ public class ResumeSteps extends RandomArrayElement {
     }
     @Step(value = "Ввод сферы деятельности")
     public ResumeSteps randomSphere(){
-        selectArray("//select[@id='professionSphereId']//option[@value]");
+        randomArrayElement.randomArrayElementClick("//select[@id='professionSphereId']//option[@value]");
         return this;
     }
     @Step(value = "Заполнение З/П")
@@ -60,7 +63,7 @@ public class ResumeSteps extends RandomArrayElement {
     }
     @Step(value = "Изменение региона")
     public ResumeSteps region(){
-        selectArray("//select[@id='nationalityId']//option[@value]");
+        randomArrayElement.randomArrayElementClick("//select[@id='nationalityId']//option[@value]");
         return this;
     }
     @Step(value = "Предпочтительный способ связи email")
@@ -79,7 +82,18 @@ public class ResumeSteps extends RandomArrayElement {
         return this;
     }
     @Step(value = "Проверка перехода на страницу Мои резюме")
-    public void pageMyResume(){
-        $x("//span//span[@itemprop='name']").should(Condition.text("Мои резюме"));
+    public ResumeSteps pageMyResume(){
+        $x("//span//span[@itemprop='name']").shouldBe(Condition.text("Мои резюме"));
+        return this;
+    }
+    @Step(value = "Навигация")
+    public ResumeSteps navigation(){
+        randomArrayElement.arrayElements("//div[@class='navigation__list']//a[@href]");
+        return this;
+    }
+    @Step(value = "Проверка УРЛ")
+    public ResumeSteps urlCheck(){
+        urlComparison.urlCompare("https://hotfix.rtportal.show.pbs.bftcom.com/auth/candidate/cvs");
+        return this;
     }
 }

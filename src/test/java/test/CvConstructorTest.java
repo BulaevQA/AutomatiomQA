@@ -11,21 +11,21 @@ import org.junit.jupiter.api.Test;
 public class CvConstructorTest {
 
     PrrUrl prrUrl = new PrrUrl();
-    AuthPrr authPRR = new AuthPrr();
-    ResumeSteps createCV = new ResumeSteps();
+    AuthPrr authPrr = new AuthPrr();
+    ResumeSteps createCv = new ResumeSteps();
     UserData userData = new UserData();
     OwnerData ownerData = new OwnerData();
 
     @Test
     @DisplayName("Тест создание резюме")
     public void cvConstructorTest() {
-        prrUrl.openBrowser();
-        authPRR.clickLogIn()
+        prrUrl.openBrowser(); // Авторизация
+        authPrr.clickLogIn()
                 .clickESIA()
                 .setLogin(ownerData.loginCv)
                 .setPassword(ownerData.passCv)
                 .clickCV();
-        createCV.buttonCloseCookie()
+        createCv.buttonCloseCookie() // Создание резюме
                 .buttonCV()
                 .positionName()
                 .clickPhoto()
@@ -39,6 +39,7 @@ public class CvConstructorTest {
                 .favoriteMail()
                 .lvlWork()
                 .buttonSaveResume()
-                .pageMyResume();
+                .pageMyResume()
+                .urlCheck();
     }
 }

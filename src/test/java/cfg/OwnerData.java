@@ -12,7 +12,11 @@ public class OwnerData {
     public String authPassCv() {
         return configProperties.passwordCV();
     }
+    public String baseUrl(){
+        return configProperties.testUrl();
+    }
     public String loginCv = authLoginCv();
     public String passCv = authPassCv();
+    public String mainUrl = baseUrl();
 
 }
