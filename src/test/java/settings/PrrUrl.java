@@ -12,10 +12,10 @@ public class PrrUrl extends OwnerData {
     public static void openBrowser() {
         Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1920x1080";
-        Configuration.browserVersion = System.getProperty("browser","edge");
-        Configuration.baseUrl = System.getProperty("url","https://www.google.com/");
+//        Configuration.browserVersion = System.getProperty("browser","edge");
+//        Configuration.baseUrl = System.getProperty("url","https://www.google.com/");
         SelenideLogger.addListener("AllureSelenide",
                 new AllureSelenide());
-//        open(mainUrl);
+        open(mainUrl);
     }
 }

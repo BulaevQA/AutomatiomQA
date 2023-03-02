@@ -9,13 +9,6 @@ version '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
-tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
-}
-tasks.withType(Test) {
-    systemProperties(System.getProperties())
-    useJUnitPlatform()
-}
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2",
             "org.junit.jupiter:junit-jupiter-engine:5.8.2",
@@ -34,4 +27,21 @@ dependencies {
             "io.rest-assured:json-path:5.3.0",
             "io.rest-assured:xml-path:5.3.0",
             "io.rest-assured:json-schema-validator:5.3.0")
+}
+
+def uiTest = tasks.register("uiTests", Test) {
+    useJUnitPlatform {
+        includeTags "UI"
+    }
+}
+def uiTestSecond = tasks.register("uiTestsSeconds", Test) {
+    useJUnitPlatform {
+        includeTags "UISec"
+    }
+}
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+test {
+    useJUnitPlatform()
 }
