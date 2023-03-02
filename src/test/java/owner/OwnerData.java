@@ -1,4 +1,4 @@
-package cfg;
+package owner;
 
 import org.aeonbits.owner.ConfigFactory;
 

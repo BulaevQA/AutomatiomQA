@@ -4,7 +4,7 @@ import faker.UserData;
 import steps.ResumeSteps;
 import steps.AuthPrr;
 import settings.PrrUrl;
-import cfg.OwnerData;
+import owner.OwnerData;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

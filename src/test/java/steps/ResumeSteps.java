@@ -7,7 +7,7 @@ import settings.UrlComparator;
 import java.io.File;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class ResumeSteps extends RandomArrayElement {
+public class ResumeSteps {
     UrlComparator urlComparison = new UrlComparator();
     RandomArrayElement randomArrayElement = new RandomArrayElement();
     @Step(value = "Закрыть уведомление")

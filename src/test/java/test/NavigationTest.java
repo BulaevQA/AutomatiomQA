@@ -1,6 +1,6 @@
 package test;
 
-import cfg.OwnerData;
+import owner.OwnerData;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import settings.PrrUrl;

@@ -2,10 +2,11 @@ package steps;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;
+import owner.OwnerData;
 
 import static com.codeborne.selenide.Selenide.$x;
 
-public class AuthPrr {
+public class AuthPrr extends OwnerData {
 
     @Step(value = "Клик войти")
     public AuthPrr clickLogIn() {
@@ -29,8 +30,7 @@ public class AuthPrr {
         return this;
     }
     @Step(value = "Выбор соискателя")
-    public AuthPrr clickCV() {
+    public void clickCV() {
         $x("//button[@id='individual_button']").click();
-        return this;
     }
 }
