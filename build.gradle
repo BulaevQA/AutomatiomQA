@@ -34,6 +34,11 @@ def uiTest = tasks.register("uiTests", Test) {
         includeTags "UI"
     }
 }
+def uiTests = tasks.register("uiTestss", Test) {
+    useJUnitPlatform {
+        includeTags "UIS"
+    }
+}
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
