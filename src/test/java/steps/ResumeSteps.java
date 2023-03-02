@@ -90,8 +90,4 @@ public class ResumeSteps {
     public void navigation(){
         randomArrayElement.arrayElements("//div[@class='navigation__list']//a[@href]");
     }
-    @Step(value = "Проверка УРЛ")
-    public void urlCheck(){
-        urlComparison.urlCompare("https://hotfix.rtportal.show.pbs.bftcom.com/auth/candidate/cvs");
-    }
 }
