@@ -16,38 +16,25 @@ public class FakerData {
     static Random random = new Random();
 
     public static String randomFirstName() {
-
         return faker.name().firstName();
     }
-
     public static String randomLastName() {
-
         return faker.name().lastName();
     }
-
     public static String randomEmail() {
-
         return faker.bothify("??????@gmail.com");
     }
-
     public static String randomPhone() {
         return faker.bothify("8921#######");
     }
-
     public static String randomFullAddress() {
-
         return faker.address().fullAddress();
     }
     public static String randomSalary() {
-
         return faker.bothify("3####");
     }
     public static String randomSphere() {
         String[] arraySphere = {"Высший менеджмент", "Домашний персонал", "Искусство и культура"};
                 return arraySphere[random.nextInt(arraySphere.length)];
     }
-//    public ResumeSteps rngSphere(SelenideElement value) {
-//        ElementsCollection sphereList = value.$$x()
-//        $x("//div[@class='dropdown-menu show']//input[@name='search']")
-//    }
 }

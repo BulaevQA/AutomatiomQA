@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import owner.OwnerData;
 
 public class GoogleTest extends OwnerData {
-//    @Test
+    @Test
     public void googleTest(){
         Selenide.open(googleUrl);
     }

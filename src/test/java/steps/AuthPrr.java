@@ -7,7 +7,9 @@ import owner.OwnerData;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class AuthPrr extends OwnerData {
-
+    /*
+    Авторизация под соискателем
+    */
     @Step(value = "Клик войти")
     public AuthPrr clickLogIn() {
         $x("//span[@class='mega-menu__user-handler']").click();

@@ -81,13 +81,13 @@ public class ResumeSteps {
         $x("//button[@class='button group-container__item']").click();
         return this;
     }
+    @Step(value = "Навигация")
+    public void navigation(){
+        randomArrayElement.arrayElements("//div[@class='navigation__list']//a[@href]");
+    }
     @Step(value = "Проверка перехода на страницу мои резюме")
     public ResumeSteps pageMyResume(){
         $x("//span//span[@itemprop='name']").shouldBe(Condition.text("Мои резюме"));
         return this;
-    }
-    @Step(value = "Навигация")
-    public void navigation(){
-        randomArrayElement.arrayElements("//div[@class='navigation__list']//a[@href]");
     }
 }
