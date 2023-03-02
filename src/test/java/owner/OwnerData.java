@@ -4,7 +4,7 @@ import org.aeonbits.owner.ConfigFactory;
 
 public class OwnerData {
 
-    OwnerAPI configProperties = ConfigFactory.create(OwnerAPI.class);
+    static OwnerAPI configProperties = ConfigFactory.create(OwnerAPI.class);
 
     public String authLoginCv() {
         return configProperties.loginCV();
@@ -12,11 +12,14 @@ public class OwnerData {
     public String authPassCv() {
         return configProperties.passwordCV();
     }
-    public String baseUrl(){
+    public static String baseUrl(){
         return configProperties.testUrl();
+    }
+    public static String gUrl(){
+        return configProperties.googleUrl();
     }
     public String loginCv = authLoginCv();
     public String passCv = authPassCv();
-    public String mainUrl = baseUrl();
-
+    public static String mainUrl = baseUrl();
+    public static String googleUrl = gUrl();
 }

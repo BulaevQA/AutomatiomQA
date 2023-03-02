@@ -6,4 +6,5 @@ public interface OwnerAPI extends Config {
     String loginCV();
     String passwordCV();
     String testUrl();
+    String googleUrl();
 }

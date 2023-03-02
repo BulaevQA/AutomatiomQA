@@ -17,6 +17,14 @@ test {
 }
 tasks.withType(Test) {
     systemProperties(System.getProperties())
+    useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
 }
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2",
