@@ -23,7 +23,7 @@ dependencies {
     testImplementation("org.aspectj:aspectjweaver:1.9.9.1")
     testImplementation("org.aeonbits.owner:owner:1.0.12")
     testImplementation("org.assertj:assertj-core:3.23.1")
-    testImplementation("io.qameta.allure:allure-selenide:2.20.1")
+    testImplementation("io.qameta.allure:allure-selenide:2.21.0")
     testImplementation("io.rest-assured:rest-assured:5.3.0")
     testImplementation("io.rest-assured:json-path:5.3.0")
     testImplementation("io.rest-assured:xml-path:5.3.0")
