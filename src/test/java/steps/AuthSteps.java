@@ -1,7 +1,7 @@
 package steps;
 
 import io.qameta.allure.Step;
-import methods.TextValidator;
+import methods.Validators;
 import org.openqa.selenium.Keys;
 import owner.OwnerData;
 
@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class AuthSteps {
     OwnerData ownerData = new OwnerData();
-    TextValidator textValidator = new TextValidator();
+    Validators textValidator = new Validators();
     /*
     Авторизация под соискателем
     */
@@ -30,7 +30,7 @@ public class AuthSteps {
     }
     @Step(value = "Ввод пароля")
     public AuthSteps fieldPassword() {
-        $x("//input[@id='password']").setValue((System.getProperty("password","admin")))
+        $x("//input[@id='password']").setValue(System.getProperty("password","admin"))
                 .sendKeys(Keys.ENTER);
         return this;
     }

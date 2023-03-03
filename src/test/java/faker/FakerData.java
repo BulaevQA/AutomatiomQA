@@ -18,6 +18,10 @@ public class FakerData {
     public String salary = randomSalary();
     public String rgnSphere = randomSphere();
 
+    /*
+    Генерируем случайные данные для переменных
+    */
+
     public static String randomFirstName() {
         return faker.name().firstName();
     }

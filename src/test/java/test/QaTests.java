@@ -10,15 +10,15 @@ import steps.ResumeSteps;
 public class QaTests {
 
     BrowserConfig browserConfig = new BrowserConfig();
-    AuthSteps authPrrSteps = new AuthSteps();
-    ResumeSteps createCv = new ResumeSteps();
+    AuthSteps authSteps = new AuthSteps();
+    ResumeSteps resumeSteps = new ResumeSteps();
 
     @Test
     @Tag("CvAuth")
     @DisplayName("Тест авторизации соискателя")
     public void cvAuthTest() {
         browserConfig.browserConfig(); // Конфигурация браузера
-        authPrrSteps.buttonLogin() // Авторизация
+        authSteps.buttonLogin() // Авторизация
                 .buttonEsiaAuth()
                 .fieldLogin()
                 .fieldPassword()
@@ -31,14 +31,14 @@ public class QaTests {
     @DisplayName("Тест создание резюме")
     public void createResume() {
         browserConfig.browserConfig(); // Конфигурация браузера
-        authPrrSteps.buttonLogin() // Авторизация
+        authSteps.buttonLogin() // Авторизация
                 .buttonEsiaAuth()
                 .fieldLogin()
                 .fieldPassword()
                 .clickCv()
                 .buttonCloseCookie()
                 .myСabinetCheck();
-        createCv.buttonCreateResume() // Создание резюме
+        resumeSteps.buttonCreateResume() // Создание резюме
                 .fieldPositionName()
                 .clickPhotoIcon()
                 .importPhoto()

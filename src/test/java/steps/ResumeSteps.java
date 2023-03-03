@@ -44,7 +44,7 @@ public class ResumeSteps {
     }
     @Step(value = "Ввод сферы деятельности")
     public ResumeSteps randomSphere(){
-        randomArrayElement.randomArrayElementClick("//select[@id='professionSphereId']//option[@value]");
+        randomArrayElement.randomElementCollectionClick("//select[@id='professionSphereId']//option[@value]");
         return this;
     }
     @Step(value = "Заполнение з/п")
@@ -59,7 +59,7 @@ public class ResumeSteps {
     }
     @Step(value = "Изменение региона")
     public ResumeSteps region(){
-        randomArrayElement.randomArrayElementClick("//select[@id='nationalityId']//option[@value]");
+        randomArrayElement.randomElementCollectionClick("//select[@id='nationalityId']//option[@value]");
         return this;
     }
     @Step(value = "Предпочтительный способ связи email")
