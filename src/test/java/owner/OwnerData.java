@@ -15,11 +15,7 @@ public class OwnerData {
     public static String baseUrl(){
         return configProperties.testUrl();
     }
-    public static String gUrl(){
-        return configProperties.googleUrl();
-    }
     public String loginCv = authLoginCv();
     public String passCv = authPassCv();
     public static String mainUrl = baseUrl();
-    public static String googleUrl = gUrl();
 }

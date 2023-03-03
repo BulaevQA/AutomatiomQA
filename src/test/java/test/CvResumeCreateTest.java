@@ -3,24 +3,24 @@ package test;
 import faker.UserData;
 import org.junit.jupiter.api.Tag;
 import steps.ResumeSteps;
-import steps.AuthPrr;
-import settings.PrepareStep;
+import steps.AuthPrrSteps;
+import conf.PrepareStep;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class CvConstructorTest {
+public class CvResumeCreateTest {
 
     PrepareStep prepareStep = new PrepareStep();
-    AuthPrr authPrr = new AuthPrr();
+    AuthPrrSteps authPrrSteps = new AuthPrrSteps();
     ResumeSteps createCv = new ResumeSteps();
     UserData userData = new UserData();
 
     @Test
     @Tag("ResumeTest")
     @DisplayName("Тест создание резюме")
-    public void cvConstructorTest() {
+    public void createResume() {
         prepareStep.browserConfig(); // Конфигурация браузера
-        authPrr.clickLogIn() // Авторизация
+        authPrrSteps.clickLogIn() // Авторизация
                 .clickEsia()
                 .setLogin()
                 .setPassword()

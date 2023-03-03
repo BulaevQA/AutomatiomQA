@@ -2,7 +2,7 @@ package test;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import settings.PrepareStep;
+import conf.PrepareStep;
 
 public class GoogleTest {
 

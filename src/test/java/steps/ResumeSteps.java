@@ -2,8 +2,8 @@ package steps;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
-import settings.RandomArrayElement;
-import settings.UrlComparator;
+import methods.RandomArrayElement;
+import methods.UrlComparator;
 import java.io.File;
 import static com.codeborne.selenide.Selenide.$x;
 

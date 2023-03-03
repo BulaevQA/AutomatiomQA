@@ -1,4 +1,4 @@
-package settings;
+package methods;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
@@ -7,7 +7,8 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import static com.codeborne.selenide.Selenide.$$x;
+
+import static com.codeborne.selenide.Selenide.*;
 
 public class RandomArrayElement {
     /*

@@ -1,4 +1,4 @@
-package settings;
+package methods;
 
 import com.codeborne.selenide.WebDriverRunner;
 
