@@ -54,3 +54,8 @@ task resume_tests(type: Test) {
         includeTags("ResumeTest")
     }
 }
+task candidate_auth(type: Test) {
+    useJUnitPlatform {
+        includeTags("CvAuth")
+    }
+}

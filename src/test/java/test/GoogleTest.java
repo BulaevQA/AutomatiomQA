@@ -2,7 +2,6 @@ package test;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import owner.OwnerData;
 import settings.PrepareStep;
 
 public class GoogleTest {

@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Tag;
 import steps.ResumeSteps;
 import steps.AuthPrr;
 import settings.PrepareStep;
-import owner.OwnerData;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

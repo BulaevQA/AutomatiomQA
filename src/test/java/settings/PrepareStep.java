@@ -13,7 +13,7 @@ public class PrepareStep extends OwnerData {
 @BeforeAll
     public static void browserConfig() {
         Configuration.holdBrowserOpen = true;
-        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browser = System.getProperty("browser", "firefox");
         Configuration.browserSize = System.getProperty("size", "1920x1080");
         Configuration.baseUrl = SITE_URL;
         SelenideLogger.addListener("AllureSelenide",
