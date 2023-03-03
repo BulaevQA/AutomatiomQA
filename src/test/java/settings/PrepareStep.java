@@ -18,6 +18,5 @@ public class PrepareStep extends OwnerData {
         Configuration.baseUrl = siteUrl;
         SelenideLogger.addListener("AllureSelenide",
                 new AllureSelenide());
-        open(siteUrl);
     }
 }
