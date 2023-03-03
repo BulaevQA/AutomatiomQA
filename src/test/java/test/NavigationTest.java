@@ -15,7 +15,7 @@ public class NavigationTest {
     @Test
     @DisplayName("Тест навигации по резюме")
     public void cvConstructorTest() {
-        prepareStep.openBrowser(); // Авторизация
+        prepareStep.browserConfig(); // Авторизация
         authPrr.clickLogIn()
                 .clickESIA()
                 .setLogin(ownerData.loginCv)

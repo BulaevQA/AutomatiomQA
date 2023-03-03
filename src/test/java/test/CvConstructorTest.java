@@ -21,7 +21,7 @@ public class CvConstructorTest {
     @Tag("ResumeTest")
     @DisplayName("Тест создание резюме")
     public void cvConstructorTest() {
-        prepareStep.openBrowser();
+        prepareStep.browserConfig();
         authPrr.clickLogIn()
                 .clickESIA()
                 .setLogin(ownerData.loginCv)

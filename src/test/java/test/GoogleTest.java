@@ -7,6 +7,9 @@ import owner.OwnerData;
 import settings.PrepareStep;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.Selenide.open;
+import static settings.PrepareStep.siteUrl;
+
 public class GoogleTest {
 
     PrepareStep prepareStep = new PrepareStep();
@@ -15,6 +18,7 @@ public class GoogleTest {
     @Test
     @Tag("GoogleTest")
     public void googleTest(){
-        prepareStep.openBrowser();
+        prepareStep.browserConfig();
+        open(siteUrl);
     }
 }
