@@ -7,7 +7,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 
 public class PrepareStep extends OwnerData {
-    public static String siteUrl = System.getProperty("baseUrl", "http://localhost:8080/");
+    public static String siteUrl = System.getProperty("base_url", "http://localhost:8080/");
 @BeforeAll
     public static void browserConfig() {
         Configuration.browser = System.getProperty("browser", "chrome");
