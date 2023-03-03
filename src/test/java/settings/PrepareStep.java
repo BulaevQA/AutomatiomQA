@@ -5,7 +5,6 @@ import owner.OwnerData;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
-import static com.codeborne.selenide.Selenide.open;
 
 public class PrepareStep extends OwnerData {
     public static String siteUrl = System.getProperty("baseUrl", "http://localhost:8080/");
