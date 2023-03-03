@@ -8,14 +8,15 @@ import io.qameta.allure.selenide.AllureSelenide;
 import static com.codeborne.selenide.Selenide.open;
 
 public class PrepareStep extends OwnerData {
+    static String siteUrl = System.getProperty("baseUrl", "https://www.google.com/");
 @BeforeAll
     public static void openBrowser() {
         Configuration.holdBrowserOpen = true;
-        Configuration.browser = System.setProperty("browser", "edge");
-        Configuration.browserSize = System.setProperty("size", "1920x1080");
-        Configuration.baseUrl = System.setProperty("baseUrl", "https://www.google.com/");
+        Configuration.browser = System.getProperty("browser", "edge");
+        Configuration.browserSize = System.getProperty("size", "1920x1080");
+        Configuration.baseUrl = siteUrl;
         SelenideLogger.addListener("AllureSelenide",
                 new AllureSelenide());
-        open(baseUrl());
+        open(siteUrl);
     }
 }
