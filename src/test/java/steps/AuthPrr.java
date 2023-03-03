@@ -21,13 +21,13 @@ public class AuthPrr extends OwnerData {
         return this;
     }
     @Step(value = "Ввод логина")
-    public AuthPrr setLogin(String value) {
-        $x("//input[@id='login']").setValue(value);
+    public AuthPrr setLogin() {
+        $x("//input[@id='login']").setValue(System.getProperty("login","admin"));
         return this;
     }
     @Step(value = "Ввод пароля")
-    public AuthPrr setPassword(String value) {
-        $x("//input[@id='password']").setValue(value)
+    public AuthPrr setPassword() {
+        $x("//input[@id='password']").setValue((System.getProperty("password","admin")))
                 .sendKeys(Keys.ENTER);
         return this;
     }

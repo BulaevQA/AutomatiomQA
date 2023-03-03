@@ -28,8 +28,8 @@ public class CvConstructorTest {
         open(siteUrl);
         authPrr.clickLogIn() // Авторизация
                 .clickEsia()
-                .setLogin(ownerData.loginCv)
-                .setPassword(ownerData.passCv)
+                .setLogin()
+                .setPassword()
                 .clickCV();
         createCv.buttonCloseCookie() // Создание резюме
                 .buttonCV()
