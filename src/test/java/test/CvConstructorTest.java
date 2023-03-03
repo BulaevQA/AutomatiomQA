@@ -25,7 +25,6 @@ public class CvConstructorTest {
     @DisplayName("Тест создание резюме")
     public void cvConstructorTest() {
         prepareStep.browserConfig(); // Конфигурация браузера
-        open(siteUrl);
         authPrr.clickLogIn() // Авторизация
                 .clickEsia()
                 .setLogin()

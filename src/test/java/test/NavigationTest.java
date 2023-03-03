@@ -19,7 +19,6 @@ public class NavigationTest {
     @DisplayName("Тест навигации по резюме")
     public void cvConstructorTest() {
         prepareStep.browserConfig(); // Конфигурация браузера
-        open(siteUrl);
         authPrr.clickLogIn() // Авторизация
                 .clickEsia()
                 .setLogin()

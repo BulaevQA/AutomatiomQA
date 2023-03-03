@@ -6,6 +6,8 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 
+import static com.codeborne.selenide.Selenide.open;
+
 public class PrepareStep extends OwnerData {
     public static String siteUrl = System.getProperty("base_url", "http://localhost:8080/");
 @BeforeAll
@@ -15,5 +17,6 @@ public class PrepareStep extends OwnerData {
         Configuration.baseUrl = siteUrl;
         SelenideLogger.addListener("AllureSelenide",
                 new AllureSelenide());
+        open(siteUrl);
     }
 }
