@@ -15,7 +15,6 @@ public class CvConstructorTest {
     AuthPrr authPrr = new AuthPrr();
     ResumeSteps createCv = new ResumeSteps();
     UserData userData = new UserData();
-    OwnerData ownerData = new OwnerData();
 
     @Test
     @Tag("ResumeTest")
