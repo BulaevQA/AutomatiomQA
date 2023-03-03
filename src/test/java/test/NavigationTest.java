@@ -22,8 +22,8 @@ public class NavigationTest {
         open(siteUrl);
         authPrr.clickLogIn() // Авторизация
                 .clickEsia()
-                .setLogin(ownerData.loginCv)
-                .setPassword(ownerData.passCv)
+                .setLogin()
+                .setPassword()
                 .clickCV();
         createCV.buttonCloseCookie() // Создание резюме
                 .buttonCV()
