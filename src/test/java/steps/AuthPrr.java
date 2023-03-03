@@ -16,7 +16,7 @@ public class AuthPrr extends OwnerData {
         return this;
     }
     @Step(value = "Авторизация через ЕСИА")
-    public AuthPrr clickESIA() {
+    public AuthPrr clickEsia() {
         $x("//div[@class='mb-3 row']").click();
         return this;
     }

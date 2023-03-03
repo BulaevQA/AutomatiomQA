@@ -7,6 +7,9 @@ import settings.PrepareStep;
 import steps.AuthPrr;
 import steps.ResumeSteps;
 
+import static com.codeborne.selenide.Selenide.open;
+import static settings.PrepareStep.siteUrl;
+
 public class NavigationTest {
     PrepareStep prepareStep = new PrepareStep();
     AuthPrr authPrr = new AuthPrr();
@@ -15,9 +18,10 @@ public class NavigationTest {
     @Test
     @DisplayName("Тест навигации по резюме")
     public void cvConstructorTest() {
-        prepareStep.browserConfig(); // Авторизация
-        authPrr.clickLogIn()
-                .clickESIA()
+        prepareStep.browserConfig(); // Конфигурация браузера
+        open(siteUrl);
+        authPrr.clickLogIn() // Авторизация
+                .clickEsia()
                 .setLogin(ownerData.loginCv)
                 .setPassword(ownerData.passCv)
                 .clickCV();

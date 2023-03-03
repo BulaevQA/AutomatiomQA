@@ -18,7 +18,7 @@ public class GoogleTest {
     @Test
     @Tag("GoogleTest")
     public void googleTest(){
-        prepareStep.browserConfig();
+        prepareStep.browserConfig(); // Конфигурация браузера
         open(siteUrl);
     }
 }

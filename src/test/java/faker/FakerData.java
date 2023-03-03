@@ -1,14 +1,9 @@
 package faker;
 
-import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
 import com.github.javafaker.Faker;
-import steps.ResumeSteps;
 
 import java.util.Locale;
 import java.util.Random;
-
-import static com.codeborne.selenide.Selenide.$x;
 
 public class FakerData {
 
@@ -22,7 +17,7 @@ public class FakerData {
         return faker.name().lastName();
     }
     public static String randomEmail() {
-        return faker.bothify("??????@gmail.com");
+        return faker.bothify("??????@pbs.bftcom.com");
     }
     public static String randomPhone() {
         return faker.bothify("8921#######");

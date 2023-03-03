@@ -9,6 +9,9 @@ import owner.OwnerData;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Selenide.open;
+import static settings.PrepareStep.siteUrl;
+
 public class CvConstructorTest {
 
     PrepareStep prepareStep = new PrepareStep();
@@ -21,13 +24,14 @@ public class CvConstructorTest {
     @Tag("ResumeTest")
     @DisplayName("Тест создание резюме")
     public void cvConstructorTest() {
-        prepareStep.browserConfig();
-        authPrr.clickLogIn()
-                .clickESIA()
+        prepareStep.browserConfig(); // Конфигурация браузера
+        open(siteUrl);
+        authPrr.clickLogIn() // Авторизация
+                .clickEsia()
                 .setLogin(ownerData.loginCv)
                 .setPassword(ownerData.passCv)
                 .clickCV();
-        createCv.buttonCloseCookie()
+        createCv.buttonCloseCookie() // Создание резюме
                 .buttonCV()
                 .positionName()
                 .clickPhoto()
