@@ -10,6 +10,14 @@ public class FakerData {
     static Faker faker = new Faker(new Locale("ru"));
     static Random random = new Random();
 
+    public String firstName = randomFirstName();
+    public String lastName = randomLastName();
+    public String email = randomEmail();
+    public String phone = randomPhone();
+    public String fullAddress = randomFullAddress();
+    public String salary = randomSalary();
+    public String rgnSphere = randomSphere();
+
     public static String randomFirstName() {
         return faker.name().firstName();
     }
@@ -17,7 +25,7 @@ public class FakerData {
         return faker.name().lastName();
     }
     public static String randomEmail() {
-        return faker.bothify("??????@pbs.bftcom.com");
+        return faker.bothify("??????@gmail.com");
     }
     public static String randomPhone() {
         return faker.bothify("8921#######");

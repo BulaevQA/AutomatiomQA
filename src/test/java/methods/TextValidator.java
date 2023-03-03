@@ -3,8 +3,11 @@ package methods;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class TextValidator {
-    public TextValidator checkText(String xpass, String text){
-        $x(xpass).getText().equals(text);
+    /*
+    Получаем текст по xpas и сравниваем с ожидаемым текстом
+    */
+    public TextValidator checkText(String xpas, String text){
+        $x(xpas).getText().equals(text);
         return this;
     }
 }

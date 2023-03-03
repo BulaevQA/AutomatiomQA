@@ -17,5 +17,5 @@ public class OwnerData {
     }
     public String loginCv = authLoginCv();
     public String passCv = authPassCv();
-    public static String mainUrl = baseUrl();
+    public static String Url = baseUrl();
 }

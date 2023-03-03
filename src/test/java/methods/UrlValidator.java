@@ -4,13 +4,13 @@ import com.codeborne.selenide.WebDriverRunner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class UrlComparator {
+public class UrlValidator {
     /*
     В value указываем url который ожидаем увидеть
      */
-    public UrlComparator urlCompare(String value){
+    public UrlValidator urlCompare(String url){
         String currentUrl = WebDriverRunner.getAndCheckWebDriver().getCurrentUrl();
-        assertEquals(currentUrl, value);
+        currentUrl.equals(url);
         return this;
     }
 }
