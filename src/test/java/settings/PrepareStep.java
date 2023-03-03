@@ -8,7 +8,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import static com.codeborne.selenide.Selenide.open;
 
 public class PrepareStep extends OwnerData {
-    static String siteUrl = System.getProperty("baseUrl", "https://www.google.com/");
+    static String siteUrl = System.getProperty("baseUrl", "http://localhost:8080/");
 @BeforeAll
     public static void openBrowser() {
         Configuration.holdBrowserOpen = true;

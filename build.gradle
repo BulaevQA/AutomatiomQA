@@ -46,6 +46,11 @@ tasks.withType(Test) {
 
 task smoke_tests(type: Test) {
     useJUnitPlatform {
-        includeTags("smoke")
+        includeTags("GoogleTest")
+    }
+}
+task resume_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("ResumeTest")
     }
 }

@@ -4,13 +4,17 @@ import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import owner.OwnerData;
+import settings.PrepareStep;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
+public class GoogleTest {
 
-public class GoogleTest extends OwnerData {
+    PrepareStep prepareStep = new PrepareStep();
+    OwnerData ownerData = new OwnerData();
+
     @Test
-    @Tag("smoke")
+    @Tag("GoogleTest")
     public void googleTest(){
-        Selenide.open(baseUrl);
+        prepareStep.openBrowser();
     }
 }

@@ -1,6 +1,7 @@
 package test;
 
 import faker.UserData;
+import org.junit.jupiter.api.Tag;
 import steps.ResumeSteps;
 import steps.AuthPrr;
 import settings.PrepareStep;
@@ -17,6 +18,7 @@ public class CvConstructorTest {
     OwnerData ownerData = new OwnerData();
 
     @Test
+    @Tag("ResumeTest")
     @DisplayName("Тест создание резюме")
     public void cvConstructorTest() {
         prepareStep.openBrowser();
