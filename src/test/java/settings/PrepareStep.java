@@ -12,6 +12,7 @@ public class PrepareStep extends OwnerData {
     public static String siteUrl = System.getProperty("base_url", "http://localhost:8080/");
 @BeforeAll
     public static void browserConfig() {
+        Configuration.holdBrowserOpen = true;
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserSize = System.getProperty("size", "1920x1080");
         Configuration.baseUrl = siteUrl;
