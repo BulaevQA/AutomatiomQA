@@ -17,18 +17,13 @@ public class AuthPage {
     public void buttonEsiaAuth() {
         ESIA_AUTH.click();
     }
-    /**
-     * Логин и пароль заполняем в jenkins в параметризированной сборке
-     * @param key Ключ для jenkins по значению которого он смотрит куда ставить логин/пароль
-     * @param def Значение ключа поумолчанию
-     */
     @Step(value = "Ввод логина")
-    public void fieldLogin(String key, String def) {
-        INSERT_LOGIN.setValue(System.getProperty(key, def));
+    public void fieldLogin(String login) {
+        INSERT_LOGIN.setValue(login);
     }
     @Step(value = "Ввод пароля")
-    public void fieldPassword(String key, String def) {
-       INSERT_PASSWORD.setValue(System.getProperty(key, def));
+    public void fieldPassword(String password) {
+       INSERT_PASSWORD.setValue(password);
        INSERT_PASSWORD.sendKeys(Keys.ENTER);
     }
     @Step(value = "Выбор соискателя")

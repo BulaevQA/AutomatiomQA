@@ -17,10 +17,8 @@ public class QaTests extends BrowserConfig {
     ResumeConstructorPage resumeConstructorPage = new ResumeConstructorPage();
 
     private final static String URL = System.getProperty("base_url", "http://localhost:8080/");
-    private final static String LOGIN = "login";
-    private final static String LOGIN_VALUE = "admin";
-    private final static String PASSWORD = "password";
-    private final static String PASSWORD_VALUE = "admin";
+    private final static String LOGIN = System.getProperty("login", "admin");
+    private final static String PASSWORD = System.getProperty("password", "admin");
     /*
     Тест авторизации соискателя
     */
@@ -31,8 +29,8 @@ public class QaTests extends BrowserConfig {
         mainPage.openUrl(URL);
         mainPage.buttonLogin();
         authPage.buttonEsiaAuth();
-        authPage.fieldLogin(LOGIN, LOGIN_VALUE);
-        authPage.fieldPassword(PASSWORD, PASSWORD_VALUE);
+        authPage.fieldLogin(LOGIN);
+        authPage.fieldPassword(PASSWORD);
         mainCvPage.myСabinetCheck();
 //                 browserConfig();
 //        authPage.buttonLogin()
