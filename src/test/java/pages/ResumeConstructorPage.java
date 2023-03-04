@@ -78,9 +78,4 @@ public class ResumeConstructorPage {
         $x("//button[@class='button group-container__item']").click();
         return this;
     }
-//    @Step(value = "Проверка страницы мои резюме")
-//    public ResumeConstructorPage myResumeCheck(){
-//        validators.checkText("//h1[@class='content__title']", "Мои резюме");
-//        return this;
-//    }
 }

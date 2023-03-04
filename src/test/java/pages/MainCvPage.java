@@ -11,8 +11,8 @@ public class MainCvPage {
     private final static SelenideElement CLOSE_COOKIES = $x("//div[@class='col-12 col-md-3 col-lg-2']");
 
     @Step(value = "Проверка главной страницы")
-    public String myСabinetCheck(String text){
-        return MY_CABINET.getText().equals(text) ? "Авторизация выполнилась" : "Авторизация провалилась";
+    public String myСabinetCheck(){
+        return MY_CABINET.getText();
     }
     @Step(value = "Закрыть уведомление")
     public void buttonCloseCookie(){

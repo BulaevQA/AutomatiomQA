@@ -10,12 +10,14 @@ public class MainNonAuthPage {
 
     private static SelenideElement LOGIN = $x("//span[@class='mega-menu__user-handler']");
 
-    @Step(value = "Переход на портал РВР")
-    public void openUrl(String url){
+    @Step(value = "Открываем url")
+    public MainNonAuthPage openUrl (String url){
         Selenide.open(url);
+        return this;
     }
     @Step(value = "Клик войти")
-    public void buttonLogin() {
+    public LoginPage buttonLogin() {
         LOGIN.click();
+        return new LoginPage();
     }
 }
