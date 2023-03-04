@@ -33,6 +33,7 @@ public class QaTests extends BrowserConfig {
         authPage.buttonEsiaAuth();
         authPage.fieldLogin(LOGIN);
         authPage.fieldPassword(PASSWORD);
+        authPage.clickCv();
         mainCvPage.myСabinetCheck(MY_CABINET);
 //                 browserConfig();
 //        authPage.buttonLogin()
