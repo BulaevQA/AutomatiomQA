@@ -7,41 +7,38 @@ import java.util.Random;
 
 public class FakerData {
 
-    static Faker faker = new Faker(new Locale("ru"));
-    static Random random = new Random();
-
-    public String firstName = randomFirstName();
-    public String lastName = randomLastName();
-    public String email = randomEmail();
-    public String phone = randomPhone();
-    public String fullAddress = randomFullAddress();
-    public String salary = randomSalary();
-    public String rgnSphere = randomSphere();
+    private static Random random = new Random();
+    private static Faker faker = new Faker(new Locale("ru"));
+    private static String salary = faker.bothify("3####");
+    private static String firstName = faker.name().firstName();
+    private static String lastName = faker.name().lastName();
+    private static String email = faker.bothify("??????@gmail.com");
+    private static String phone = faker.bothify("8921#######");
+    private static String addres = faker.address().fullAddress();
+    private static String[] workSphere = {"Высший менеджмент", "Домашний персонал", "Искусство и культура"};
 
     /*
     Генерируем случайные данные для переменных
     */
-
     public static String randomFirstName() {
-        return faker.name().firstName();
+        return firstName;
     }
     public static String randomLastName() {
-        return faker.name().lastName();
+        return lastName;
     }
     public static String randomEmail() {
-        return faker.bothify("??????@gmail.com");
+        return email;
     }
     public static String randomPhone() {
-        return faker.bothify("8921#######");
+        return phone;
     }
     public static String randomFullAddress() {
-        return faker.address().fullAddress();
+        return addres;
     }
-    public static String randomSalary() {
-        return faker.bothify("3####");
+    public String randomSalary() {
+        return salary;
     }
     public static String randomSphere() {
-        String[] arraySphere = {"Высший менеджмент", "Домашний персонал", "Искусство и культура"};
-                return arraySphere[random.nextInt(arraySphere.length)];
+        return workSphere[random.nextInt(workSphere.length)];
     }
 }

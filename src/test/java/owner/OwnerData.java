@@ -15,7 +15,4 @@ public class OwnerData {
     public static String baseUrl(){
         return configProperties.testUrl();
     }
-    public String loginCv = authLoginCv();
-    public String passCv = authPassCv();
-    public static String Url = baseUrl();
 }
