@@ -1,8 +1,11 @@
 package steps;
 
+import com.codeborne.selenide.SelenideElement;
 import faker.FakerData;
 import io.qameta.allure.Step;
 import methods.ElementCollections;
+import methods.Validators;
+
 import java.io.File;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -10,6 +13,7 @@ public class ResumeSteps {
 
     ElementCollections randomArrayElement = new ElementCollections();
     FakerData fakerData = new FakerData();
+    Validators validators = new Validators();
 
     @Step(value = "Клик создать резюме")
     public ResumeSteps buttonCreateResume(){
@@ -75,6 +79,11 @@ public class ResumeSteps {
     @Step(value = "Сохранить и опубликовать")
     public ResumeSteps buttonPublish(){
         $x("//button[@class='button group-container__item']").click();
+        return this;
+    }
+    @Step(value = "Проверка страницы мои резюме")
+    public ResumeSteps myResumeCheck(){
+        validators.checkText("//h1[@class='content__title']", "Мои резюме");
         return this;
     }
 }

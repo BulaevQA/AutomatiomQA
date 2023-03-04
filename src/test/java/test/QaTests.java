@@ -12,7 +12,9 @@ public class QaTests {
     BrowserConfig browserConfig = new BrowserConfig();
     AuthSteps authSteps = new AuthSteps();
     ResumeSteps resumeSteps = new ResumeSteps();
-
+    /*
+    Тест авторизации соискателя
+    */
     @Test
     @Tag("CvAuth")
     @DisplayName("Тест авторизации соискателя")
@@ -26,6 +28,9 @@ public class QaTests {
                 .buttonCloseCookie()
                 .myСabinetCheck();
     }
+    /*
+    Тест создания резюме соискателем
+    */
     @Test
     @Tag("ResumeTest")
     @DisplayName("Тест создание резюме")
@@ -50,6 +55,7 @@ public class QaTests {
                 .region()
                 .radioButtonMail()
                 .workExperience()
-                .buttonPublish();
+                .buttonPublish()
+                .myResumeCheck();
     }
 }
