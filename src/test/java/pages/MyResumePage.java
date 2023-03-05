@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class MyResumePage {
 
-    private final static SelenideElement MY_RESUME = $x("//h1");
+    private final static SelenideElement MY_RESUME = $x("//div[@class='ib-cv-review']//h1");
     private final static SelenideElement UPDATE_RESUME = $x("//button[@data-action='republish']");
 
     @Step(value = "Проверка страницы Мои резюме")

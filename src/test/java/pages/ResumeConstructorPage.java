@@ -14,12 +14,12 @@ public class ResumeConstructorPage {
     private final static SelenideElement UPLOAD_PHOTO = $x("//button[@data-action='save_img']");
     private final static SelenideElement POSITION_NAME = $x("//input[@name='positionName']");
     private final static SelenideElement WORK_SPHERE_FIELD = $x("//*[@data-id='professionSphereId']");
-    private final static String RANDOM_WORK_SPHERE = "//*[@id='professionSphereId']//option[position()>2]";
     private final static SelenideElement SALARY = $x("//input[@name='salary']");
     private final static SelenideElement REGION = $x("//button[@data-id='nationalityId']");
-    private final static String RANDOM_REGION = "//select[@id='nationalityId']//option[position()>1]";
     private final static SelenideElement WORK_EXPERIENCE = $x("//span[contains(text(),'Есть опыт работы')]");
     private final static SelenideElement PUBLISH = $x("//button[@class='button group-container__item']");
+    private final static String RANDOM_WORK_SPHERE = "//*[@id='professionSphereId']//option[position()>2]";
+    private final static String RANDOM_REGION = "//select[@id='nationalityId']//option[position()>1]";
 
     @Step(value = "Клик на кнопку загрузить фото")
     public ResumeConstructorPage clickPhotoIcon() {
