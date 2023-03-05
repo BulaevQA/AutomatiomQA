@@ -20,9 +20,6 @@ public class QaTests extends BrowserConfig {
     private final static String POSITION_NAME = "Автотест";
     private final static String SALARY = fakerData.randomSalary();
     private final static String MY_RESUME = "Мои резюме";
-//    private final static String URL = "https://hotfix2.rtportal.show.pbs.bftcom.com/";
-//    private final static String LOGIN = "89674407691";
-//    private final static String PASSWORD = "Ex3t8yh96mj!";
 
     /*
     Тест авторизации соискателя
