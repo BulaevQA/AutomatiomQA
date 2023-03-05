@@ -1,4 +1,4 @@
-package methods;
+package helpers;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;

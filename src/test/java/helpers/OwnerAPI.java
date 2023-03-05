@@ -1,4 +1,4 @@
-package owner;
+package helpers;
 
 import org.aeonbits.owner.Config;
 @Config.Sources({"file:./src/test/resources/config/config.properties"})

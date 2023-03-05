@@ -1,11 +1,11 @@
-package conf;
+package core;
 
 import org.junit.jupiter.api.BeforeAll;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 
-public class BrowserConfig {
+abstract public class BrowserConfig {
 @BeforeAll
     public static void browserConfig() {
         Configuration.holdBrowserOpen = true;

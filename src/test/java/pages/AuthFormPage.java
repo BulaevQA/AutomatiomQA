@@ -18,8 +18,9 @@ public class AuthFormPage {
     }
     @Step(value = "Ввод пароля")
     public UserSelectPage fieldPassword(String password) {
-       INSERT_PASSWORD.setValue(password);
-       INSERT_PASSWORD.sendKeys(Keys.ENTER);
+       INSERT_PASSWORD
+               .setValue(password)
+               .sendKeys(Keys.ENTER);
        return new UserSelectPage();
     }
 }
