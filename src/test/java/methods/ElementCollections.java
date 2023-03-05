@@ -14,8 +14,8 @@ public class ElementCollections {
     /*
     Клик на случайный веб-элемент из коллекции эллементов
     */
-    public void randomElementCollectionClick(String xpass){
-        ElementsCollection selectList = $$x(xpass);
+    public void randomElementCollectionClick(String value){
+        ElementsCollection selectList = $$x(value);
         List<WebElement> selects = new ArrayList<>();
         for (SelenideElement x : selectList) {
             selects.add(x.getWrappedElement());
@@ -26,8 +26,8 @@ public class ElementCollections {
     /*
     Переход на случайный href из коллекции эллементов
     */
-    public void randomElementCollectionOpen(String xpass){
-        ElementsCollection selectList = $$x(xpass);
+    public void randomElementCollectionOpen(String value){
+        ElementsCollection selectList = $$x(value);
         List<String> selects = new ArrayList<>();
         for (SelenideElement x : selectList) {
             selects.add(x.getAttribute("href"));

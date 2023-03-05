@@ -8,7 +8,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 public class BrowserConfig {
 @BeforeAll
     public static void browserConfig() {
-        Configuration.holdBrowserOpen = false;
+        Configuration.holdBrowserOpen = true;
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserSize = System.getProperty("size", "1920x1080");
         SelenideLogger.addListener("AllureSelenide",
