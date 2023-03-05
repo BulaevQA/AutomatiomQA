@@ -14,7 +14,7 @@ public class QaTests extends BrowserConfig {
     private final static String URL = System.getProperty("base_url", "http://localhost:8080/");
     private final static String LOGIN = System.getProperty("login", "admin");
     private final static String PASSWORD = System.getProperty("password", "admin");
-    private final static String MY_CABINET = "Мой кабинт";
+    private final static String MY_CABINET = "Мой кабинет";
 
     /*
     Тест авторизации соискателя
