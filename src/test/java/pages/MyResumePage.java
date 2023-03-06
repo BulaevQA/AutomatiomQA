@@ -1,9 +1,11 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$x;
+import static helpers.ScreenshotMethod.attachScreenshot;
 
 public class MyResumePage {
 
@@ -11,12 +13,14 @@ public class MyResumePage {
     private final static SelenideElement UPDATE_RESUME = $x("//button[@data-action='republish']");
 
     @Step(value = "Проверка страницы Мои резюме")
-    public String myResumeCheck(){
-        return MY_RESUME.getText();
+    public MyResumePage myResumeCheck(String value){
+        MY_RESUME.shouldBe(Condition.text(value));
+        attachScreenshot();
+        return this;
     }
-    public MyResumePage updateResume() {
+    @Step(value = "Обновление резюме")
+    public MyResumePage updateResume(){
         UPDATE_RESUME.click();
         return this;
     }
-    //button[@data-action='republish']
 }

@@ -17,9 +17,8 @@ public class QaTests extends BrowserConfig {
                 .buttonEsiaAuth()
                 .fieldLogin(TestValues.LOGIN)
                 .fieldPassword(TestValues.PASSWORD)
-                .clickCv();
-        Assertions
-                .assertEquals(new MainCvPage().mainCandidatePage(), TestValues.EXPECTED_CABINET);
+                .clickCv()
+                .mainCandidatePage(TestValues.EXPECTED_CABINET);
     }
     @Test
     @Tag("ResumeTest")
@@ -41,8 +40,7 @@ public class QaTests extends BrowserConfig {
                 .fieldRegion()
                 .randomRegion()
                 .workExperience()
-                .buttonPublish();
-        Assertions
-                .assertEquals(new MyResumePage().myResumeCheck(), TestValues.EXPECTED_MY_RESUME);
+                .buttonPublish()
+                .myResumeCheck(TestValues.EXPECTED_MY_RESUME);
     }
 }
