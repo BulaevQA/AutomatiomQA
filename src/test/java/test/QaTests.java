@@ -2,20 +2,16 @@ package test;
 
 import com.codeborne.selenide.junit5.ScreenShooterExtension;
 import helpers.TestValues;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import core.BrowserConfig;
 import org.junit.jupiter.api.extension.ExtendWith;
 import pages.*;
 
+@ExtendWith({ScreenShooterExtension.class})
 public class QaTests extends BrowserConfig {
-
     @Test
     @Tag("CvAuth")
     @DisplayName("Тест авторизации соискателя")
-    @ExtendWith({ScreenShooterExtension.class})
     public void cvAuthTest() {
         new MainNonAuthPage()
                 .openUrl(TestValues.URL)
