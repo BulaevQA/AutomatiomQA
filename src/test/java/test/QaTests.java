@@ -1,14 +1,12 @@
 package test;
 
-import com.codeborne.selenide.junit5.ScreenShooterExtension;
 import helpers.TestValues;
 import org.junit.jupiter.api.*;
 import core.BrowserConfig;
-import org.junit.jupiter.api.extension.ExtendWith;
 import pages.*;
 
-@ExtendWith({ScreenShooterExtension.class})
 public class QaTests extends BrowserConfig {
+
     @Test
     @Tag("CvAuth")
     @DisplayName("Тест авторизации соискателя")
@@ -21,7 +19,7 @@ public class QaTests extends BrowserConfig {
                 .fieldPassword(TestValues.PASSWORD)
                 .clickCv();
         Assertions
-                .assertTrue(new MainCvPage().mainCandidatePage().equals(TestValues.EXPECTED_CABINET));
+                .assertEquals(new MainCvPage().mainCandidatePage(), TestValues.EXPECTED_CABINET);
     }
     @Test
     @Tag("ResumeTest")
@@ -45,6 +43,6 @@ public class QaTests extends BrowserConfig {
                 .workExperience()
                 .buttonPublish();
         Assertions
-                .assertTrue(new MyResumePage().myResumeCheck().equals(TestValues.EXPECTED_MY_RESUME));
+                .assertEquals(new MyResumePage().myResumeCheck(), TestValues.EXPECTED_MY_RESUME);
     }
 }

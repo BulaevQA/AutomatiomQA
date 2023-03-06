@@ -1,7 +1,5 @@
 package helpers;
 
-import pages.MainCvPage;
-
 public class TestValues {
 
     public static String URL = System.getProperty("base_url", "http://localhost:8080/");
