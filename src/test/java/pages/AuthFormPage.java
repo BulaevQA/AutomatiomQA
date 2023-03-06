@@ -13,7 +13,7 @@ public class AuthFormPage {
 
     @Step(value = "Ввод логина")
     public AuthFormPage fieldLogin(String login) {
-        INSERT_LOGIN.setValue(login).screenshot();
+        INSERT_LOGIN.setValue(login);
         return this;
     }
     @Step(value = "Ввод пароля")
