@@ -10,7 +10,7 @@ public class MainNonAuthPage {
 
     private static final SelenideElement LOGIN = $x("//span[@class='mega-menu__user-handler']");
 
-    @Step(value = "Открываем url")
+    @Step(value = "Открываем {url}")
     public MainNonAuthPage openUrl (String url){
         Selenide.open(url);
         return this;

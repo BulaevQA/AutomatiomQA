@@ -21,21 +21,11 @@ public class ResumeConstructorPage {
     private final static String RANDOM_WORK_SPHERE = "//*[@id='professionSphereId']//option[position()>2]";
     private final static String RANDOM_REGION = "//select[@id='nationalityId']//option[position()>1]";
 
-    @Step(value = "Клик на кнопку загрузить фото")
-    public ResumeConstructorPage clickPhotoIcon() {
-        PHOTO_ICON.click();
-        return this;
-    }
-
-    @Step(value = "Импорт фото из файла")
-    public ResumeConstructorPage importPhoto() {
+    @Step(value = "Загрузка фото соискателя")
+    public ResumeConstructorPage uploadResumePhoto() {
         File cvPhoto = new File("src/test/resources/cvPhoto.jpg");
+        PHOTO_ICON.click();
         IMPORT_PHOTO.uploadFile(cvPhoto);
-        return this;
-    }
-
-    @Step(value = "Загрузка фото")
-    public ResumeConstructorPage uploadPhoto() {
         UPLOAD_PHOTO.click();
         return this;
     }
@@ -46,14 +36,9 @@ public class ResumeConstructorPage {
         return this;
     }
 
-    @Step(value = "Селект сфера деятельности")
+    @Step(value = "Заполнение селекта сферы деятельности")
     public ResumeConstructorPage fieldSphere() {
         WORK_SPHERE_FIELD.click();
-        return this;
-    }
-
-    @Step(value = "Ввод сферы деятельности")
-    public ResumeConstructorPage randomSphere() {
         new ElementCollections().randomElementCollectionClick(RANDOM_WORK_SPHERE);
         return this;
     }
@@ -64,20 +49,15 @@ public class ResumeConstructorPage {
         return this;
     }
 
-    @Step(value = "Селект изменение региона")
+    @Step(value = "Изменение гражданства")
     public ResumeConstructorPage fieldRegion() {
         REGION.click();
-        return this;
-    }
-
-    @Step(value = "Изменение региона")
-    public ResumeConstructorPage randomRegion() {
         new ElementCollections().randomElementCollectionClick(RANDOM_REGION);
         return this;
     }
 
     @Step(value = "Деактивация блока опыта работы")
-    public ResumeConstructorPage workExperience() {
+    public ResumeConstructorPage workExperienceDisable() {
         WORK_EXPERIENCE.click();
         return this;
     }

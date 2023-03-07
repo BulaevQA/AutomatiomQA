@@ -15,8 +15,7 @@ public class QaTests extends BrowserConfig {
                 .openUrl(TestValues.URL)
                 .buttonLogin()
                 .buttonEsiaAuth()
-                .fieldLogin(TestValues.LOGIN)
-                .fieldPassword(TestValues.PASSWORD)
+                .inputAuthForms(TestValues.LOGIN, TestValues.PASSWORD)
                 .clickCv()
                 .mainCandidatePage(TestValues.EXPECTED_CABINET);
     }
@@ -28,18 +27,15 @@ public class QaTests extends BrowserConfig {
                 .openUrl(TestValues.URL)
                 .buttonLogin()
                 .buttonEsiaAuth()
-                .fieldLogin(TestValues.LOGIN)
-                .fieldPassword(TestValues.PASSWORD)
+                .inputAuthForms(TestValues.LOGIN, TestValues.PASSWORD)
                 .clickCv()
                 .buttonCloseCookie()
                 .buttonCreateResume()
                 .fieldPositionName(TestValues.POSITION_NAME)
                 .fieldSphere()
-                .randomSphere()
                 .fieldSalary(TestValues.SALARY)
                 .fieldRegion()
-                .randomRegion()
-                .workExperience()
+                .workExperienceDisable()
                 .buttonPublish()
                 .myResumeCheck(TestValues.EXPECTED_MY_RESUME);
     }
