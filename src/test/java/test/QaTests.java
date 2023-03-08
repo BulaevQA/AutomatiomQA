@@ -36,6 +36,7 @@ public class QaTests extends BrowserConfig {
                 .fieldSalary(TestValues.SALARY)
                 .fieldRegion()
                 .workExperienceDisable()
+                .scheduleType()
                 .buttonPublish()
                 .myResumeCheck(TestValues.EXPECTED_MY_RESUME);
     }

@@ -2,8 +2,7 @@ package helpers;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.WebElement;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -16,34 +15,37 @@ public class ElementCollections {
     */
     public void randomElementCollectionClick(String xpath) {
         ElementsCollection selectList = $$x(xpath);
-        List<WebElement> selects = new ArrayList<>();
-        for (SelenideElement x : selectList) {
-            selects.add(x.getWrappedElement());
-        }
-        int randomNumber = new Random().nextInt(selects.size());
-        selects.get(randomNumber).click();
+        selectList.get(new Random().nextInt(selectList.size())).click();
     }
     /*
-    Переход на случайный href из коллекции эллементов
+    Клик на все эллементы из коллекции
     */
-    public void randomElementCollectionOpen(String xpath) {
+    public void elementsCollectionsClick(String xpath) {
         ElementsCollection selectList = $$x(xpath);
-        List<String> selects = new ArrayList<>();
-        for (SelenideElement x : selectList) {
-            selects.add(x.getAttribute("href"));
+        for(int i = 0; i < selectList.size(); i++) {
+            selectList.get(i).click();
         }
-        int randomNumber = new Random().nextInt(selects.size());
-        Selenide.open(selects.get(randomNumber));
     }
     /*
-    Перебор всех элементов с атрибутом href
+    Перебор href ссылок
     */
-    public void FullElementsCollection(String xpath) {
-        ElementsCollection arraylist = $$x(xpath);
-        List<String> elements = new ArrayList<>();
-        for (SelenideElement x : arraylist) {
-            elements.add(x.getAttribute("href"));
+    public void hrefCollection(String xpath) {
+        ElementsCollection selectList = $$x(xpath);
+        List<String> selectArray = new ArrayList<>();
+        for(int i = 0; i < selectList.size(); i++) {
+            selectArray.add(selectList.get(i).getAttribute("href"));
         }
-        elements.forEach(Selenide::open);
+        selectArray.forEach(Selenide::open);
+    }
+    /*
+    Случайная href ссылка
+    */
+    public void randomHref(String xpath) {
+        ElementsCollection selectList = $$x(xpath);
+        List<String> selectArray = new ArrayList<>();
+        for(int i = 0; i < selectList.size(); i++) {
+            selectArray.add(selectList.get(i).getAttribute("href"));
+        }
+        Selenide.open(selectArray.get(new Random().nextInt(selectArray.size())));
     }
 }

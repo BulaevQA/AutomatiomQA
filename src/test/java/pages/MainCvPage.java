@@ -6,8 +6,9 @@ import helpers.ScreenshotMethod;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$x;
+import static helpers.ScreenshotMethod.attachScreenshot;
 
-public class MainCvPage extends ScreenshotMethod {
+public class MainCvPage {
 
     private final static SelenideElement MY_CABINET = $x("//h1");
     private final static SelenideElement CLOSE_COOKIES = $x("//div[@class='col-12 col-md-3 col-lg-2']");

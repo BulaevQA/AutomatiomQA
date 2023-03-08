@@ -18,6 +18,7 @@ public class ResumeConstructorPage {
     private final static SelenideElement REGION = $x("//button[@data-id='nationalityId']");
     private final static SelenideElement WORK_EXPERIENCE = $x("//span[contains(text(),'Есть опыт работы')]");
     private final static SelenideElement PUBLISH = $x("//button[@class='button group-container__item']");
+    private final static String SCHEDULE = "//*[text()='График работы']/..//label//input[not(contains(@checked, 'checked'))]/..";
     private final static String RANDOM_WORK_SPHERE = "//*[@id='professionSphereId']//option[position()>2]";
     private final static String RANDOM_REGION = "//select[@id='nationalityId']//option[position()>1]";
 
@@ -66,5 +67,11 @@ public class ResumeConstructorPage {
     public MyResumePage buttonPublish() {
         PUBLISH.click();
         return new MyResumePage();
+    }
+
+    @Step(value = "Сохранить и опубликовать")
+    public ResumeConstructorPage scheduleType() {
+        new ElementCollections().elementsCollectionsClick(SCHEDULE);
+        return this;
     }
 }
