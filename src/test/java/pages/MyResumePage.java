@@ -9,8 +9,8 @@ import static helpers.ScreenshotMethod.attachScreenshot;
 
 public class MyResumePage {
 
-    private final static SelenideElement MY_RESUME = $x("//div[@class='ib-cv-review']//h1");
-    private final static SelenideElement UPDATE_RESUME = $x("//button[@data-action='republish']");
+    private final SelenideElement MY_RESUME = $x("//div[@class='ib-cv-review']//h1");
+    private final SelenideElement UPDATE_RESUME = $x("//button[@data-action='republish']");
 
     @Step(value = "Проверка страницы Мои резюме")
     public MyResumePage myResumeCheck(String value){

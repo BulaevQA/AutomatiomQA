@@ -10,34 +10,33 @@ public class QaTests extends BrowserConfig {
     @Test
     @Tag("CvAuth")
     @DisplayName("Тест авторизации соискателя")
-    public void cvAuthTest() {
+    public void cvAuthTest(TestValues testValues) {
         new MainNonAuthPage()
-                .openUrl(TestValues.URL)
+                .openUrl(testValues.getURL())
                 .buttonLogin()
                 .buttonEsiaAuth()
-                .inputAuthForms(TestValues.LOGIN, TestValues.PASSWORD)
+                .authForm(testValues.getLOGIN(), testValues.getPASSWORD())
                 .clickCv()
-                .mainCandidatePage(TestValues.EXPECTED_CABINET);
+                .mainCandidatePage(testValues.getEXPECTED_CABINET());
     }
     @Test
     @Tag("ResumeTest")
     @DisplayName("Тест создания резюме")
-    public void cvCreateResumeTest() {
+    public void cvCreateResumeTest(TestValues testValues) {
         new MainNonAuthPage()
-                .openUrl(TestValues.URL)
+                .openUrl(testValues.getURL())
                 .buttonLogin()
                 .buttonEsiaAuth()
-                .inputAuthForms(TestValues.LOGIN, TestValues.PASSWORD)
+                .authForm(testValues.getLOGIN(), testValues.getPASSWORD())
                 .clickCv()
                 .buttonCloseCookie()
                 .buttonCreateResume()
-                .fieldPositionName(TestValues.POSITION_NAME)
+                .fieldPositionName(testValues.getPOSITION_NAME())
                 .fieldSphere()
-                .fieldSalary(TestValues.SALARY)
+                .fieldSalary(testValues.getSALARY())
                 .fieldRegion()
                 .workExperienceDisable()
-                .scheduleType()
                 .buttonPublish()
-                .myResumeCheck(TestValues.EXPECTED_MY_RESUME);
+                .myResumeCheck(testValues.getEXPECTED_MY_RESUME());
     }
 }

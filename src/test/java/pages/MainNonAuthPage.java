@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class MainNonAuthPage {
 
-    private static final SelenideElement LOGIN = $x("//span[@class='mega-menu__user-handler']");
+    private final SelenideElement LOGIN = $x("//span[@class='mega-menu__user-handler']");
 
     @Step(value = "Открываем {url}")
     public MainNonAuthPage openUrl (String url){

@@ -10,9 +10,9 @@ import static helpers.ScreenshotMethod.attachScreenshot;
 
 public class MainCvPage {
 
-    private final static SelenideElement MY_CABINET = $x("//h1");
-    private final static SelenideElement CLOSE_COOKIES = $x("//div[@class='col-12 col-md-3 col-lg-2']");
-    private final static SelenideElement CREATE_RESUME = $x("//a[@class='button group-container__item']");
+    private final SelenideElement MY_CABINET = $x("//h1");
+    private final SelenideElement CLOSE_COOKIES = $x("//div[@class='col-12 col-md-3 col-lg-2']");
+    private final SelenideElement CREATE_RESUME = $x("//a[@class='button group-container__item']");
 
     @Step(value = "Проверка главной страницы")
     public MainCvPage mainCandidatePage(String value){

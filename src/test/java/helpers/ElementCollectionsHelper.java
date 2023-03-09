@@ -9,7 +9,7 @@ import java.util.Random;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class ElementCollections {
+public class ElementCollectionsHelper {
     /*
     Клик на случайный веб-элемент из коллекции эллементов
     */

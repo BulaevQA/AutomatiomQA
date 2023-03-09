@@ -12,7 +12,7 @@ public class OwnerData {
     public String authPassCv() {
         return configProperties.passwordCV();
     }
-    public static String baseUrl(){
+    public String baseUrl(){
         return configProperties.testUrl();
     }
 }
