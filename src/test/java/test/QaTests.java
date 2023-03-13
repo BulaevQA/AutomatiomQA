@@ -1,5 +1,6 @@
 package test;
 
+import helpers.OwnerData;
 import helpers.TestValues;
 import org.junit.jupiter.api.*;
 import core.BrowserConfig;
@@ -10,12 +11,12 @@ public class QaTests extends BrowserConfig {
     @Test
     @Tag("CvAuth")
     @DisplayName("Тест авторизации соискателя")
-    public void cvAuthTest(TestValues testValues) {
+    public void cvAuthTest(TestValues testValues, OwnerData ownerData) {
         new MainNonAuthPage()
                 .openUrl(testValues.getURL())
                 .buttonLogin()
                 .buttonEsiaAuth()
-                .authForm(testValues.getLOGIN(), testValues.getPASSWORD())
+                .authForm(ownerData.authLoginCv(), ownerData.authPassCv())
                 .clickCv()
                 .mainCandidatePage(testValues.getEXPECTED_CABINET());
     }
