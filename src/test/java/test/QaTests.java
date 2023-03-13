@@ -1,6 +1,5 @@
 package test;
 
-import helpers.OwnerData;
 import helpers.TestValues;
 import org.junit.jupiter.api.*;
 import core.BrowserConfig;
@@ -10,33 +9,33 @@ public class QaTests extends BrowserConfig {
     @Test
     @Tag("CvAuth")
     @DisplayName("Тест авторизации соискателя")
-    public void cvAuthTest(TestValues testValues) {
+    public void cvAuthTest() {
         new MainNonAuthPage()
-                .openUrl(testValues.getURL())
+                .openUrl(TestValues.getURL())
                 .buttonLogin()
                 .buttonEsiaAuth()
-                .authForm(testValues.getLOGIN(), testValues.getPASSWORD())
+                .authForm(TestValues.getLOGIN(), TestValues.getPASSWORD())
                 .clickCv()
-                .mainCandidatePage(testValues.getEXPECTED_CABINET());
+                .mainCandidatePage(TestValues.getEXPECTED_CABINET());
     }
     @Test
     @Tag("ResumeTest")
     @DisplayName("Тест создания резюме")
-    public void cvCreateResumeTest(TestValues testValues) {
+    public void cvCreateResumeTest() {
         new MainNonAuthPage()
-                .openUrl(testValues.getURL())
+                .openUrl(TestValues.getURL())
                 .buttonLogin()
                 .buttonEsiaAuth()
-                .authForm(testValues.getLOGIN(), testValues.getPASSWORD())
+                .authForm(TestValues.getLOGIN(), TestValues.getPASSWORD())
                 .clickCv()
                 .buttonCloseCookie()
                 .buttonCreateResume()
-                .fieldPositionName(testValues.getPOSITION_NAME())
+                .fieldPositionName(TestValues.getPOSITION_NAME())
                 .fieldSphere()
-                .fieldSalary(testValues.getSALARY())
+                .fieldSalary(TestValues.getSALARY())
                 .fieldRegion()
                 .workExperienceDisable()
                 .buttonPublish()
-                .myResumeCheck(testValues.getEXPECTED_MY_RESUME());
+                .myResumeCheck(TestValues.getEXPECTED_MY_RESUME());
     }
 }
