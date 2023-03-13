@@ -8,17 +8,18 @@ import pages.*;
 
 public class QaTests extends BrowserConfig {
 
+    OwnerData ownerData = new OwnerData();
     @Test
     @Tag("CvAuth")
     @DisplayName("Тест авторизации соискателя")
-    public void cvAuthTest(TestValues testValues, OwnerData ownerData) {
+    public void cvAuthTest() {
         new MainNonAuthPage()
-                .openUrl(testValues.getURL())
+                .openUrl(new TestValues().URL)
                 .buttonLogin()
                 .buttonEsiaAuth()
-                .authForm(ownerData.authLoginCv(), ownerData.authPassCv())
+                .authForm(ownerData.authLoginCv(), ownerData.authLoginCv())
                 .clickCv()
-                .mainCandidatePage(testValues.getEXPECTED_CABINET());
+                .mainCandidatePage(new TestValues().EXPECTED_CABINET);
     }
     @Test
     @Tag("ResumeTest")
