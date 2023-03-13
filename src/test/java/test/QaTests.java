@@ -11,31 +11,31 @@ public class QaTests extends BrowserConfig {
     @DisplayName("Тест авторизации соискателя")
     public void cvAuthTest() {
         new MainNonAuthPage()
-                .openUrl(TestValues.getURL())
+                .openUrl(TestValues.URL)
                 .buttonLogin()
                 .buttonEsiaAuth()
-                .authForm(TestValues.getLOGIN(), TestValues.getPASSWORD())
+                .authForm(TestValues.LOGIN, TestValues.PASSWORD)
                 .clickCv()
-                .mainCandidatePage(TestValues.getEXPECTED_CABINET());
+                .mainCandidatePage(TestValues.EXPECTED_CABINET);
     }
     @Test
     @Tag("ResumeTest")
     @DisplayName("Тест создания резюме")
     public void cvCreateResumeTest() {
         new MainNonAuthPage()
-                .openUrl(TestValues.getURL())
+                .openUrl(TestValues.URL)
                 .buttonLogin()
                 .buttonEsiaAuth()
-                .authForm(TestValues.getLOGIN(), TestValues.getPASSWORD())
+                .authForm(TestValues.LOGIN, TestValues.PASSWORD)
                 .clickCv()
                 .buttonCloseCookie()
                 .buttonCreateResume()
-                .fieldPositionName(TestValues.getPOSITION_NAME())
+                .fieldPositionName(TestValues.POSITION_NAME)
                 .fieldSphere()
-                .fieldSalary(TestValues.getSALARY())
+                .fieldSalary(TestValues.SALARY)
                 .fieldRegion()
                 .workExperienceDisable()
                 .buttonPublish()
-                .myResumeCheck(TestValues.getEXPECTED_MY_RESUME());
+                .myResumeCheck(TestValues.EXPECTED_MY_RESUME);
     }
 }
