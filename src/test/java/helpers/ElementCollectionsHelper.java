@@ -11,9 +11,10 @@ import java.util.Random;
 import static com.codeborne.selenide.Selenide.*;
 
 public class ElementCollectionsHelper {
-    /*
-    Клик на случайный веб-элемент из коллекции эллементов
-    */
+    /**
+     Клик на случайный элемент из коллеции элементов
+     * @param elementsCollection - Указываем XPath на оллекцию элементов
+     */
     public void randomElementCollectionClick(ElementsCollection elementsCollection) {
         elementsCollection.get(new Random().nextInt(elementsCollection.size())).click();
     }

@@ -7,9 +7,9 @@ import pages.*;
 
 public class QaTests extends BrowserConfig {
 
-    private final String url = System.getProperty("base_url", "https://rtportal.show.pbs.bftcom.com/");
-    private final String login = System.getProperty("login", "89674407691");
-    private final String password = System.getProperty("password", "Ex3t8yh96mj!");
+    private final String url = System.getProperty("base_url", "localhost");
+    private final String login = System.getProperty("login", "admin");
+    private final String password = System.getProperty("password", "admin");
     private final String positionName = new Faker().bothify("Автотест####");
 
     @Test
@@ -37,10 +37,11 @@ public class QaTests extends BrowserConfig {
                 .buttonCreateResume()
                 .inputFieldValue("Желаемая должность", positionName)
                 .dropDownField("Сфера деятельности")
+                .dropDownField("Профессия", "Нет такой профессии", "1")
                 .inputFieldValue("Заработная плата (руб.)", "30000")
+                .inputFieldValue("Готов приступить к работе с", "01.01.2024")
                 .resumeConstructorToggle("Есть опыт работы")
                 .functionalButtons("Сохранить и опубликовать")
                 .myResumeCheck("Мои резюме");
-
     }
 }
