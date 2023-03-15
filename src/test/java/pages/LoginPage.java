@@ -6,10 +6,10 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class LoginPage {
-    private final SelenideElement ESIA_AUTH = $x("//div[@class='mb-3 row']");
+    private final SelenideElement authByEsia = $x("//*[text()='«Госуслуги»']");
     @Step(value = "Авторизация через ЕСИА")
     public AuthFormPage buttonEsiaAuth() {
-        ESIA_AUTH.click();
+        authByEsia.click();
         return new AuthFormPage();
     }
 }

@@ -8,16 +8,19 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class MainNonAuthPage {
 
-    private final SelenideElement LOGIN = $x("//span[@class='mega-menu__user-handler']");
+    private final SelenideElement login = $x("//*[text()='Войти']");
+    private final SelenideElement cookies = $x("//*[text()='Согласен']");
 
     @Step(value = "Открываем {url}")
     public MainNonAuthPage openUrl (String url){
         Selenide.open(url);
         return this;
     }
+
     @Step(value = "Клик войти")
     public LoginPage buttonLogin() {
-        LOGIN.click();
+        cookies.click();
+        login.click();
         return new LoginPage();
     }
 }

@@ -9,18 +9,18 @@ import static helpers.ScreenshotMethod.attachScreenshot;
 
 public class MyResumePage {
 
-    private final SelenideElement MY_RESUME = $x("//div[@class='ib-cv-review']//h1");
-    private final SelenideElement UPDATE_RESUME = $x("//button[@data-action='republish']");
+    private final SelenideElement myResume = $x("//div[@class='ib-cv-review']//h1");
+    private final SelenideElement updateResume = $x("//button[@data-action='republish']");
 
-    @Step(value = "Проверка страницы Мои резюме")
+    @Step(value = "Проверка страницы {value}")
     public MyResumePage myResumeCheck(String value){
-        MY_RESUME.shouldBe(Condition.text(value));
+        myResume.shouldBe(Condition.text(value));
         attachScreenshot();
         return this;
     }
     @Step(value = "Обновление резюме")
     public MyResumePage updateResume(){
-        UPDATE_RESUME.click();
+        updateResume.click();
         return this;
     }
 }

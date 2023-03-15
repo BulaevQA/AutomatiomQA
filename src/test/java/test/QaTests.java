@@ -1,41 +1,46 @@
 package test;
 
-import helpers.TestValues;
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.*;
 import core.BrowserConfig;
 import pages.*;
 
 public class QaTests extends BrowserConfig {
+
+    private final String url = System.getProperty("base_url", "https://rtportal.show.pbs.bftcom.com/");
+    private final String login = System.getProperty("login", "89674407691");
+    private final String password = System.getProperty("password", "Ex3t8yh96mj!");
+    private final String positionName = new Faker().bothify("Автотест####");
+
     @Test
     @Tag("CvAuth")
     @DisplayName("Тест авторизации соискателя")
     public void cvAuthTest() {
         new MainNonAuthPage()
-                .openUrl(TestValues.URL)
+                .openUrl(url)
                 .buttonLogin()
                 .buttonEsiaAuth()
-                .authForm(TestValues.LOGIN, TestValues.PASSWORD)
-                .clickCv()
-                .mainCandidatePage(TestValues.EXPECTED_CABINET);
+                .authForm(login, password)
+                .selectUser("Частное лицо");
+        Assertions.assertEquals(new MainCvPage().mainCandidatePage(), "Мой кабинет");
     }
     @Test
     @Tag("ResumeTest")
     @DisplayName("Тест создания резюме")
     public void cvCreateResumeTest() {
         new MainNonAuthPage()
-                .openUrl(TestValues.URL)
+                .openUrl(url)
                 .buttonLogin()
                 .buttonEsiaAuth()
-                .authForm(TestValues.LOGIN, TestValues.PASSWORD)
-                .clickCv()
-                .buttonCloseCookie()
+                .authForm(login, password)
+                .selectUser("Частное лицо")
                 .buttonCreateResume()
-                .fieldPositionName(TestValues.POSITION_NAME)
-                .fieldSphere()
-                .fieldSalary(TestValues.SALARY)
-                .fieldRegion()
-                .workExperienceDisable()
-                .buttonPublish()
-                .myResumeCheck(TestValues.EXPECTED_MY_RESUME);
+                .inputFieldValue("Желаемая должность", positionName)
+                .dropDownField("Сфера деятельности")
+                .inputFieldValue("Заработная плата (руб.)", "30000")
+                .resumeConstructorToggle("Есть опыт работы")
+                .functionalButtons("Сохранить и опубликовать")
+                .myResumeCheck("Мои резюме");
+
     }
 }

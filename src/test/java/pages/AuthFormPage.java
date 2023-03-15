@@ -8,13 +8,13 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class AuthFormPage {
 
-    private final SelenideElement INSERT_LOGIN = $x("//input[@id='login']");
-    private final SelenideElement INSERT_PASSWORD = $x("//input[@id='password']");
+    private final SelenideElement insertLogin = $x("//input[@id='login']");
+    private final SelenideElement insertPassword = $x("//input[@id='password']");
 
     @Step(value = "Авторизация пользователем с данными {login} / {password}")
     public UserSelectPage authForm(String login, String password) {
-        INSERT_LOGIN.setValue(login);
-        INSERT_PASSWORD.setValue(password).sendKeys(Keys.ENTER);
+        insertLogin.setValue(login);
+        insertPassword.setValue(password).sendKeys(Keys.ENTER);
         return new UserSelectPage();
     }
 }

@@ -6,11 +6,10 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class UserSelectPage {
-
-    private final SelenideElement CV_CONFIRM = $x("//button[@id='individual_button']");
-    @Step(value = "Выбор соискателя")
-    public MainCvPage clickCv() {
-        CV_CONFIRM.click();
+    @Step(value = "Авторизуемся как {user}")
+    public MainCvPage selectUser(String user) {
+        final SelenideElement userConfirm = $x("//div[text()='" + user + "']");
+        userConfirm.click();
         return new MainCvPage();
     }
 }
