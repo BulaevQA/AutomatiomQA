@@ -1,0 +1,413 @@
+[33mcommit 7bf30f43006481419e013f7e9d6168838fd4c737[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Wed Mar 15 18:03:36 2023 +0300
+
+    add new method
+
+[33mcommit 77b567709abedaac90223ed5b103ab852b698006[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Wed Mar 15 16:37:48 2023 +0300
+
+    global overgaul
+
+[33mcommit e80ac8e3e6eb02e70a597cd9eb69445c82086868[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Mon Mar 13 12:01:47 2023 +0300
+
+    fix values
+
+[33mcommit 6732041b3af7c155453f8146008a1fdd52893fb5[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Mon Mar 13 11:51:00 2023 +0300
+
+    fix test falues
+
+[33mcommit b1dec4e6371f86e6a4af440acf7592bd4149fd33[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Mon Mar 13 11:26:36 2023 +0300
+
+    test values fix
+
+[33mcommit 50572c435d47eafcfcef59c6c39ab01b0550d143[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Mon Mar 13 11:14:03 2023 +0300
+
+    fix owner
+
+[33mcommit 98d60b85bb74539a8b4cdd79aca51bc5a5396047[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Mon Mar 13 10:47:25 2023 +0300
+
+    owner test
+
+[33mcommit 7a8a45550bd3b1343e0a9c89a84e0937199533e5[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Thu Mar 9 15:32:16 2023 +0300
+
+    enchancments
+
+[33mcommit 8c5daeb6b418f2eeaa6823c7012c537f2bc9d429[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Wed Mar 8 04:10:03 2023 +0300
+
+    element collection method overhaul
+
+[33mcommit a8d5741d74b55e613042540ecf1a3a8b566df01d[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Tue Mar 7 20:59:48 2023 +0300
+
+    test value fix
+
+[33mcommit 6acf94ffdc1c7bc2eeb64fefde6d191c99b2d9d2[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Tue Mar 7 20:57:35 2023 +0300
+
+    method refactor
+
+[33mcommit e647a30efb845ec6365739d2e0d224102e19ffef[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Mon Mar 6 23:05:15 2023 +0300
+
+    test merge
+
+[33mcommit 6ffbe90b745eda5939a5dea42531d5dc9c135d86[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Mon Mar 6 22:49:39 2023 +0300
+
+    develop branch
+
+[33mcommit 7d3f4c4c56c9da28f4b20dfbf17c9c9f37b06f43[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Mon Mar 6 14:08:55 2023 +0300
+
+    assert enchansment
+
+[33mcommit bad03e92d891184a5dc579ffd64bcfea91432031[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Mon Mar 6 13:18:38 2023 +0300
+
+    screenshot extention
+
+[33mcommit 3a52527cd42931e3bdd2905f6c21739a565497b4[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Mon Mar 6 12:52:27 2023 +0300
+
+    add screenshot extention
+
+[33mcommit cbdd9e30d2bab933fbc8a05f4b5821b0883cd542[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Mon Mar 6 12:39:17 2023 +0300
+
+    add screenshot
+
+[33mcommit 269f9d470f47ff2d3bc1e0873c52fb2baab9554a[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sun Mar 5 22:49:58 2023 +0300
+
+    ITS WORKSS 2
+
+[33mcommit bcb57da3445dae2589e5e1a204f112e13633a990[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sun Mar 5 22:47:19 2023 +0300
+
+    ITS WORKSS
+
+[33mcommit eb976cdcd86659747828175962318b0d2700c503[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sun Mar 5 22:18:57 2023 +0300
+
+    oop tests fix varables
+
+[33mcommit 413e09c1cfe078c8a10d6c3df10af8ebe2a8b61d[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sun Mar 5 22:18:07 2023 +0300
+
+    oop tests
+
+[33mcommit 55827d6d648c36c6adf2ba6438fe6e6de4a923e9[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sun Mar 5 05:29:45 2023 +0300
+
+    fix
+
+[33mcommit 0ef7ed6e826f18712a9047897139ce6c67edc337[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sun Mar 5 05:23:56 2023 +0300
+
+    new resume test
+
+[33mcommit 411a376580bbbe3a5c66e7a7a06bd6af01a357dd[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sun Mar 5 03:00:30 2023 +0300
+
+    fix e letter
+
+[33mcommit 1ecc18ff84d6bd7d7e4beaa1b1cc0d89db9255de[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sun Mar 5 02:58:18 2023 +0300
+
+    OOP complite 4 auth test
+
+[33mcommit a68d24108e7f243ce66d57565a54400365aabcb7[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sun Mar 5 01:22:22 2023 +0300
+
+    forgot clickCv method
+
+[33mcommit 54aa4a1ce8e6223a9e389563678eec1e44dcaaf8[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sun Mar 5 01:17:53 2023 +0300
+
+    my cabinet check fix
+
+[33mcommit ef7e60bc0429378c9d8a639b2aab2fb8b02e933a[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sun Mar 5 01:06:09 2023 +0300
+
+    OOP test repair#2
+
+[33mcommit 254e046071062bb8fdff9cb25d07088bd9de43c6[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sun Mar 5 01:04:16 2023 +0300
+
+    OOP test repair#1
+
+[33mcommit dc0eb39f156adea9b06e0005e8b280f13f0149e1[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sun Mar 5 01:02:55 2023 +0300
+
+    OOP test 2
+
+[33mcommit da41cae3cfbc7a923598d9e662966ff3967eac29[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sun Mar 5 00:59:48 2023 +0300
+
+    OOP test
+
+[33mcommit 7c854171718ba8c4f9f5a753349e83e2dffa8e70[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sat Mar 4 12:27:06 2023 +0300
+
+    my resume validator
+
+[33mcommit ed70ea50a720c159296e5b6281eedd14c22a7aca[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sat Mar 4 02:49:34 2023 +0300
+
+    new validator method
+
+[33mcommit 8d1c02c63166f138b30131bb2a54c34f6e22ce5b[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sat Mar 4 02:29:56 2023 +0300
+
+    overhauls
+
+[33mcommit 21b220d34cc198dc79455ab14b5acaaa1f2890b5[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Sat Mar 4 01:30:16 2023 +0300
+
+    new method test
+
+[33mcommit e6aa996951f33ccebeb3674c6231d84b3ff3dd03[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 14:20:31 2023 +0300
+
+    new authorise test
+
+[33mcommit ff456629fe4d721ee44ae5bd828136973e98c2c8[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 13:40:17 2023 +0300
+
+    remove unused imports
+
+[33mcommit 811be5e12252cc4e1182c80c1573d28bc000dbbd[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 13:37:27 2023 +0300
+
+    delete navigation test
+
+[33mcommit 6a68c0f320ae7786341a3325be195ff7e5b581b8[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 13:34:05 2023 +0300
+
+    commit
+
+[33mcommit 3f5806c60b3a8373043c76b2be92c967aadbc023[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 13:31:37 2023 +0300
+
+    commit
+
+[33mcommit a2718eb98e17774d9498f1e2684b009a119f541d[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 13:27:17 2023 +0300
+
+    commit
+
+[33mcommit 13957d26d3d1b8e649574155f6b30461ca6b434d[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 13:24:09 2023 +0300
+
+    commit
+
+[33mcommit 9480d8f0aca17dc6cc4207611fc020fcd23cb53e[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 13:19:10 2023 +0300
+
+    commit
+
+[33mcommit 8f2d40425f6569eebfbb2571aab78cdb7e0ee896[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 13:08:54 2023 +0300
+
+    commit
+
+[33mcommit 4f63d5e270030b52df789bbd3d20fcefbe5cb19b[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 13:03:35 2023 +0300
+
+    commit
+
+[33mcommit 3c44819efe6588ad9059202a9d5abd130e5ae11a[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 13:02:06 2023 +0300
+
+    commit
+
+[33mcommit d1837f8262a02e285e8cba6d29509a26c60b31f9[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 12:58:05 2023 +0300
+
+    commit
+
+[33mcommit 7e2668bfdec46a1feffdedb2c3db6a8e4582b288[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 12:28:25 2023 +0300
+
+    commit
+
+[33mcommit e11a66c7e55f1892a80a78d640039eb3c77f5edf[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 12:27:18 2023 +0300
+
+    commit
+
+[33mcommit 488ddf845e726acca8245a65aad36542d2bdbcde[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 12:15:13 2023 +0300
+
+    commit
+
+[33mcommit e218d7adb1d6a83f11a189a65658b475a443205b[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 12:08:42 2023 +0300
+
+    commit
+
+[33mcommit a651de6d746f2cf19a10fc97963df6b0b044eede[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 11:53:02 2023 +0300
+
+    commit
+
+[33mcommit b1713177c9041cc6f071181eb3d2076a708c2c33[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Fri Mar 3 11:17:12 2023 +0300
+
+    commit
+
+[33mcommit 57d0d3b68602e6b4ac4e84e58de2e1fb2ef68b3a[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Thu Mar 2 21:32:38 2023 +0300
+
+    commit
+
+[33mcommit 598cdccfc9c5a7a4e4d5936c893411d7f91cae8f[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Thu Mar 2 19:57:59 2023 +0300
+
+    commit
+
+[33mcommit a8ab2137b189d3f41141f238819e05b20166875f[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Thu Mar 2 19:53:10 2023 +0300
+
+    commit
+
+[33mcommit 4319a05b7bab5fb5a8d96cfc3cc95b92a788f684[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Thu Mar 2 19:46:39 2023 +0300
+
+    commit
+
+[33mcommit e17c7f1088a0d422b06e30d0dccb33f955f30ba1[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Thu Mar 2 18:24:15 2023 +0300
+
+    commit
+
+[33mcommit 389d0a4b4abe9900444df78eb2d30cc277e12dd6[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Thu Mar 2 18:10:04 2023 +0300
+
+    commit
+
+[33mcommit f0594484397cf2765d1867089d84cd43b38a4c0c[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Thu Mar 2 17:33:58 2023 +0300
+
+    commit
+
+[33mcommit db05b9cd6ba59a84066db2de6b5fd58d94c90b8b[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Thu Mar 2 16:44:42 2023 +0300
+
+    commit
+
+[33mcommit 2b63a1f460483696a7de6b651096d90256bd114c[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Thu Mar 2 16:09:03 2023 +0300
+
+    commit
+
+[33mcommit 53c816253a69134ac5ef74060d9e669a813ea980[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Thu Mar 2 10:39:06 2023 +0300
+
+    commit
+
+[33mcommit dfc8901da8a9c23d8a7e06ff360a96fecc0a723e[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Wed Mar 1 23:36:55 2023 +0300
+
+    commit
+
+[33mcommit 22f86635552c1afbee7f8c54c91a9f4a2b925729[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Wed Mar 1 23:05:49 2023 +0300
+
+    Commit
+
+[33mcommit 6278c3909d50bdaee34b5a10edd25635b7749c6a[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Wed Mar 1 23:04:42 2023 +0300
+
+    Commit
+
+[33mcommit 500b0a760d672a58b8715c71c9d1f48d0ac23eea[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Wed Mar 1 22:57:54 2023 +0300
+
+    Commit
+
+[33mcommit 8e07a3a8d993242c9c253624d73784251e73e3a4[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Mon Feb 27 17:40:32 2023 +0300
+
+    Commit
+
+[33mcommit ca15f209ae839b73fcb88f63339c79c1fcd78398[m
+Author: Denis Bulaev <bulaev.qa@gmail.com>
+Date:   Mon Feb 27 17:36:37 2023 +0300
+
+    first commit

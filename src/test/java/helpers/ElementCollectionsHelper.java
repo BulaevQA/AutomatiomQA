@@ -13,36 +13,36 @@ import static com.codeborne.selenide.Selenide.*;
 public class ElementCollectionsHelper {
     /**
      Клик на случайный элемент из коллеции элементов
-     * @param elementsCollection - Указываем XPath на оллекцию элементов
+     * @param $$x - Указываем XPath на оллекцию элементов
      */
-    public void randomElementCollectionClick(ElementsCollection elementsCollection) {
-        elementsCollection.get(new Random().nextInt(elementsCollection.size())).click();
+    public void randomElementCollectionClick(ElementsCollection $$x) {
+        $$x.get(new Random().nextInt($$x.size())).click();
     }
     /*
     Клик на все эллементы из коллекции
     */
-    public void elementsCollectionsClick(ElementsCollection elementsCollection) {
-        for(int i = 0; i < elementsCollection.size(); i++) {
-            elementsCollection.get(i).click();
+    public void elementsCollectionsClick(ElementsCollection $$x) {
+        for(int i = 0; i < $$x.size(); i++) {
+            $$x.get(i).click();
         }
     }
     /*
     Перебор href ссылок
     */
-    public void hrefCollection(ElementsCollection elementsCollection) {
+    public void hrefCollection(ElementsCollection $$x) {
         List<String> selectArray = new ArrayList<>();
-        for(int i = 0; i < elementsCollection.size(); i++) {
-            selectArray.add(elementsCollection.get(i).getAttribute("href"));
+        for(int i = 0; i < $$x.size(); i++) {
+            selectArray.add($$x.get(i).getAttribute("href"));
         }
         selectArray.forEach(Selenide::open);
     }
     /*
     Случайная href ссылка
     */
-    public void randomHref(ElementsCollection elementsCollection) {
+    public void randomHref(ElementsCollection $$x) {
         List<String> selectArray = new ArrayList<>();
-        for(int i = 0; i < elementsCollection.size(); i++) {
-            selectArray.add(elementsCollection.get(i).getAttribute("href"));
+        for(int i = 0; i < $$x.size(); i++) {
+            selectArray.add($$x.get(i).getAttribute("href"));
         }
         Selenide.open(selectArray.get(new Random().nextInt(selectArray.size())));
     }
