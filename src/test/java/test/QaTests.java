@@ -2,18 +2,19 @@ package test;
 
 import org.junit.jupiter.api.*;
 import core.BrowserConfig;
-import pages.*;
+import pages.main.MainNonAuthPage;
 
 public class QaTests extends BrowserConfig {
 
     private final String url = System.getProperty("base_url", "localhost:8080");
     private final String login = System.getProperty("login", "admin");
     private final String password = System.getProperty("password", "admin");
+    private final String filePath = "src/test/resources/cvPhoto.png";
 
     @Test
     @Tag("ResumeTest")
     @DisplayName("Тест создания резюме")
-    public void cvCreateResumeTest() {
+    public void createResumeTest() {
         new MainNonAuthPage()
                 .openUrl(url)
                 .buttonLogin()
@@ -21,20 +22,10 @@ public class QaTests extends BrowserConfig {
                 .authForm(login, password)
                 .selectUser("Частное лицо")
                 .buttonCreateResume()
-                .uploadPhoto()
-                .inputValueIntoField("Желаемая должность", "Программист")
+                .inputValueField("Желаемая должность", "Программист")
                 .selectRandomIntoDropDown("Сфера деятельности")
-                .inputValueIntoDropDown("Профессия", "Учитель")
-                .inputValueIntoField("Заработная плата (руб.)", "30000")
-                .inputValueIntoField("Готов приступить к работе с", "01.01.2024")
-                .inputValueIntoDropDown("Населенный пункт", "город")
-                .resumeConstructorToggle("Есть опыт работы")
-                .inputValueIntoDropDown("Выберите навыки", "умение")
-                .inputValueIntoDropDown("Выберите навыки", "умение", "2")
-                .selectRandomIntoDropDown("Образование")
-                .inputValueIntoDropDown("Учебное заведение", "Университет")
-                .selectFirstValueDropDownField("Специальность по диплому")
-                .functionButtons("Сохранить и опубликовать")
-                .myResumeCheck("Мои резюме");
+                .inputValueDropDown("Профессия", "Учитель", "Учитель")
+                .inputValueField("Заработная плата (руб.)", "30000")
+                .clickButton("Сохранить и опубликовать");
     }
 }
