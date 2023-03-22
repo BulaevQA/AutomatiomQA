@@ -1,9 +1,8 @@
-package pages.auth;
+package pages.trudvsem.auth;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import pages.main.MainPage;
+import pages.trudvsem.mainPrr.MainPage;
 
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -16,7 +15,7 @@ public class UserSelectPage {
      * @param user - тип пользователя (Соикатель, ИП, ЮР лицо)
      */
     private void serviceUser(String user) {
-        $x("//div[text()='" + user + "']").should(Condition.exist).click();
+        $x("//div[text()='" + user + "']").should(Condition.exist, Condition.enabled).click();
     }
 
     ///////////////// Логика взаимодействия со страницей \\\\\\\\\\\\\\\\\\\

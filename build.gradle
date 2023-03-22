@@ -47,7 +47,7 @@ tasks.withType(Test) {
 
 task resume_tests(type: Test) {
     useJUnitPlatform {
-        includeTags("ResumeTest")
+        includeTags("Smoke")
     }
 }
 task candidate_auth(type: Test) {

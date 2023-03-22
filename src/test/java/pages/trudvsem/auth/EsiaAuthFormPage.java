@@ -1,5 +1,6 @@
-package pages.auth;
+package pages.trudvsem.auth;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;
@@ -10,9 +11,6 @@ public class EsiaAuthFormPage {
 
     ///////////////// XPath \\\\\\\\\\\\\\\\\\\
 
-    /**
-     === XPath для ззаполнения полей ===
-     */
     private final SelenideElement insertLogin = $x("//input[@id='login']");
     private final SelenideElement insertPassword = $x("//input[@id='password']");
 
@@ -25,8 +23,8 @@ public class EsiaAuthFormPage {
      */
     @Step(value = "Авторизация пользователем с данными {login} / {password}")
     public UserSelectPage authForm(String login, String password) {
-        insertLogin.setValue(login);
-        insertPassword.setValue(password).sendKeys(Keys.ENTER);
+        insertLogin.should(Condition.editable).setValue(login);
+        insertPassword.should(Condition.editable).setValue(password).sendKeys(Keys.ENTER);
         return new UserSelectPage();
     }
 }

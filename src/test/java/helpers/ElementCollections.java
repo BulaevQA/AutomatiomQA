@@ -2,15 +2,12 @@ package helpers;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static com.codeborne.selenide.Selenide.*;
-
-public class ElementCollectionsHelper {
+public class ElementCollections {
     /**
      Клик на случайный элемент из коллеции элементов
      * @param $$x - Указываем XPath на оллекцию элементов
