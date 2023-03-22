@@ -41,7 +41,7 @@ public class CorePage {
         $x("//div[@class='dropdown-menu show']//input").should(Condition.editable).clear();
         $x("//div[@class='dropdown-menu show']//input").setValue(value);
         sleep(1500);
-        if (!serviceCheckDropDownOptions(value)) {
+        if (!serviceCheckDropDownOptions(select, value)) {
             $x("//div[@class='dropdown-menu show']//*[@data-action='add-item']").should(Condition.enabled).click();
         } else {
             $x("//span[text()='" + select + "']/..//select").selectOption(options);
@@ -53,8 +53,8 @@ public class CorePage {
         $x("//span[text()='" + select + "']/..//button").should(Condition.enabled).click();
         $x("//div[@class='dropdown-menu show']//input").should(Condition.editable).clear();
         $x("//div[@class='dropdown-menu show']//input").setValue(value);
-        sleep(1500);
-        if (!serviceCheckDropDownOptions(value)) {
+        sleep(milliseconds);
+        if (!serviceCheckDropDownOptions(select, value)) {
             $x("//div[@class='dropdown-menu show']//*[@data-action='add-item']").should(Condition.enabled).click();
         } else {
             $x("//span[text()='" + select + "']/..//select").selectOption(options);
@@ -66,7 +66,7 @@ public class CorePage {
         $x("//div[@class='dropdown-menu show']//input").should(Condition.editable).clear();
         $x("//div[@class='dropdown-menu show']//input").setValue(value);
         sleep(1500);
-        if (!serviceCheckDropDownOptions(value)) {
+        if (!serviceCheckDropDownOptions(select, value)) {
             $x("//div[@class='dropdown-menu show']//*[@data-action='add-item']").should(Condition.enabled).click();
         } else {
             $x("(//span[text()='" + select + "']/..//select)[" + index + "]").selectOption(options);
@@ -79,15 +79,15 @@ public class CorePage {
         $x("//div[@class='dropdown-menu show']//input").should(Condition.editable).clear();
         $x("//div[@class='dropdown-menu show']//input").setValue(value);
         sleep(1500);
-        if (!serviceCheckDropDownOptions(value)) {
+        if (!serviceCheckDropDownOptions(select, value)) {
             $x("//div[@class='dropdown-menu show']//*[@data-action='add-item']").should(Condition.enabled).click();
         } else {
             $x("(//span[text()='" + select + "']/..//select)[" + index + "]").selectOption(options);
         }
     }
 
-    private boolean serviceCheckDropDownOptions(String value) {
-        return $x("//*[text()='Профессия']/..//select[@class='select__control']" +
+    private boolean serviceCheckDropDownOptions(String select, String value) {
+        return $x("//*[text()='" + select + "']/..//select[@class='select__control']" +
                 "//option[text()='" + value + "']").exists();
     }
 
