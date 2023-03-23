@@ -2,16 +2,11 @@ package pages.trudvsem.myResume;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import helpers.HashMaps;
 import io.qameta.allure.Step;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.sleep;
-import static pages.core.ClassObjects.infoBlockHealth;
-import static pages.core.ClassObjects.meatBalls;
+import static helpers.ClassObjects.meatBalls;
 
 public class MyResumePage {
 
@@ -27,23 +22,10 @@ public class MyResumePage {
             "//div[3]//*[text()='Удалить']");
 
     /**
-     === hashmap проверки резюме ===
-     */
-    public Map<String, Object> actualAttributes() {
-        return new HashMap<String, Object>() {{
-            put(HashMaps.infoBlockError, infoBlockHealth.errorInfoBlock());
-            put(HashMaps.myResumeTitle, myResumeCheck());
-            put(HashMaps.resumeName, resumeNameCheck());
-            put(HashMaps.progressBar, progressBarCheck());
-            put(HashMaps.resumeModStatusCheck, moderationStatusCheck());
-        }};
-    }
-
-    /**
      === Метод получения тектса заголовка ===
      */
     @Step(value = "Получение заголовка страницы")
-    private String myResumeCheck(){
+    public String myResumeCheck(){
         return myResumeTitleCheck.getText();
     }
 
@@ -51,7 +33,7 @@ public class MyResumePage {
      === Получение названия резюме ===
      */
     @Step(value = "Получение наименования резюме")
-    private String resumeNameCheck() {
+    public String resumeNameCheck() {
         return resumeNameCheck.getText().trim();
     }
 
@@ -59,7 +41,7 @@ public class MyResumePage {
      === Проверка заполнения резюме ===
      */
     @Step(value = "Получение заполнености резюме")
-    private String progressBarCheck() {
+    public String progressBarCheck() {
         return progressBarCheck.getAttribute("value");
     }
 
@@ -67,13 +49,12 @@ public class MyResumePage {
      === Получение статуса модерации резюме ===
      */
     @Step(value = "Получение статуса модерации резюме")
-    private String moderationStatusCheck() {
+    public String moderationStatusCheck() {
         return resumeModStatusCheck.getText();
     }
 
     /**
      === Метод удаления резюме ===
-     * @param milliseconds - таймер ожидания перед кликом на элемент(для стабильности теста)
      */
     @Step(value = "Процесс удаления резюме")
     public void deleteResume() {

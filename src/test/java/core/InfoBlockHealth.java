@@ -1,4 +1,4 @@
-package pages.core;
+package core;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -7,9 +7,6 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class InfoBlockHealth {
 
-    /**
-     === XPath для проверки наличия "Кранов" на странице
-     */
     private final SelenideElement errorInfoBlock = $x("//div[@class='ib-error']");
 
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static pages.core.ClassObjects.*;
+import static helpers.ClassObjects.*;
 
 public class AuthTestManager extends BrowserConfig {
 
@@ -14,7 +14,7 @@ public class AuthTestManager extends BrowserConfig {
     @Tag("Auth")
     @DisplayName("Auth test")
     public void authTest() {
-        openUrl // Открываем УРЛ
+        openLink // Открываем УРЛ
                 .openUrl(url);
         mainNonAuthPage // Авторизуемся на портале
                 .buttonLogin()
@@ -22,6 +22,6 @@ public class AuthTestManager extends BrowserConfig {
                 .authForm(login, password)
                 .selectUser("Индивидуальный предприниматель");
         Assertions // Делаем ассерт для подтверждения корректности теста
-                .assertEquals(hashMaps.expectedMainManager(), mainPage.actualAttributesManager());
+                .assertEquals(expectedHashMaps.expectedMainManager(), actualHashMaps.actualValueManager());
     }
 }

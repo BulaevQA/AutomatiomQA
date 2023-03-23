@@ -1,12 +1,12 @@
-package pages.core;
+package core;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Selenide.$x;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.switchTo;
 
-public class InputValueField {
+public class Input {
 
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
@@ -32,6 +32,20 @@ public class InputValueField {
         $x("(//*[text()='" + field + "']/..//input)[" + index + "]").setValue(value);
     }
 
+    private boolean serviceCheckDropDownOptions(String select, String value) {
+        return $x("//*[text()='" + select + "']/..//select[@class='select__control']" +
+                "//option[text()='" + value + "']").exists();
+    }
+
+    private void serviceInputIframe(String field, String value) {
+        $x("//*[text()='" + field + "']/preceding-sibling::div[@class='tox tox-tinymce']" +
+                "/descendant::iframe").should(Condition.exist);
+        switchTo().frame($x("//*[text()='" + field + "']/preceding-sibling::div[@class='tox tox-tinymce']" +
+                "/descendant::iframe"));
+        $x("//body/p").should(Condition.editable).setValue(value);
+        switchTo().defaultContent();
+    }
+
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\
 
     /**
@@ -40,7 +54,7 @@ public class InputValueField {
      * @param value - Заполнение поля желаемым значением
      */
     @Step(value = "Заполняем поле {field} значением {value}")
-    public InputValueField inputValueField(String field, String value) {
+    public Input inputValueField(String field, String value) {
         serviceInputField(field, value);
         return this;
     }
@@ -52,7 +66,7 @@ public class InputValueField {
      * @param milliseconds - Ожидание перед началом выполнения метода
      */
     @Step(value = "Заполняем поле {field} значением {value}")
-    public InputValueField inputValueField(String field, String value, int milliseconds) {
+    public Input inputValueField(String field, String value, int milliseconds) {
         serviceInputField(field, value, milliseconds);
         return this;
     }
@@ -64,7 +78,7 @@ public class InputValueField {
      * @param index - Позиция поля в DOM
      */
     @Step(value = "Заполняем поле {field} значением {value} с позицией в DOM {index}")
-    public InputValueField inputValueField(String field, String value, String index) {
+    public Input inputValueField(String field, String value, String index) {
         serviceInputField(field, value, index);
         return this;
     }
@@ -77,8 +91,19 @@ public class InputValueField {
      * @param index - Позиция поля в DOM
      */
     @Step(value = "Заполняем поле {field} значением {value} с позицией в DOM {index}")
-    public InputValueField inputValueField(String field, String value, int milliseconds, String index) {
+    public Input inputValueField(String field, String value, int milliseconds, String index) {
         serviceInputField(field, value, milliseconds, index);
+        return this;
+    }
+
+    /**
+     * === Заполнение HTML поля, путем переклчюения на iframe ===
+     * @param field - Наименование поля
+     * @param value - Значение, которым заполяем поле
+     */
+    @Step(value = "Заполняем поле {field} значением {value}")
+    public Input inputIframeField(String field, String value) {
+        serviceInputIframe(field, value);
         return this;
     }
 }

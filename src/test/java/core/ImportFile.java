@@ -1,4 +1,4 @@
-package pages.core;
+package core;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -20,7 +20,7 @@ public class ImportFile {
      * === Загрузка фото соискателя в конструктор ===
      * @File - Задаем путь имя переменной для файла
      */
-    @Step(value = "Загружаем фото")
+    @Step(value = "Загружаем файл")
     public ImportFile uploadPhoto(String filePath) {
         File cvPhoto = new File(filePath);
         buttonPhoto.click();

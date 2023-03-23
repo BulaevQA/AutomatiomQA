@@ -2,16 +2,11 @@ package pages.trudvsem.myVacancy;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import helpers.HashMaps;
 import io.qameta.allure.Step;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.sleep;
-import static pages.core.ClassObjects.infoBlockHealth;
-import static pages.core.ClassObjects.meatBalls;
+import static helpers.ClassObjects.meatBalls;
 
 public class MyVacancyPage {
 
@@ -23,16 +18,6 @@ public class MyVacancyPage {
     private final SelenideElement confirmDeleteVacancy = $x("(//div[@class='modal__content'])[last()]" +
             "//div[3]//*[text()='Удалить']");
     private final SelenideElement foundCandidateQ = $x("//div[@class='modal__content']//*[text()='Да']");
-
-
-    public Map<String, Object> actualAttributes() {
-        return new HashMap<String, Object>() {{
-            put(HashMaps.infoBlockError, infoBlockHealth.errorInfoBlock());
-            put(HashMaps.myVacancyTitle, myVacancyTitle());
-            put(HashMaps.vacancyName, vacancyName());
-            put(HashMaps.vacancyModStatusCheck, moderationStatus());
-        }};
-    }
 
     /**
      === Получение загаовка старницы Вакансии компании ===

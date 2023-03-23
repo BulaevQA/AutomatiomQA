@@ -3,7 +3,9 @@ package helpers;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HashMaps {
+public class ExpectedHashMaps {
+
+    public static String mobilityProgram = "Программа переезда";
 
     //Общие ключи
     public static String infoBlockError = "Информация временно недоступна";
@@ -22,8 +24,8 @@ public class HashMaps {
     public static String vacancyModStatusCheck = "Статус модерации";
     public static String companyName = "Наименование компании";
 
-    /**
-     === Hashmaps с ожидаемыми результатами для сравнения с актуальными ===
+    /*
+     === Hashmaps с ожидаемыми результатами главной соискателя ===
      */
     public Map<String, Object> expectedMainCv() {
         return new HashMap<String, Object>() {{
@@ -33,7 +35,10 @@ public class HashMaps {
         }};
     }
 
-    public Map<String, Object> expectedMinResumeModerated() {
+    /*
+    === Hashmaps с ожидаемыми результатами отмодерированного резюме ===
+    */
+    public Map<String, Object> expectedResume() {
         return new HashMap<String, Object>() {{
             put(infoBlockError, false);
             put(myResumeTitle, "Мои резюме");
@@ -43,6 +48,9 @@ public class HashMaps {
         }};
     }
 
+    /*
+    === Hashmaps с ожидаемыми результатами главной соискателя работодателя ===
+    */
     public Map<String, Object> expectedMainManager() {
         return new HashMap<String, Object>() {{
             put(infoBlockError, false);
@@ -51,12 +59,25 @@ public class HashMaps {
         }};
     }
 
-    public Map<String, Object> expectedVacancyModerated() {
+    /*
+    === Hashmaps с ожидаемыми результатами отмодерированной вакансии ===
+    */
+    public Map<String, Object> expectedVacancy() {
         return new HashMap<String, Object>() {{
             put(infoBlockError, false);
             put(myVacancyTitle, "Вакансии компании");
             put(vacancyName, "Автотест");
             put(vacancyModStatusCheck, "Одобрена");
+        }};
+    }
+
+     /**
+     === HashMap с ожидаемыми значениями мега-меню ===
+     */
+    public Map<String, Object> expectedMegaMenu() {
+        return new HashMap<String, Object>() {{
+            put(infoBlockError, false);
+            put(mobilityProgram, "Программа повышения трудовой мобильности");
         }};
     }
 }

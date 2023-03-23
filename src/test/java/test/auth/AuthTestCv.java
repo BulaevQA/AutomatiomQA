@@ -3,7 +3,7 @@ package test.auth;
 import org.junit.jupiter.api.*;
 import base.BrowserConfig;
 
-import static pages.core.ClassObjects.*;
+import static helpers.ClassObjects.*;
 
 public class AuthTestCv extends BrowserConfig {
 
@@ -11,7 +11,7 @@ public class AuthTestCv extends BrowserConfig {
     @Tag("Auth")
     @DisplayName("Auth test")
     public void authTest() {
-        openUrl // Открываем УРЛ
+        openLink // Открываем УРЛ
                 .openUrl(url);
         mainNonAuthPage // Авторизуемся на портале
                 .buttonLogin()
@@ -19,6 +19,6 @@ public class AuthTestCv extends BrowserConfig {
                 .authForm(login, password)
                 .selectUser("Частное лицо");
         Assertions // Делаем ассерт для подтверждения корректности теста
-                .assertEquals(hashMaps.expectedMainCv(), mainPage.actualAttributesCv());
+                .assertEquals(expectedHashMaps.expectedMainCv(), actualHashMaps.actualValueCv());
     }
 }
