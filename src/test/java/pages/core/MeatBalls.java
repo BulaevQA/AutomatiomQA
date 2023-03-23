@@ -1,14 +1,10 @@
-package helpers;
+package pages.core;
 
 import com.codeborne.selenide.SelenideElement;
-import pages.core.CorePage;
 
-import static com.codeborne.selenide.Selenide.$x;
-import static com.codeborne.selenide.Selenide.switchTo;
+import static com.codeborne.selenide.Selenide.*;
 
 public class MeatBalls {
-
-    CorePage corePage = new CorePage();
 
     /**
      === XPath для клика на митбол ===
@@ -16,12 +12,14 @@ public class MeatBalls {
     private final SelenideElement meatBalls = $x("(//div[@class='row row_middle']//div[@class='col-auto']" +
             "//button[@data-toggle='dropdown'])[last()]");
 
+    ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\
+
     /**
      === Метод клика на митбол ===
      * @param milliseconds - таймер ожидания перед кликом на митбол(для стабильности теста)
      */
     public void serviceMeatBalls(int milliseconds) {
-        corePage.sleeper(milliseconds);
+        sleep(milliseconds);
         meatBalls.click();
         switchTo().activeElement();
     }

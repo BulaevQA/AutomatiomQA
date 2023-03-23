@@ -3,21 +3,20 @@ package pages.trudvsem.myResume;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import helpers.HashMaps;
-import helpers.InfoBlockHealth;
-import helpers.MeatBalls;
+import pages.core.InfoBlockHealth;
+import pages.core.MeatBalls;
 import io.qameta.allure.Step;
-import pages.core.CorePage;
+import pages.core.ImportPhoto;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.sleep;
+import static pages.core.ClassObjects.infoBlockHealth;
+import static pages.core.ClassObjects.meatBalls;
 
 public class MyResumePage {
-
-    MeatBalls meatBalls = new MeatBalls();
-    CorePage corePage = new CorePage();
-    InfoBlockHealth infoBlockHealth = new InfoBlockHealth();
 
     ///////////////// XPath \\\\\\\\\\\\\\\\\\\
 
@@ -83,7 +82,7 @@ public class MyResumePage {
     public void deleteResume(int milliseconds) {
         meatBalls.serviceMeatBalls(milliseconds);
         deleteResumeModal.should(Condition.enabled).click();
-        corePage.sleeper(milliseconds);
+        sleep(milliseconds);
         confirmDeleteResume.should(Condition.enabled).click();
     }
 }

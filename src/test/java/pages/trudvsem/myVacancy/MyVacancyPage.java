@@ -3,20 +3,20 @@ package pages.trudvsem.myVacancy;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import helpers.HashMaps;
-import helpers.InfoBlockHealth;
-import helpers.MeatBalls;
+import pages.core.InfoBlockHealth;
+import pages.core.MeatBalls;
 import io.qameta.allure.Step;
-import pages.core.CorePage;
+import pages.core.ImportPhoto;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.sleep;
+import static pages.core.ClassObjects.infoBlockHealth;
+import static pages.core.ClassObjects.meatBalls;
 
 public class MyVacancyPage {
-
-    MeatBalls meatBalls = new MeatBalls();
-    CorePage corePage = new CorePage();
 
     private final SelenideElement myVacancyTitleCheck = $x("//h1[text()='Вакансии компании']");
     private final SelenideElement vacancyNameCheck = $x("(//a[@data-content='title'])[last()]");
@@ -30,7 +30,7 @@ public class MyVacancyPage {
 
     public Map<String, Object> actualAttributes() {
         return new HashMap<String, Object>() {{
-            put(HashMaps.infoBlockError, new InfoBlockHealth().errorInfoBlock());
+            put(HashMaps.infoBlockError, infoBlockHealth.errorInfoBlock());
             put(HashMaps.myVacancyTitle, myVacancyTitle());
             put(HashMaps.vacancyName, vacancyName());
             put(HashMaps.vacancyModStatusCheck, moderationStatus());
@@ -69,7 +69,7 @@ public class MyVacancyPage {
     public void deleteVacancy(int milliseconds) {
         meatBalls.serviceMeatBalls(milliseconds);
         deleteVacancyModal.should(Condition.enabled).click();
-        corePage.sleeper(milliseconds);
+        sleep(milliseconds);
         confirmDeleteVacancy.should(Condition.enabled).click();
         foundCandidateQ.should(Condition.enabled).click();
     }

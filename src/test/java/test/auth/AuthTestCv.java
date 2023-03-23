@@ -1,24 +1,17 @@
 package test.auth;
 
-import helpers.HashMaps;
 import org.junit.jupiter.api.*;
 import base.BrowserConfig;
-import pages.core.CorePage;
-import pages.trudvsem.mainPrr.MainNonAuthPage;
-import pages.trudvsem.mainPrr.MainPage;
+
+import static pages.core.ClassObjects.*;
 
 public class AuthTestCv extends BrowserConfig {
 
-    MainPage mainPage = new MainPage();
-    HashMaps hashMaps = new HashMaps();
-    CorePage corePage = new CorePage();
-    MainNonAuthPage mainNonAuthPage = new MainNonAuthPage();
-
     @Test
     @Tag("Auth")
-    @DisplayName("Тест авторизации")
+    @DisplayName("Auth test")
     public void authTest() {
-        corePage // Открываем УРЛ
+        openUrl // Открываем УРЛ
                 .openUrl(url);
         mainNonAuthPage // Авторизуемся на портале
                 .buttonLogin()

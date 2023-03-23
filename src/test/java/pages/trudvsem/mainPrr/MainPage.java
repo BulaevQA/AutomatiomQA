@@ -2,9 +2,9 @@ package pages.trudvsem.mainPrr;
 
 import com.codeborne.selenide.SelenideElement;
 import helpers.HashMaps;
-import helpers.InfoBlockHealth;
+import pages.core.InfoBlockHealth;
 import io.qameta.allure.Step;
-import pages.core.CorePage;
+import pages.core.ImportPhoto;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -82,17 +82,17 @@ public class MainPage {
      === Клик на кнопку Создать резюме ===
      */
     @Step(value = "Клик на кнопку Создать резюме")
-    public CorePage buttonCreateResume() {
+    public ImportPhoto buttonCreateResume() {
         buttonCreateResume.click();
-        return new CorePage();
+        return new ImportPhoto();
     }
 
     /**
      === Клик на кнопку Создать вакансию ===
      */
     @Step(value = "Клик на кнопку Создать вакансию")
-    public CorePage buttonCreateVacancy() {
+    public ImportPhoto buttonCreateVacancy() {
         buttonCreateVacancy.click();
-        return new CorePage();
+        return new ImportPhoto();
     }
 }
