@@ -18,7 +18,7 @@ public class AuthTestManager extends BrowserConfig {
     MainNonAuthPage mainNonAuthPage = new MainNonAuthPage();
 
     @Test
-    @Tag("Smoke")
+    @Tag("Auth")
     @DisplayName("Тест авторизации")
     public void authTest() {
         corePage // Открываем УРЛ

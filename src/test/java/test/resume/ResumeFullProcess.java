@@ -22,7 +22,7 @@ public class ResumeFullProcess extends BrowserConfig {
     MainPage mainPage = new MainPage();
 
     @Test
-    @Tag("Full test")
+    @Tag("Smoke")
     @DisplayName("Создание и модерация резюме")
     public void resumeModerationTest() {
         authTestCv // Авторизируемся на ПРР

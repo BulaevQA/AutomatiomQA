@@ -45,13 +45,13 @@ tasks.withType(Test) {
     }
 }
 
-task resume_tests(type: Test) {
+task auth(type: Test) {
     useJUnitPlatform {
-        includeTags("Smoke")
+        includeTags("Auth")
     }
 }
-task candidate_auth(type: Test) {
+task smoke(type: Test) {
     useJUnitPlatform {
-        includeTags("CvAuth")
+        includeTags("Smoke")
     }
 }

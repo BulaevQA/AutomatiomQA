@@ -479,6 +479,7 @@ public class CorePage {
      * === Выбор уровня владения навыком ===
      * @param lvl - Уровень владения навыком (Начальный, Средний, Продвинутый, Эксперт)
      */
+    @Step("Выбор владения навыком на уровне {lvl}")
     public CorePage selectDefinitionLvl(String lvl) {
         serviceProficiencyLevel(serviceLvlDefinition(lvl));
         return this;
@@ -489,6 +490,7 @@ public class CorePage {
      * @param lvl   - Уровень владения навыком (Начальный, Средний, Продвинутый, Эксперт)
      * @param index - Позиция поля в DOM
      */
+    @Step("Выбор владения навыком на уровне {lvl}")
     public CorePage selectDefinitionLvl(String lvl, String index) {
         serviceProficiencyLevel(serviceLvlDefinition(lvl), index);
         return this;

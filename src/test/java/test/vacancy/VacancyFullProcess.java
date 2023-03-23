@@ -23,7 +23,7 @@ public class VacancyFullProcess extends BrowserConfig {
     AuthTestManager authTestManager = new AuthTestManager();
 
     @Test
-    @Tag("Full test")
+    @Tag("Smoke")
     @DisplayName("Создание и модерация вакансии")
     public void createVacancyTest() {
         authTestManager // Авторизируемся на ПРР
