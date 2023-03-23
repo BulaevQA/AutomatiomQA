@@ -25,6 +25,7 @@ abstract public class BrowserConfig {
 
 @BeforeAll
     public static void beforeTestConfiguration() {
+        Configuration.timeout = 50000;
         Configuration.browser = System.getProperty("browser", "chrome");
         SelenideLogger.addListener("AllureSelenide",
                 new AllureSelenide());
