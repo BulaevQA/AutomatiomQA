@@ -19,9 +19,9 @@ abstract public class BrowserConfig {
     /**
      === Переменнты для АДМ ===
      */
-    protected final String urlAdm = System.getProperty("base_url", "https://rtadm.show.pbs.bftcom.com/");
-    protected final String loginAdm = System.getProperty("login", "admin@trudvsem.ru");
-    protected final String passwordAdm = System.getProperty("password", "Qwerty123");
+    protected final String urlAdm = System.getProperty("base_urlAdm", "https://rtadm.show.pbs.bftcom.com/");
+    protected final String loginAdm = System.getProperty("loginAdm", "admin@trudvsem.ru");
+    protected final String passwordAdm = System.getProperty("passwordAdm", "Qwerty123");
 
 @BeforeAll
     public static void beforeTestConfiguration() {
