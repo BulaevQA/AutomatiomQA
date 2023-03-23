@@ -2,8 +2,8 @@ package pages.core;
 
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$x;
-import static com.codeborne.selenide.Selenide.open;
 
 public class OpenLink {
 
@@ -40,4 +40,25 @@ public class OpenLink {
         return this;
     }
 
+    /**
+     === Метод открытия базового URL ===
+     * @param url - https ссылка
+     */
+    @Step(value = "Открываем {url}")
+    public OpenLink openUrl (String url){
+        open(url);
+        return this;
+    }
+
+    /**
+     === Метод открытия базового URL ===
+     * @param url - https ссылка
+     * @param milliseconds - Ожидание перед выполнением метода
+     */
+    @Step(value = "Открываем {url} с задержкой {milliseconds} миллисекунд")
+    public OpenLink openUrl (String url, int milliseconds){
+        sleep(milliseconds);
+        open(url);
+        return this;
+    }
 }

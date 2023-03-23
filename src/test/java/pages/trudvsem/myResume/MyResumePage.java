@@ -3,10 +3,7 @@ package pages.trudvsem.myResume;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import helpers.HashMaps;
-import pages.core.InfoBlockHealth;
-import pages.core.MeatBalls;
 import io.qameta.allure.Step;
-import pages.core.ImportPhoto;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -79,10 +76,10 @@ public class MyResumePage {
      * @param milliseconds - таймер ожидания перед кликом на элемент(для стабильности теста)
      */
     @Step(value = "Процесс удаления резюме")
-    public void deleteResume(int milliseconds) {
-        meatBalls.serviceMeatBalls(milliseconds);
+    public void deleteResume() {
+        meatBalls.serviceMeatBalls(1000);
         deleteResumeModal.should(Condition.enabled).click();
-        sleep(milliseconds);
+        sleep(1000);
         confirmDeleteResume.should(Condition.enabled).click();
     }
 }

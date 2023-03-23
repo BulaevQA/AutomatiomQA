@@ -5,7 +5,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.Selenide.switchTo;
 
-public class SwitchTo {
+public class SwitchWindow {
 
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\
 
@@ -13,7 +13,7 @@ public class SwitchTo {
      === Переключение в модальное/всплывающее окно ===
      */
     @Step(value = "Переключение на модальное окно")
-    public SwitchTo switchToActiveWindow() {
+    public SwitchWindow switchToActiveWindow() {
         switchTo().activeElement();
         return this;
     }
@@ -23,7 +23,7 @@ public class SwitchTo {
      * @param milliseconds - Ожидание перед зачаном выполнения метода
      */
     @Step(value = "Переключение на модальное окно с ожиданием {milliseconds} миллисекунд")
-    public SwitchTo switchToActiveWindow(int milliseconds) {
+    public SwitchWindow switchToActiveWindow(int milliseconds) {
         sleep(milliseconds);
         switchTo().activeElement();
         return this;
@@ -33,7 +33,7 @@ public class SwitchTo {
      === Переклчюение в стандартную область контента ===
      */
     @Step(value = "Переключение на стандартный контент")
-    public SwitchTo switchToDefaultWindow() {
+    public SwitchWindow switchToDefaultWindow() {
         switchTo().defaultContent();
         return this;
     }

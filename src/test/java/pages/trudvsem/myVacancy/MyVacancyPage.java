@@ -3,10 +3,7 @@ package pages.trudvsem.myVacancy;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import helpers.HashMaps;
-import pages.core.InfoBlockHealth;
-import pages.core.MeatBalls;
 import io.qameta.allure.Step;
-import pages.core.ImportPhoto;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -63,13 +60,12 @@ public class MyVacancyPage {
 
     /**
      === Метод удаления вакансии ===
-     * @param milliseconds - таймер ожидания перед кликом на элемент(для стабильности теста)
      */
     @Step(value = "Процесс удаления вакансии")
-    public void deleteVacancy(int milliseconds) {
-        meatBalls.serviceMeatBalls(milliseconds);
+    public void deleteVacancy() {
+        meatBalls.serviceMeatBalls(1000);
         deleteVacancyModal.should(Condition.enabled).click();
-        sleep(milliseconds);
+        sleep(1000);
         confirmDeleteVacancy.should(Condition.enabled).click();
         foundCandidateQ.should(Condition.enabled).click();
     }

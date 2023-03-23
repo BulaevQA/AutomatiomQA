@@ -4,7 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;
-import pages.core.ImportPhoto;
+import pages.core.ImportFile;
 import pages.trudvsem.mainPrr.MainPage;
 
 import static com.codeborne.selenide.Selenide.$x;
@@ -68,9 +68,9 @@ public class LoginPage {
      === Метод для перехода на страницу регистрации работодателя через логин/пароль ===
      */
     @Step(value = "Клик на кнопку Регистрация работодателя")
-    public ImportPhoto managerRegistration() {
+    public ImportFile managerRegistration() {
         registrationButton.should(Condition.enabled).click();
-        return new ImportPhoto();
+        return new ImportFile();
     }
 
 }

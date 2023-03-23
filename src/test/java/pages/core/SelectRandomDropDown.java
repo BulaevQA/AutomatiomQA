@@ -7,7 +7,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class RandomDropDown {
+public class SelectRandomDropDown {
 
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
@@ -30,7 +30,7 @@ public class RandomDropDown {
      * @param select - Наименование поля
      */
     @Step(value = "Кликаем на поле {select} и заполняем случайным значением")
-    public RandomDropDown selectRandomIntoDropDown(String select) {
+    public SelectRandomDropDown selectRandomIntoDropDown(String select) {
         serviceRandomDropDown(select);
         return this;
     }
@@ -41,7 +41,7 @@ public class RandomDropDown {
      * @param index  - Позиция поля в DOM
      */
     @Step(value = "Заполняем поле {select} с позицией в DOM {index}")
-    public RandomDropDown selectRandomIntoDropDown(String select, String index) {
+    public SelectRandomDropDown selectRandomIntoDropDown(String select, String index) {
         serviceRandomDropDown(select, index);
         return this;
     }

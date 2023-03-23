@@ -36,7 +36,7 @@ public class VacancyFullProcess extends BrowserConfig {
         mainAdmPage.moderationButtons("2");
         mainAdmPage.moderationObject("Автотест");
         // Проводим положительную модерацию вакансии
-        switchTo.switchToActiveWindow(2000);
+        switchWindow.switchToActiveWindow(2000);
         clickButton.clickButton("Модерация", "2");
         clickCheckbox.clickCheckboxes("Проводимые проверки", 2000);
         clickButton.clickButton("Модерация", 1000, "3");
@@ -44,6 +44,6 @@ public class VacancyFullProcess extends BrowserConfig {
         // Делаем ассерт для подтверждения корректности теста
         Assertions.assertEquals(hashMaps.expectedVacancyModerated(), myVacancyPage.actualAttributes());
         // Удаляем вакансию
-        myVacancyPage.deleteVacancy(1000);
+        myVacancyPage.deleteVacancy();
     }
 }

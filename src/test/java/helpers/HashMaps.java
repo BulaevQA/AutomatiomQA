@@ -25,13 +25,11 @@ public class HashMaps {
     /**
      === Hashmaps с ожидаемыми результатами для сравнения с актуальными ===
      */
-    public Map<String, Object> expectedMinResume() {
+    public Map<String, Object> expectedMainCv() {
         return new HashMap<String, Object>() {{
             put(infoBlockError, false);
-            put(myResumeTitle, "Мои резюме");
-            put(resumeName, "Автотест");
-            put(progressBar, "47");
-            put(resumeModStatusCheck, "Ожидает модерации");
+            put(myCabinetTitle, "Мой кабинет");
+            put(myName, "Булаев Денис Сергеевич");
         }};
     }
 
@@ -45,48 +43,11 @@ public class HashMaps {
         }};
     }
 
-    public Map<String, Object> expectedMaxResume() {
-        return new HashMap<String, Object>() {{
-            put(infoBlockError, false);
-            put(myResumeTitle, "Мои резюме");
-            put(resumeName, "Автотест");
-            put(progressBar, "100");
-            put(resumeModStatusCheck, "Ожидает модерации");
-        }};
-    }
-
-    public Map<String, Object> expectedMaxResumeModerated() {
-        return new HashMap<String, Object>() {{
-            put(infoBlockError, false);
-            put(myResumeTitle, "Мои резюме");
-            put(resumeName, "Автотест");
-            put(progressBar, "100");
-            put(resumeModStatusCheck, "Ожидает модерации");
-        }};
-    }
-
-    public Map<String, Object> expectedMainCv() {
-        return new HashMap<String, Object>() {{
-            put(infoBlockError, false);
-            put(myCabinetTitle, "Мой кабинет");
-            put(myName, "Булаев Денис Сергеевич");
-        }};
-    }
-
     public Map<String, Object> expectedMainManager() {
         return new HashMap<String, Object>() {{
             put(infoBlockError, false);
             put(myCabinetTitle, "Мой кабинет");
             put(companyName, "ИП Булаев Д. С.");
-        }};
-    }
-
-    public Map<String, Object> expectedVacancy() {
-        return new HashMap<String, Object>() {{
-            put(infoBlockError, false);
-            put(myVacancyTitle, "Вакансии компании");
-            put(vacancyName, "Автотест");
-            put(vacancyModStatusCheck, "Ожидает модерации");
         }};
     }
 

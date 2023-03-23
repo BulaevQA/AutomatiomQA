@@ -5,7 +5,7 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$x;
 
-public class DoubleFieldForms {
+public class SelectDoubleForms {
 
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
@@ -36,7 +36,7 @@ public class DoubleFieldForms {
      * @param value - Значение, которым заполяем поле
      */
     @Step(value = "Заполняем поле {select} значением {value} c выбором {options}")
-    public DoubleFieldForms selectDoubleField(String select, String options, String value) {
+    public SelectDoubleForms selectDoubleField(String select, String options, String value) {
         serviceDoubleFieldForms(select, options, value);
         return this;
     }
@@ -49,7 +49,7 @@ public class DoubleFieldForms {
      * @param index   - Позиция поля в DOM
      */
     @Step(value = "Заполняем поле {select} значением {value} c выбором {options} и позицией в DOM {index}")
-    public DoubleFieldForms selectDoubleField(String select, String options, String value, String index) {
+    public SelectDoubleForms selectDoubleField(String select, String options, String value, String index) {
         serviceDoubleFieldForms(select, options, value, index);
         return this;
     }

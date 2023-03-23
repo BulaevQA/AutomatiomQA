@@ -7,7 +7,7 @@ import java.io.File;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class ImportPhoto {
+public class ImportFile {
 
     private final SelenideElement buttonPhoto = $x("//button[@class='photo__button']");
     private final SelenideElement buttonInputPhoto = $x("//*[text()='Выбрать файл']/..//input");
@@ -21,7 +21,7 @@ public class ImportPhoto {
      * @File - Задаем путь имя переменной для файла
      */
     @Step(value = "Загружаем фото")
-    public ImportPhoto uploadPhoto(String filePath) {
+    public ImportFile uploadPhoto(String filePath) {
         File cvPhoto = new File(filePath);
         buttonPhoto.click();
         buttonInputPhoto.uploadFile(cvPhoto);

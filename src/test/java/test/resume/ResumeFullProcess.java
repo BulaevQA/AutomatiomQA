@@ -35,13 +35,13 @@ public class ResumeFullProcess extends BrowserConfig {
         mainAdmPage.moderationButtons("2");
         mainAdmPage.moderationObject("Автотест");
         // Проводим положительную модерацию резюме
-        switchTo.switchToActiveWindow(2000);
+        switchWindow.switchToActiveWindow(2000);
         clickButton.clickButton("Модерация", "2");
         clickCheckbox.clickCheckboxes("Проводимые проверки", 2000);
         clickButton.clickButton("Модерация", 1000, "3");
         openUrl.openUrl(url + "auth/candidate/cvs", 1000);
         // Делаем ассерт для подтверждения корректности теста
         Assertions.assertEquals(hashMaps.expectedMinResumeModerated(), myResumePage.actualAttributes());
-        myResumePage.deleteResume(1000);
+        myResumePage.deleteResume();
     }
 }

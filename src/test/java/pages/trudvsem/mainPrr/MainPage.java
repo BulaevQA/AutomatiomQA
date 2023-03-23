@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import helpers.HashMaps;
 import pages.core.InfoBlockHealth;
 import io.qameta.allure.Step;
-import pages.core.ImportPhoto;
+import pages.core.ImportFile;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -82,17 +82,17 @@ public class MainPage {
      === Клик на кнопку Создать резюме ===
      */
     @Step(value = "Клик на кнопку Создать резюме")
-    public ImportPhoto buttonCreateResume() {
+    public ImportFile buttonCreateResume() {
         buttonCreateResume.click();
-        return new ImportPhoto();
+        return new ImportFile();
     }
 
     /**
      === Клик на кнопку Создать вакансию ===
      */
     @Step(value = "Клик на кнопку Создать вакансию")
-    public ImportPhoto buttonCreateVacancy() {
+    public ImportFile buttonCreateVacancy() {
         buttonCreateVacancy.click();
-        return new ImportPhoto();
+        return new ImportFile();
     }
 }
