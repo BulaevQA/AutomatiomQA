@@ -39,7 +39,7 @@ public class ResumeFullProcess extends BrowserConfig {
                 .openUrl(urlAdm, 1000)
                 .inputValueField("Имя пользователя", loginAdm)
                 .inputValueField("Пароль", passwordAdm)
-                .clickButton("Вход", 1000, "2")
+                .clickButton("Вход", "2")
                 .clickButton("Модерация")
                 .clickButton("Модерация резюме")
                 .inputValueField("Дата от", "22.03.2023");
