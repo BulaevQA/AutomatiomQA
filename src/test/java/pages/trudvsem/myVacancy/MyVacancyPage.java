@@ -6,18 +6,17 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.sleep;
-import static helpers.ClassObjects.meatBalls;
+import static helpers.other.ClassObjects.meatBalls;
 
 public class MyVacancyPage {
 
-    private final SelenideElement myVacancyTitleCheck = $x("//h1[text()='Вакансии компании']");
-    private final SelenideElement vacancyNameCheck = $x("(//a[@data-content='title'])[last()]");
-    private final SelenideElement vacancyModStatusCheck = $x("(//div[contains(@class, 'status ')]//span[@class])[last()]");
-    private final SelenideElement deleteVacancyModal = $x("(//div[@class='dropdown-menu dropdown-menu-right show']" +
-            "//button)[last()]");
-    private final SelenideElement confirmDeleteVacancy = $x("(//div[@class='modal__content'])[last()]" +
-            "//div[3]//*[text()='Удалить']");
-    private final SelenideElement foundCandidateQ = $x("//div[@class='modal__content']//*[text()='Да']");
+    private final SelenideElement
+            myVacancyTitleCheck = $x("//h1[text()='Вакансии компании']"),
+            vacancyNameCheck = $x("(//a[@data-content='title'])[last()]"),
+            vacancyModStatusCheck = $x("(//div[contains(@class, 'status ')]//span[@class])[last()]"),
+            deleteVacancyModal = $x("(//div[@class='dropdown-menu dropdown-menu-right show']//button)[last()]"),
+            confirmDeleteVacancy = $x("(//div[@class='modal__content'])[last()]//div[3]//*[text()='Удалить']"),
+            foundCandidateQ = $x("//div[@class='modal__content']//*[text()='Да']");
 
     /**
      === Получение загаовка старницы Вакансии компании ===

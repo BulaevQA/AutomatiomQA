@@ -15,7 +15,7 @@ public class UserSelectPage {
      * @param user - тип пользователя (Соикатель, ИП, ЮР лицо)
      */
     private void serviceUser(String user) {
-        $x("//div[text()='" + user + "']").should(Condition.exist, Condition.enabled).click();
+        $x("//div[text()='"+user+"']").should(Condition.exist, Condition.enabled).click();
     }
 
     ///////////////// Логика взаимодействия со страницей \\\\\\\\\\\\\\\\\\\

@@ -2,7 +2,7 @@ package pages.trudvsem.mainPrr;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import core.ImportFile;
+import core.constructor.ImportFile;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -10,14 +10,13 @@ public class MainPage {
 
     ///////////////// XPath \\\\\\\\\\\\\\\\\\\
 
-    private final SelenideElement myCabinet = $x("//h1");
-    private final SelenideElement megaMenuUser = $x("//button[@id='megaMenuDropdownUser']");
-
-    private final SelenideElement buttonCreateResume = $x("//*[text()='Создать резюме']");
-    private final SelenideElement myName = $x("//span[@class='mega-menu__user-name']");
-
-    private final SelenideElement buttonCreateVacancy = $x("//h2[text()='Уведомления и события']/..//*[text()='Добавить вакансию']");
-    private final SelenideElement myCompanyName = $x("//span[@class='mega-menu__user-text']");
+    private final SelenideElement
+            myCabinet = $x("//h1"),
+            megaMenuUser = $x("//button[@id='megaMenuDropdownUser']"),
+            buttonCreateResume = $x("//*[text()='Создать резюме']"),
+            myName = $x("//span[@class='mega-menu__user-name']"),
+            buttonCreateVacancy = $x("//h2[text()='Уведомления и события']/..//*[text()='Добавить вакансию']"),
+            myCompanyName = $x("//span[@class='mega-menu__user-text']");
 
     ///////////////// Методы взаимодействя со страницей \\\\\\\\\\\\\\\\\\\
 

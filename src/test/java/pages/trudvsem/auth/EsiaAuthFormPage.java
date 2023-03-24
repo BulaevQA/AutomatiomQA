@@ -11,8 +11,9 @@ public class EsiaAuthFormPage {
 
     ///////////////// XPath \\\\\\\\\\\\\\\\\\\
 
-    private final SelenideElement insertLogin = $x("//input[@id='login']");
-    private final SelenideElement insertPassword = $x("//input[@id='password']");
+    private final SelenideElement
+            insertLogin = $x("//input[@id='login']"),
+            insertPassword = $x("//input[@id='password']");
 
     ///////////////// Логика взаимодействия со страницей \\\\\\\\\\\\\\\\\\\
 

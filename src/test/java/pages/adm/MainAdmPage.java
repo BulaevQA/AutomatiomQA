@@ -14,7 +14,7 @@ public class MainAdmPage {
      * @param index - позиция элемента в DOM
      */
     private void serviceModerationButtons(String index) {
-        $x("(//div[@id='block-buttons']//button)[" + index + "]").should(Condition.enabled).click();
+        $x("(//div[@id='block-buttons']//button)["+index+"]").should(Condition.enabled).click();
     }
 
     /**
@@ -22,7 +22,7 @@ public class MainAdmPage {
      * @param positionName - наименование вакансии/резюме
      */
     private void serviceModerationObject(String positionName) {
-        $x("//*[text()='" + positionName + "']/ancestor::tr//td[@class='action']//button").should(Condition.enabled)
+        $x("//*[text()='"+positionName+"']/ancestor::tr//td[@class='action']//button").should(Condition.enabled)
                 .click();
     }
 
@@ -30,11 +30,19 @@ public class MainAdmPage {
 
     /**
      === Клик на функциональные кнопки в АРМ АДМ ===
-     * @param index - позиция элемента в DOM
      */
-    @Step(value = "Клик на фукнциональную кнопку с номером {index}")
-    public MainAdmPage moderationButtons(String index) {
-        serviceModerationButtons(index);
+    @Step(value = "Клик на кнопку Применить")
+    public MainAdmPage clickAcceptFilter() {
+        serviceModerationButtons("2");
+        return this;
+    }
+
+    /**
+     === Клик на функциональные кнопки в АРМ АДМ ===
+     */
+    @Step(value = "Клик на кнопку Сбросить")
+    public MainAdmPage clickResetFilter() {
+        serviceModerationButtons("1");
         return this;
     }
 

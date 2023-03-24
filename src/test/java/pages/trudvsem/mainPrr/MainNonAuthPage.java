@@ -11,8 +11,9 @@ public class MainNonAuthPage {
 
     ///////////////// XPath \\\\\\\\\\\\\\\\\\\
 
-    private final SelenideElement login = $x("//*[text()='Войти']");
-    private final SelenideElement cookies = $x("//*[text()='Согласен']");
+    private final SelenideElement
+            login = $x("//*[text()='Войти']"),
+            cookies = $x("//*[text()='Согласен']");
 
     ///////////////// Логика взаимодействия со страницей \\\\\\\\\\\\\\\\\\\
 

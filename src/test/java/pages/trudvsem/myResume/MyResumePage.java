@@ -6,20 +6,19 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.sleep;
-import static helpers.ClassObjects.meatBalls;
+import static helpers.other.ClassObjects.meatBalls;
 
 public class MyResumePage {
 
     ///////////////// XPath \\\\\\\\\\\\\\\\\\\
 
-    private final SelenideElement myResumeTitleCheck = $x("//h1[text()='Мои резюме']");
-    private final SelenideElement progressBarCheck = $x("(//progress)[last()]");
-    private final SelenideElement resumeModStatusCheck = $x("(//div[contains(@class, 'status ')]" +
-            "//span[not(contains(@class,'d-flex'))])[last()]");
-    private final SelenideElement resumeNameCheck = $x("(//div[@data-name]//h2//a)[last()]");
-    private final SelenideElement deleteResumeModal = $x("(//button[@class='dropdown-item']//span/..)[last()]");
-    private final SelenideElement confirmDeleteResume = $x("(//div[@class='modal__content'])[last()]" +
-            "//div[3]//*[text()='Удалить']");
+    private final SelenideElement
+            myResumeTitleCheck = $x("//h1[text()='Мои резюме']"),
+            progressBarCheck = $x("(//progress)[last()]"),
+            resumeModStatusCheck = $x("(//div[contains(@class, 'status ')]//span[not(contains(@class,'d-flex'))])[last()]"),
+            resumeNameCheck = $x("(//div[@data-name]//h2//a)[last()]"),
+            deleteResumeModal = $x("(//button[@class='dropdown-item']//span/..)[last()]"),
+            confirmDeleteResume = $x("(//div[@class='modal__content'])[last()]//div[3]//*[text()='Удалить']");
 
     /**
      === Метод получения тектса заголовка ===

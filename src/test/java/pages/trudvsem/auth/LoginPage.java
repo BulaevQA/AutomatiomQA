@@ -4,7 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;
-import core.ImportFile;
+import core.constructor.ImportFile;
 import pages.trudvsem.mainPrr.MainPage;
 
 import static com.codeborne.selenide.Selenide.$x;
@@ -13,15 +13,14 @@ public class LoginPage {
 
     ///////////////// XPath \\\\\\\\\\\\\\\\\\\
 
-    private final SelenideElement tabManager = $x("//button[@data-target='#employer']");
-    private final SelenideElement tabCandidate = $x("//button[@data-target='#laborer']");
-
-    private final SelenideElement emailField = $x("//input[@name='login']");
-    private final SelenideElement passwordField = $x("//input[@name='password']");
-
-    private final SelenideElement authByEsia = $x("//*[text()='«Госуслуги»']");
-    private final SelenideElement loginButton = $x("//button[text()='Войти']");
-    private final SelenideElement registrationButton = $x("//a[@class='button button_plain'][text()='Зарегистрироваться']");
+    private final SelenideElement
+            tabManager = $x("//button[@data-target='#employer']"),
+            tabCandidate = $x("//button[@data-target='#laborer']"),
+            emailField = $x("//input[@name='login']"),
+            passwordField = $x("//input[@name='password']"),
+            authByEsia = $x("//*[text()='«Госуслуги»']"),
+            loginButton = $x("//button[text()='Войти']"),
+            registrationButton = $x("//a[@class='button button_plain'][text()='Зарегистрироваться']");
 
     ///////////////// Логика взаимодействия со страницей \\\\\\\\\\\\\\\\\\\
 
