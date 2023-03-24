@@ -33,7 +33,7 @@ public class VacancyFullProcess extends BrowserConfig {
         click.clickButton("Модерация");
         click.clickButton("Модерация вакансий");
         input.inputValueField("Дата от", getCurrentDate.getCurrentDate());
-//        mainAdmPage.moderationButtons("2");
+        mainAdmPage.clickAcceptFilter();
         mainAdmPage.moderationObject("Автотест");
         // Проводим положительную модерацию вакансии
         switchWindow.switchToActiveWindow(2000);
