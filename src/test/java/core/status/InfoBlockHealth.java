@@ -1,5 +1,6 @@
 package core.status;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
@@ -12,10 +13,10 @@ public class InfoBlockHealth {
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\
 
     /**
-     === Метот поиска кранов на странице ===
+     * === Метот поиска кранов на странице ===
      */
     @Step(value = "Проверка наличия упавших инфоблоков на странице")
     public boolean errorInfoBlock() {
-        return errorInfoBlock.exists();
+        return !errorInfoBlock.exists();
     }
 }

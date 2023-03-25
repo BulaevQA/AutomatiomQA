@@ -18,29 +18,29 @@ public class VacancyFullProcess extends BrowserConfig {
         authTestManager.authTest();
         // Созадем вакансию
         openLink.openLink("Добавить вакансию");
-        dropDown.inputValueDropDown("Название вакансии", "Автотест", "Автотест", 1500);
-        dropDown.inputValueDropDown("Профессия", "Учитель", "Учитель");
+        dropDown.inputValueDropDown("Название вакансии", "Автотест");
+        dropDown.inputValueDropDown("Профессия", "Учитель");
         dropDown.selectDropDown("Сфера деятельности", "Высший менеджмент");
         input.inputIframeField("Обязанности", "Обязанность на рабочем месте");
         input.inputIframeField("Требования", "Требование для рабочего места");
         input.inputValueField("Контактное лицо", "Булаев Денис");
         click.clickButton("Сохранить и опубликовать");
         // Открываем АРМ АДМ и находим нашу вакансию
-        openLink.openUrl(urlAdm, 1000);
+        openLink.openUrl(urlAdm);
         input.inputValueField("Имя пользователя", loginAdm);
         input.inputValueField("Пароль", passwordAdm);
         click.clickButton("Вход", "2");
         click.clickButton("Модерация");
         click.clickButton("Модерация вакансий");
         input.inputValueField("Дата от", getCurrentDate.getCurrentDate());
-        mainAdmPage.clickAcceptFilter();
+        click.clickButton("Применить");
         mainAdmPage.moderationObject("Автотест");
         // Проводим положительную модерацию вакансии
-        switchWindow.switchToActiveWindow(2000);
+        switchWindow.switchToActiveWindow();
         click.clickButton("Модерация", "2");
-        click.clickCheckboxes("Проводимые проверки", 2000);
-        click.clickButton("Модерация", 1000, "3");
-        openLink.openUrl(url+"auth/manager/vacancies", 3500);
+        click.clickCheckboxes("Проводимые проверки");
+        click.clickButton("Модерация", "3");
+        openLink.openUrl(url+"auth/manager/vacancies");
         // Делаем ассерт для подтверждения корректности теста
         Assertions.assertEquals(expectedHashMaps.expectedVacancy(), actualHashMaps.actualValueVacancy());
         // Удаляем вакансию

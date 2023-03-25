@@ -1,11 +1,11 @@
-package pages.trudvsem.myVacancy;
+package pages.trudvsem.vacancy;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$x;
-import static com.codeborne.selenide.Selenide.sleep;
 import static helpers.other.ClassObjects.meatBalls;
 
 public class MyVacancyPage {
@@ -23,7 +23,7 @@ public class MyVacancyPage {
      */
     @Step(value = "Получение заголовка страницы")
     public String myVacancyTitle() {
-        return myVacancyTitleCheck.getText();
+        return myVacancyTitleCheck.should(exist, visible).getText();
     }
 
     /**
@@ -31,7 +31,7 @@ public class MyVacancyPage {
      */
     @Step(value = "Получение наименования вакансии")
     public String vacancyName() {
-        return vacancyNameCheck.getText();
+        return vacancyNameCheck.should(exist, visible).getText();
     }
 
     /**
@@ -39,7 +39,7 @@ public class MyVacancyPage {
      */
     @Step(value = "Получение статуса модерации ")
     public String moderationStatus() {
-       return vacancyModStatusCheck.getText();
+       return vacancyModStatusCheck.should(exist, visible).getText();
     }
 
     /**
@@ -47,10 +47,9 @@ public class MyVacancyPage {
      */
     @Step(value = "Процесс удаления вакансии")
     public void deleteVacancy() {
-        meatBalls.serviceMeatBalls(1000);
-        deleteVacancyModal.should(Condition.enabled).click();
-        sleep(1000);
-        confirmDeleteVacancy.should(Condition.enabled).click();
-        foundCandidateQ.should(Condition.enabled).click();
+        meatBalls.serviceMeatBalls();
+        deleteVacancyModal.should(exist, visible, enabled).click();
+        confirmDeleteVacancy.should(exist, visible, enabled).click();
+        foundCandidateQ.should(exist, visible, enabled).click();
     }
 }

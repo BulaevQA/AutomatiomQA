@@ -16,6 +16,7 @@ public class ExpectedHashMaps {
             resumeName = "Наименование резюме",
             resumeModStatusCheck = "Статус модерации",
             myName = "Мое имя",
+            resumeConstructorTitle = "Заголовок конструктора резюме",
 
     //Ключи работодателя
             myVacancyTitle = "Вакансии компании",
@@ -29,9 +30,9 @@ public class ExpectedHashMaps {
     /*
      === Hashmaps с ожидаемыми результатами главной соискателя ===
      */
-    public Map<String, Object> expectedMainCv() {
+    public Map<String, Object> expectedCvAuth() {
         return new HashMap<String, Object>() {{
-            put(infoBlockError, false);
+            put(infoBlockError, true);
             put(myCabinetTitle, "Мой кабинет");
             put(myName, "Булаев Денис Сергеевич");
         }};
@@ -42,7 +43,7 @@ public class ExpectedHashMaps {
     */
     public Map<String, Object> expectedResume() {
         return new HashMap<String, Object>() {{
-            put(infoBlockError, false);
+            put(infoBlockError, true);
             put(myResumeTitle, "Мои резюме");
             put(resumeName, "Автотест");
             put(progressBar, "47");
@@ -55,7 +56,7 @@ public class ExpectedHashMaps {
     */
     public Map<String, Object> expectedMainManager() {
         return new HashMap<String, Object>() {{
-            put(infoBlockError, false);
+            put(infoBlockError, true);
             put(myCabinetTitle, "Мой кабинет");
             put(companyName, "ИП Булаев Д. С.");
         }};
@@ -66,7 +67,7 @@ public class ExpectedHashMaps {
     */
     public Map<String, Object> expectedVacancy() {
         return new HashMap<String, Object>() {{
-            put(infoBlockError, false);
+            put(infoBlockError, true);
             put(myVacancyTitle, "Вакансии компании");
             put(vacancyName, "Автотест");
             put(vacancyModStatusCheck, "Одобрена");
@@ -78,7 +79,7 @@ public class ExpectedHashMaps {
      */
     public Map<String, Object> expectedMegaMenu() {
         return new HashMap<String, Object>() {{
-            put(infoBlockError, false);
+            put(infoBlockError, true);
             put(mobilityProgram, "Программа повышения трудовой мобильности");
         }};
     }

@@ -14,62 +14,7 @@ public class LoginPage {
     ///////////////// XPath \\\\\\\\\\\\\\\\\\\
 
     private final SelenideElement
-            tabManager = $x("//button[@data-target='#employer']"),
-            tabCandidate = $x("//button[@data-target='#laborer']"),
-            emailField = $x("//input[@name='login']"),
-            passwordField = $x("//input[@name='password']"),
-            authByEsia = $x("//*[text()='«Госуслуги»']"),
-            loginButton = $x("//button[text()='Войти']"),
-            registrationButton = $x("//a[@class='button button_plain'][text()='Зарегистрироваться']");
 
     ///////////////// Логика взаимодействия со страницей \\\\\\\\\\\\\\\\\\\
-
-    /**
-     === Метод авторизации через ЕСИА ===
-     */
-    @Step(value = "Авторизация через ЕСИА")
-    public EsiaAuthFormPage buttonEsiaAuth() {
-        authByEsia.should(Condition.enabled).click();
-        return new EsiaAuthFormPage();
-    }
-
-    /**
-     === Метод для переключения таба на работодателя ===
-     */
-    @Step(value = "Переход на таб работодателя")
-    public LoginPage tabManager() {
-        tabManager.should(Condition.enabled).click();
-        return this;
-    }
-
-    /**
-     === Метод для переключения таба на соискателя ===
-     */
-    @Step(value = "Переход на таб соискателя")
-    public LoginPage tabCandidate() {
-        tabCandidate.should(Condition.enabled).click();
-        return this;
-    }
-
-    /**
-     === Метод авторизации по упрощенной форме (через логин/пароль)
-     * @param email - email работодателя для авторизации
-     * @param password - пароль для авторизации работодаеля
-     */
-    @Step(value = "Авторизация работодателя по упрощенной форме")
-    public MainPage simpleAuthForm(String email, String password) {
-        emailField.should(Condition.editable).setValue(email);
-        passwordField.should(Condition.editable).setValue(password).sendKeys(Keys.ENTER);
-        return new MainPage();
-    }
-
-    /**
-     === Метод для перехода на страницу регистрации работодателя через логин/пароль ===
-     */
-    @Step(value = "Клик на кнопку Регистрация работодателя")
-    public ImportFile managerRegistration() {
-        registrationButton.should(Condition.enabled).click();
-        return new ImportFile();
-    }
 
 }

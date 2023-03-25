@@ -1,9 +1,11 @@
 package pages.trudvsem.mainPrr;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import core.constructor.ImportFile;
 
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage {
@@ -33,10 +35,9 @@ public class MainPage {
      */
     @Step(value = "Проверка имени соискателя")
     public String myNameCheck() {
-        megaMenuUser.click();
+        megaMenuUser.should(visible, enabled).click();
         switchTo().activeElement();
-        sleep(1500);
-        return myName.getText();
+        return myName.should(exist, visible).getText();
     }
 
     /**
@@ -44,10 +45,9 @@ public class MainPage {
      */
     @Step(value = "Проверка наименования организации")
     public String myCompanyCheck() {
-        megaMenuUser.click();
+        megaMenuUser.should(visible, enabled).click();
         switchTo().activeElement();
-        sleep(1500);
-        return myCompanyName.getText();
+        return myCompanyName.should(exist, visible).getText();
     }
 
     /**

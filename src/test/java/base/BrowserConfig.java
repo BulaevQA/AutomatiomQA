@@ -25,6 +25,8 @@ abstract public class BrowserConfig {
 
 @BeforeAll
     public static void beforeTestConfiguration() {
+        Configuration.holdBrowserOpen = true;
+        Configuration.browserSize = "1920x1080";
         Configuration.browser = System.getProperty("browser", "chrome");
         SelenideLogger.addListener("AllureSelenide",
                 new AllureSelenide());

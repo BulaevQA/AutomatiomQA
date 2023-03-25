@@ -16,9 +16,9 @@ public class AuthTestManager extends BrowserConfig {
     public void authTest() {
         // Открываем портал и авторизуемся
         openLink.openUrl(url);
-        openLink.openUrl(url);
         click.clickButton("Согласен");
-        click.clickButton("Войти", "2");
+        click.clickButton("Войти");
+        click.clickButton("«Госуслуги»");
         input.inputValueField("Телефон / Email / СНИЛС", login);
         input.inputValueField("Пароль", password);
         click.clickButton("Войти");

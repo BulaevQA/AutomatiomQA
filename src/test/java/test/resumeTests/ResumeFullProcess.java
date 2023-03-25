@@ -19,26 +19,27 @@ public class ResumeFullProcess extends BrowserConfig {
         //Создаем резюме
         openLink.openLink("Создать резюме");
         input.inputValueField("Желаемая должность", "Автотест");
+        dropDown.inputValueDropDown("Профессия", "Учитель");
         dropDown.selectDropDown("Сфера деятельности", "Домашний персонал");
         input.inputValueField("Заработная плата (руб.)", "30000");
         toggleSwitch.switchToggle("Есть опыт работы");
         click.clickButton("Сохранить и опубликовать");
         // Открываем АРМ АДМ и находим наше резюме
-        openLink.openUrl(urlAdm, 1000);
+        openLink.openUrl(urlAdm);
         input.inputValueField("Имя пользователя", loginAdm);
         input.inputValueField("Пароль", passwordAdm);
         click.clickButton("Вход", "2");
         click.clickButton("Модерация");
         click.clickButton("Модерация резюме");
         input.inputValueField("Дата от", getCurrentDate.getCurrentDate());
-        mainAdmPage.clickAcceptFilter();
+        click.clickButton("Применить");
         mainAdmPage.moderationObject("Автотест");
         // Проводим положительную модерацию резюме
-        switchWindow.switchToActiveWindow(2000);
+        switchWindow.switchToActiveWindow();
         click.clickButton("Модерация", "2");
-        click.clickCheckboxes("Проводимые проверки", 2000);
-        click.clickButton("Модерация", 1000, "3");
-        openLink.openUrl(url+"auth/candidate/cvs", 1000);
+        click.clickCheckboxes("Проводимые проверки");
+        click.clickButton("Модерация", "3");
+        openLink.openUrl(url+"auth/candidate/cvs");
         // Делаем ассерт для подтверждения корректности теста
         Assertions.assertEquals(expectedHashMaps.expectedResume(), actualHashMaps.actualValueResume());
         // Удаляем резюме

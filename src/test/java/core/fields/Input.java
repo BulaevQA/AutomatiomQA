@@ -3,6 +3,8 @@ package core.fields;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.editable;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.switchTo;
 
@@ -11,38 +13,33 @@ public class Input {
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
     private void serviceInputField(String field, String value) {
-        $x("//*[normalize-space(text())='"+field+"']/..//input").should(Condition.editable).clear();
-        $x("//*[normalize-space(text())='"+field+"']/..//input").setValue(value);
+        $x("//*[text()[normalize-space() = '"+field+"']]/..//input").should(visible, editable).clear();
+        $x("//*[text()[normalize-space() = '"+field+"']]/..//input").setValue(value);
     }
 
     private void serviceInputField(String field, String value, int milliseconds) {
         sleep(milliseconds);
-        $x("//*[normalize-space(text())='"+field+"']/..//input").should(Condition.editable).clear();
-        $x("//*[normalize-space(text())='"+field+"']/..//input").setValue(value);
+        $x("//*[text()[normalize-space() = '"+field+"']]/..//input").should(visible, editable).clear();
+        $x("//*[text()[normalize-space() = '"+field+"']]/..//input").setValue(value);
     }
 
     private void serviceInputField(String field, String value, String index) {
-        $x("(//*[normalize-space(text())='"+field+"']/..//input)["+index+"]").should(Condition.editable).clear();
-        $x("(//*[normalize-space(text())='"+field+"']/..//input)["+index+"]").setValue(value);
+        $x("(//*[text()[normalize-space() = '"+field+"']]/..//input)["+index+"]").should(visible, editable).clear();
+        $x("(//*[text()[normalize-space() = '"+field+"']]/..//input)["+index+"]").setValue(value);
     }
 
     private void serviceInputField(String field, String value, int milliseconds, String index) {
         sleep(milliseconds);
-        $x("(//*[normalize-space(text())='"+field+"']/..//input)["+index+"]").should(Condition.editable).clear();
-        $x("(//*[normalize-space(text())='"+field+"']/..//input)["+index+"]").setValue(value);
-    }
-
-    private boolean serviceCheckDropDownOptions(String select, String value) {
-        return $x("//*[normalize-space(text())='"+select+"']/..//select[@class='select__control']" +
-                "//option[text()='"+value+"']").exists();
+        $x("(//*[text()[normalize-space() = '"+field+"']]/..//input)["+index+"]").should(visible, editable).clear();
+        $x("(//*[text()[normalize-space() = '"+field+"']]/..//input)["+index+"]").setValue(value);
     }
 
     private void serviceInputIframe(String field, String value) {
-        $x("//*[normalize-space(text())='"+field+"']/preceding-sibling::div[@class='tox tox-tinymce']" +
+        $x("//*[text()[normalize-space() = '"+field+"']]/preceding-sibling::div[@class='tox tox-tinymce']" +
                 "/descendant::iframe").should(Condition.exist);
-        switchTo().frame($x("//*[normalize-space(text())='"+field+"']/preceding-sibling::div[@class='tox tox-tinymce']" +
+        switchTo().frame($x("//*[text()[normalize-space() = '"+field+"']]/preceding-sibling::div[@class='tox tox-tinymce']" +
                 "/descendant::iframe"));
-        $x("//body/p").should(Condition.editable).setValue(value);
+        $x("//body/p").should(editable).setValue(value);
         switchTo().defaultContent();
     }
 

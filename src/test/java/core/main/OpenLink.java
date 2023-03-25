@@ -10,11 +10,11 @@ public class OpenLink {
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
     private String serviceGetLink(String link) {
-        return $x("//a[normalize-space(text())='"+link+"']").getAttribute("href");
+        return $x("//a[text()[normalize-space() = '"+link+"']]").getAttribute("href");
     }
 
     private String serviceGetLink(String link, String index) {
-        return $x("(//a[normalize-space(text())='"+link+"'])["+index+"]").getAttribute("href");
+        return $x("(//a[text()[normalize-space() = '"+link+"']])["+index+"]").getAttribute("href");
     }
 
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\

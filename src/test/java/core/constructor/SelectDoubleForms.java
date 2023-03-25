@@ -10,20 +10,20 @@ public class SelectDoubleForms {
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
     private void serviceDoubleFieldForms(String select, String options, String value) {
-        $x("//*[normalize-space(text())='"+select+"']//following-sibling::div//button" +
+        $x("//*[text()[normalize-space() = '"+select+"]//following-sibling::div//button" +
                 "[not(contains(@data-change-block, 'remove-form'))]").should(Condition.enabled).click();
-        $x("//*[normalize-space(text())='"+select+"']//following-sibling::div//" +
+        $x("//*[text()[normalize-space() = '"+select+"]//following-sibling::div//" +
                 "select[not(contains(@data-change-block, 'remove-form'))]").selectOption(options);
-        $x("//*[normalize-space(text())='"+select+"']//following-sibling::div//" +
+        $x("//*[text()[normalize-space() = '"+select+"]//following-sibling::div//" +
                 "input[not(contains(@data-change-block, 'remove-form'))]").should(Condition.editable).setValue(value);
     }
 
     private void serviceDoubleFieldForms(String select, String options, String value, String index) {
-        $x("(//*[normalize-space(text())='"+select+"']//following-sibling::div//button" +
+        $x("(//*[text()[normalize-space() = '"+select+"]//following-sibling::div//button" +
                 "[not(contains(@data-change-block, 'remove-form'))])["+index+"]").should(Condition.enabled).click();
-        $x("(//*[normalize-space(text())='"+select+"']//following-sibling::div//select" +
+        $x("(//*[text()[normalize-space() = '"+select+"]//following-sibling::div//select" +
                 "[not(contains(@data-change-block, 'remove-form'))])["+index+"]").selectOption(options);
-        $x("//*[normalize-space(text())='"+select+"']//following-sibling::div//input" +
+        $x("//*[text()[normalize-space() = '"+select+"]//following-sibling::div//input" +
                 "[not(contains(@data-change-block, 'remove-form'))]").should(Condition.editable).setValue(value);
     }
 

@@ -14,12 +14,13 @@ public class AuthTestCv extends BrowserConfig {
         // Открываем портал и авторизуемся
         openLink.openUrl(url);
         click.clickButton("Согласен");
-        click.clickButton("Войти", "2");
+        click.clickButton("Войти");
+        click.clickButton("«Госуслуги»");
         input.inputValueField("Телефон / Email / СНИЛС", login);
         input.inputValueField("Пароль", password);
         click.clickButton("Войти");
         click.clickButton("Частное лицо");
         // Делаем ассерт для подтверждения корректности теста
-        Assertions.assertEquals(expectedHashMaps.expectedMainCv(), actualHashMaps.actualValueCv());
+        Assertions.assertEquals(expectedHashMaps.expectedCvAuth(), actualHashMaps.actualValueCv());
     }
 }

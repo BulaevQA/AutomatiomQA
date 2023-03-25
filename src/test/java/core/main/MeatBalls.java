@@ -1,7 +1,10 @@
 package core.main;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Condition.enabled;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MeatBalls {
@@ -16,11 +19,9 @@ public class MeatBalls {
 
     /**
      === Метод клика на митбол ===
-     * @param milliseconds - таймер ожидания перед кликом на митбол(для стабильности теста)
      */
-    public void serviceMeatBalls(int milliseconds) {
-        sleep(milliseconds);
-        meatBalls.click();
+    public void serviceMeatBalls() {
+        meatBalls.should(visible, enabled).click();
         switchTo().activeElement();
     }
 }

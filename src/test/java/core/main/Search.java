@@ -13,7 +13,8 @@ public class Search {
 
     @Step(value = "Поиск значения {value} в поисковой выдаче")
     public Search searchField(String value) {
-        search.should(Condition.enabled).setValue(value).sendKeys(Keys.ENTER);
+        search.should(Condition.exist, Condition.enabled).clear();
+        search.setValue(value);
         return this;
     }
 }

@@ -14,7 +14,7 @@ public class ActualHashMaps {
     public Map<String, Object> actualValueResume() {
         return new HashMap<String, Object>() {{
             put(infoBlockError, infoBlockHealth.errorInfoBlock());
-            put(myResumeTitle, myResumePage.myResumeCheck());
+            put(myResumeTitle, myResumePage.myResumeTitle());
             put(resumeName, myResumePage.resumeNameCheck());
             put(progressBar, myResumePage.progressBarCheck());
             put(resumeModStatusCheck, myResumePage.moderationStatusCheck());
@@ -38,7 +38,7 @@ public class ActualHashMaps {
     public Map<String, Object> actualValueCv() {
         return new HashMap<String, Object>() {{
             put(infoBlockError, infoBlockHealth.errorInfoBlock());
-            put(myCabinetTitle, getTitle.getTitle());
+            put(myCabinetTitle, getPageTitle.pageTitle());
             put(myName, mainPage.myNameCheck());
         }};
     }
@@ -48,7 +48,7 @@ public class ActualHashMaps {
     public Map<String, Object> actualValueManager() {
         return new HashMap<String, Object>() {{
             put(infoBlockError, infoBlockHealth.errorInfoBlock());
-            put(myCabinetTitle, getTitle.getTitle());
+            put(myCabinetTitle, getPageTitle.pageTitle());
             put(companyName, mainPage.myCompanyCheck());
         }};
     }
@@ -59,7 +59,7 @@ public class ActualHashMaps {
     public Map<String, Object> actualMegaMenu() {
         return new HashMap<String, Object>() {{
             put(infoBlockError, infoBlockHealth.errorInfoBlock());
-            put(mobilityProgram, getTitle.getTitle());
+//            put(mobilityProgram, getTitle.getTitle());
         }};
     }
 }

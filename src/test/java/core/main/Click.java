@@ -4,6 +4,8 @@ import com.codeborne.selenide.Condition;
 import helpers.other.ElementCollections;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.enabled;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$$x;
 
@@ -12,29 +14,31 @@ public class Click {
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
     private void serviceClickButton(String button) {
-        $x("//*[normalize-space(text())='"+button+"']").should(Condition.enabled).click();
+        $x("//*[text()[normalize-space() = '"+button+"']]").should(visible, enabled).click();
     }
 
     private void serviceClickButton(String button, int milliseconds) {
         sleep(milliseconds);
-        $x("//*[normalize-space(text())='"+button+"']").should(Condition.enabled).click();
+        $x("//*[text()[normalize-space() = '"+button+"']]").should(visible, enabled).click();
     }
 
     private void serviceClickButton(String button, String index) {
-        $x("(//*[normalize-space(text())='"+button+"'])["+index+"]").should(Condition.enabled).click();
+        $x("(//*[text()[normalize-space() = '"+button+"']])["+index+"]").should(visible, enabled).click();
     }
 
     private void serviceClickButton(String button, int milliseconds, String index) {
         sleep(milliseconds);
-        $x("(//*[normalize-space(text())='"+button+"'])["+index+"]").should(Condition.enabled).click();
+        $x("(//*[text()[normalize-space() = '"+button+"']])["+index+"]").should(visible, enabled).click();
     }
 
     private void serviceCheckBox(String checkbox) {
-        $x("//*[normalize-space(text())='"+checkbox+"']/ancestor::label[@class='checkbox']").should(Condition.enabled).click();
+        $x("//*[normalize-space(text())='"+checkbox+"']/ancestor::label[@class='checkbox']").should(visible, enabled).click();
     }
 
     private void serviceClickCheckboxes(String titleName) {
-        new ElementCollections().elementsCollectionsClick($$x("//*[normalize-space(text())='"+titleName+"']/..//div//div//label"));
+        $x("//*[normalize-space(text())='"+titleName+"']").should(visible);
+        new ElementCollections().elementsCollectionsClick($$x("//*[normalize-space(text())='"+titleName+"']" +
+                "/..//div//div//label"));
     }
 
     private void serviceClickCheckboxes(String titleName, int milliseconds) {
@@ -43,7 +47,7 @@ public class Click {
     }
 
     private void serviceRadioButton(String radioButton) {
-        $x("//*[normalize-space(text())='"+radioButton+"']/ancestor::label[@class='radio']").should(Condition.enabled).click();
+        $x("//*[normalize-space(text())='"+radioButton+"']/ancestor::label[@class='radio']").should(visible, enabled).click();
     }
 
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\

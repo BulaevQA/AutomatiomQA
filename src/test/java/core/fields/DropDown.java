@@ -1,9 +1,11 @@
 package core.fields;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import helpers.other.ElementCollections;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$$x;
 
@@ -11,91 +13,95 @@ public class DropDown {
 
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
-    private void serviceInputDropDown(String select, String value, String options) {
-        $x("//span[normalize-space(text())='"+select+"']/..//button").should(Condition.enabled).click();
+    private void serviceInputDropDown(String select, String value) {
+        sleep(1000);
+        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button").should(Condition.enabled).click();
         $x("//div[@class='dropdown-menu show']//input").should(Condition.editable).clear();
         $x("//div[@class='dropdown-menu show']//input").setValue(value);
-        sleep(1500);
+        sleep(1000);
         if (!serviceCheckDropDownOptions(select, value)) {
             $x("//div[@class='dropdown-menu show']//*[@data-action='add-item']").should(Condition.enabled).click();
         } else {
-            $x("//span[normalize-space(text())='"+select+"']/..//select").selectOption(options);
+            $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//select").selectOption(value);
         }
     }
 
-    private void serviceInputDropDown(String select, String value, String options, int milliseconds) {
+    //*[text()[normalize-space() = '"+select+"']]/ancestor::label//button
+
+    private void serviceInputDropDown(String select, String value, int milliseconds) {
         sleep(milliseconds);
-        $x("//span[normalize-space(text())='"+select+"']/..//button").should(Condition.enabled).click();
+        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button").should(Condition.enabled).click();
         $x("//div[@class='dropdown-menu show']//input").should(Condition.editable).clear();
         $x("//div[@class='dropdown-menu show']//input").setValue(value);
         sleep(milliseconds);
         if (!serviceCheckDropDownOptions(select, value)) {
             $x("//div[@class='dropdown-menu show']//*[@data-action='add-item']").should(Condition.enabled).click();
         } else {
-            $x("//span[normalize-space(text())='"+select+"']/..//select").selectOption(options);
+            $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//select").selectOption(value);
         }
     }
 
-    private void serviceInputDropDown(String select, String value, String options, String index) {
-        $x("(//span[normalize-space(text())='"+select+"']/..//button)["+index+"]").should(Condition.enabled).click();
+    private void serviceInputDropDown(String select, String value, String index) {
+        sleep(1000);
+        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button)["+index+"]").should(Condition.enabled).click();
         $x("//div[@class='dropdown-menu show']//input").should(Condition.editable).clear();
         $x("//div[@class='dropdown-menu show']//input").setValue(value);
-        sleep(1500);
+        sleep(1000);
         if (!serviceCheckDropDownOptions(select, value)) {
             $x("//div[@class='dropdown-menu show']//*[@data-action='add-item']").should(Condition.enabled).click();
         } else {
-            $x("(//span[normalize-space(text())='"+select+"']/..//select)["+index+"]").selectOption(options);
+            $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//select)["+index+"]").selectOption(value);
         }
     }
 
-    private void serviceInputDropDown(String select, String value, String options, int milliseconds, String index) {
+    private void serviceInputDropDown(String select, String value, int milliseconds, String index) {
         sleep(milliseconds);
-        $x("(//span[normalize-space(text())='"+select+"']/..//button)["+index+"]").should(Condition.enabled).click();
+        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button)["+index+"]").should(Condition.enabled).click();
         $x("//div[@class='dropdown-menu show']//input").should(Condition.editable).clear();
         $x("//div[@class='dropdown-menu show']//input").setValue(value);
-        sleep(1500);
+        sleep(milliseconds);
         if (!serviceCheckDropDownOptions(select, value)) {
             $x("//div[@class='dropdown-menu show']//*[@data-action='add-item']").should(Condition.enabled).click();
         } else {
-            $x("(//span[normalize-space(text())='"+select+"']/..//select)["+index+"]").selectOption(options);
+            $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//select)["+index+"]").selectOption(value);
         }
     }
 
     private boolean serviceCheckDropDownOptions(String select, String value) {
-        return $x("//*[normalize-space(text())='"+select+"']/..//select[@class='select__control']" +
-                "//option[normalize-space(text())='"+value+"']").exists();
+       return  $x("//*[text()[normalize-space() = '"+select+"']]/..//select[@class='select__control']" +
+               "//option[text()[normalize-space() = '"+value+"']]").exists();
     }
 
     private void serviceSelectDropDown(String select, String options) {
-        $x("//span[normalize-space(text())='"+select+"']/..//button").should(Condition.editable).click();
-        $x("//span[normalize-space(text())='"+select+"']/..//select").selectOption(options);
+        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button").should(Condition.editable).click();
+        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//select").selectOption(options);
     }
 
     private void serviceSelectDropDown(String select, String options, int milliseconds) {
         sleep(milliseconds);
-        $x("//span[normalize-space(text())='"+select+"']/..//button").should(Condition.editable).click();
-        $x("//span[normalize-space(text())='"+select+"']/..//select").selectOption(options);
+        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button").should(Condition.editable).click();
+        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//select").selectOption(options);
     }
 
     private void serviceSelectDropDown(String select, String options, String index) {
-        $x("(//span[normalize-space(text())='"+select+"']/..//button)["+index+"]").should(Condition.editable).click();
-        $x("(//span[normalize-space(text())='"+select+"']/..//select)["+index+"]").selectOption(options);
+        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button)["+index+"]").should(Condition.editable).click();
+        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//select)["+index+"]").selectOption(options);
     }
 
     private void serviceSelectDropDown(String select, String options, int milliseconds, String index) {
         sleep(milliseconds);
-        $x("(//span[normalize-space(text())='"+select+"']/..//button)["+index+"]").should(Condition.editable).click();
-        $x("(//span[normalize-space(text())='"+select+"']/..//select)["+index+"]").selectOption(options);
+        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button)["+index+"]").should(Condition.editable).click();
+        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//select)["+index+"]").selectOption(options);
     }
 
     private void serviceRandomDropDown(String select) {
-        $x("//span[normalize-space(text())='"+select+"']/..//button").should(Condition.enabled).click();
+        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button").should(Condition.enabled).click();
         new ElementCollections().randomElementCollectionClick(
                 $$x("//div[@class='dropdown-menu show']//a[not(contains(@class, 'active'))]"));
     }
 
     private void serviceRandomDropDown(String select, String index) {
-        $x("(//span[normalize-space(text())='"+select+"']/..//button)["+index+"]").should(Condition.enabled).click();
+        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button)["+index+"]").should(Condition.enabled).click();
         new ElementCollections().randomElementCollectionClick
                 ($$x("//div[@class='dropdown-menu show']//a[not(contains(@class, 'active'))]"));
     }
@@ -106,11 +112,10 @@ public class DropDown {
      * === Заполнение уникального поле типа "Селект" ===
      * @param select  - Наименование поля
      * @param value   - Заполняем поле этим значением
-     * @param options - Имя значения в выпадающем списке
      */
     @Step(value = "Заполняем поле {select} значением {value} и выбором значения {options}")
-    public DropDown inputValueDropDown(String select, String value, String options) {
-        serviceInputDropDown(select, value, options);
+    public DropDown inputValueDropDown(String select, String value) {
+        serviceInputDropDown(select, value);
         return this;
     }
 
@@ -118,12 +123,11 @@ public class DropDown {
      * === Заполнение уникального поле типа "Селект" ===
      * @param select  - Наименование поля
      * @param value   - Заполняем поле этим значением
-     * @param options - Имя значения в выпадающем списке
      * @param milliseconds - Ожидание перед началом выполнения метода
      */
     @Step(value = "Заполняем поле {select} значением {value} и выбором значения {options}")
-    public DropDown inputValueDropDown(String select, String value, String options, int milliseconds) {
-        serviceInputDropDown(select, value, options, milliseconds);
+    public DropDown inputValueDropDown(String select, String value, int milliseconds) {
+        serviceInputDropDown(select, value, milliseconds);
         return this;
     }
 
@@ -131,12 +135,11 @@ public class DropDown {
      * === Заполнение повторяющееся поле типа "Селект" ===
      * @param select  - Наименование поля
      * @param value   - Значение, которым заполяем поле
-     * @param options - Имя значения в выпадающем списке
      * @param index   - Позиция поля в DOM
      */
     @Step(value = "Заполняем поле {select} значением {value} с выбором {options} и позицией в DOM {index}")
-    public DropDown inputValueDropDown(String select, String value, String options, String index) {
-        serviceInputDropDown(select, value, options, index);
+    public DropDown inputValueDropDown(String select, String value, String index) {
+        serviceInputDropDown(select, value, index);
         return this;
     }
 
@@ -144,12 +147,11 @@ public class DropDown {
      * === Заполнение повторяющееся поле типа "Селект" ===
      * @param select  - Наименование поля
      * @param value   - Значение, которым заполяем поле
-     * @param options - Имя значения в выпадающем списке
      * @param index   - Позиция поля в DOM
      */
     @Step(value = "Заполняем поле {select} значением {value} с выбором {options} и позицией в DOM {index}")
-    public DropDown inputValueDropDown(String select, String value, String options, int milliseconds, String index) {
-        serviceInputDropDown(select, value, options, milliseconds, index);
+    public DropDown inputValueDropDown(String select, String value, int milliseconds, String index) {
+        serviceInputDropDown(select, value, milliseconds, index);
         return this;
     }
 
