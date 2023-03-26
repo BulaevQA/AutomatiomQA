@@ -19,17 +19,6 @@ public class SwitchWindow {
     }
 
     /**
-     === Переключение в модальное/всплывающее окно ===
-     * @param milliseconds - Ожидание перед зачаном выполнения метода
-     */
-    @Step(value = "Переключение на модальное окно с ожиданием {milliseconds} миллисекунд")
-    public SwitchWindow switchToActiveWindow(int milliseconds) {
-        sleep(milliseconds);
-        switchTo().activeElement();
-        return this;
-    }
-
-    /**
      === Переклчюение в стандартную область контента ===
      */
     @Step(value = "Переключение на стандартный контент")

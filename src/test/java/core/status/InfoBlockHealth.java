@@ -1,9 +1,9 @@
 package core.status;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class InfoBlockHealth {
@@ -17,6 +17,6 @@ public class InfoBlockHealth {
      */
     @Step(value = "Проверка наличия упавших инфоблоков на странице")
     public boolean errorInfoBlock() {
-        return !errorInfoBlock.exists();
+        return errorInfoBlock.should(visible).exists();
     }
 }

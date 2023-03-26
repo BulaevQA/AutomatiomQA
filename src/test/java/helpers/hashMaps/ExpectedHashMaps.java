@@ -3,28 +3,27 @@ package helpers.hashMaps;
 import java.util.HashMap;
 import java.util.Map;
 
+import static helpers.other.ClassObjects.testValues;
+
 public class ExpectedHashMaps {
 
-    //Общие ключи
     public static String
-            infoBlockError = "Информация временно недоступна",
-            myCabinetTitle = "Мой кабинет",
-
-    //Ключи соискателя
+            //Общие ключи
+            pageHeader = "H1 заголовок",
+            workSphere = "Сфера деятельности",
+            salary = "Заработая плата",
+            creationDate = "Дата создания",
+            //Ключи соискателя
             progressBar = "Шкала заполнения",
-            myResumeTitle = "Мои резюме",
             resumeName = "Наименование резюме",
-            resumeModStatusCheck = "Статус модерации",
             myName = "Мое имя",
-            resumeConstructorTitle = "Заголовок конструктора резюме",
-
-    //Ключи работодателя
-            myVacancyTitle = "Вакансии компании",
+            //Ключи работодателя
             vacancyName = "Наименование вакансии",
-            vacancyModStatusCheck = "Статус модерации",
             companyName = "Наименование компании",
-
-    //Ключи мега-меню
+            jobResponsibilities = "Обязанности",
+            jobRequirements = "Требования",
+            contactPerson = "Контактное лицо",
+            //Ключи мега-меню
             mobilityProgram = "Программа переезда";
 
     /*
@@ -32,9 +31,8 @@ public class ExpectedHashMaps {
      */
     public Map<String, Object> expectedCvAuth() {
         return new HashMap<String, Object>() {{
-            put(infoBlockError, true);
-            put(myCabinetTitle, "Мой кабинет");
-            put(myName, "Булаев Денис Сергеевич");
+            put(pageHeader, true);
+            put(myName, testValues.myName);
         }};
     }
 
@@ -43,11 +41,13 @@ public class ExpectedHashMaps {
     */
     public Map<String, Object> expectedResume() {
         return new HashMap<String, Object>() {{
-            put(infoBlockError, true);
-            put(myResumeTitle, "Мои резюме");
-            put(resumeName, "Автотест");
-            put(progressBar, "47");
-            put(resumeModStatusCheck, "Одобрено");
+            put(pageHeader, true);
+            put(myName, testValues.myName);
+            put(resumeName, testValues.position);
+            put(workSphere, testValues.workSphere);
+            put(salary, testValues.salary);
+            put(progressBar, testValues.minProgressBar);
+            put(creationDate, testValues.currentDate);
         }};
     }
 
@@ -56,9 +56,8 @@ public class ExpectedHashMaps {
     */
     public Map<String, Object> expectedMainManager() {
         return new HashMap<String, Object>() {{
-            put(infoBlockError, true);
-            put(myCabinetTitle, "Мой кабинет");
-            put(companyName, "ИП Булаев Д. С.");
+            put(pageHeader, true);
+            put(companyName, testValues.companyName);
         }};
     }
 
@@ -67,10 +66,14 @@ public class ExpectedHashMaps {
     */
     public Map<String, Object> expectedVacancy() {
         return new HashMap<String, Object>() {{
-            put(infoBlockError, true);
-            put(myVacancyTitle, "Вакансии компании");
-            put(vacancyName, "Автотест");
-            put(vacancyModStatusCheck, "Одобрена");
+            put(pageHeader, true);
+            put(companyName, testValues.companyName);
+            put(vacancyName, testValues.position);
+            put(salary, testValues.salaryManager);
+            put(jobResponsibilities, testValues.jobFields);
+            put(jobRequirements, testValues.jobFields);
+            put(contactPerson, testValues.myName);
+            put(creationDate, testValues.currentDate);
         }};
     }
 
@@ -79,7 +82,6 @@ public class ExpectedHashMaps {
      */
     public Map<String, Object> expectedMegaMenu() {
         return new HashMap<String, Object>() {{
-            put(infoBlockError, true);
             put(mobilityProgram, "Программа повышения трудовой мобильности");
         }};
     }

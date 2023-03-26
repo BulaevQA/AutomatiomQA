@@ -1,12 +1,12 @@
 package pages.trudvsem.resume;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$x;
 import static helpers.other.ClassObjects.meatBalls;
+import static helpers.other.ClassObjects.notificationCheck;
 
 public class MyResumePage {
 
@@ -14,28 +14,20 @@ public class MyResumePage {
 
     private final SelenideElement
             progressBarCheck = $x("(//progress)[last()]"),
-            resumeModStatusCheck = $x("(//div[contains(@class, 'status ')]//span[not(contains(@class,'d-flex'))])[last()]"),
             resumeNameCheck = $x("(//div[@data-name]//h2//a)[last()]"),
+            statusWaitForModeration = $x("(//div[@class='status status_warning']//span[text()='Ожидает модерации'])[last()]"),
+            statusApproved = $x("(//div[@class='status ']//span[text()='Одобрено'])[last()]"),
             deleteResumeModal = $x("(//button[@class='dropdown-item']//span/..)[last()]"),
-            confirmDeleteResume = $x("(//div[@class='modal__content'])[last()]//div[3]//*[text()='Удалить']"),
-            deleteNotification = $x("//div[@class='notifications__card-title']"),
-            pageTitle = $x("//h1[text()='Мои резюме']");
+            confirmDeleteResume = $x("(//div[@class='modal__content'])/..//button[text()='Удалить']");
+
 
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\
-
-    /**
-     * === Метод получения заголовска страницы ===
-     */
-    @Step(value = "Получение заголовка стрницы")
-    public String myResumeTitle() {
-        return pageTitle.should(exist, visible).getText();
-    }
 
     /**
      === Получение названия резюме ===
      */
     @Step(value = "Получение наименования резюме")
-    public String resumeNameCheck() {
+    public String resumeName() {
         return resumeNameCheck.should(exist, visible).getText().trim();
     }
 
@@ -46,13 +38,20 @@ public class MyResumePage {
     public String progressBarCheck() {
         return progressBarCheck.should(exist, visible).getAttribute("value");
     }
+    /**
+     === Получение статуса модерации резюме ===
+     */
+    @Step(value = "Статус резюме Ожидает модерации")
+    public String statusWaitForModeration() {
+        return statusWaitForModeration.should(exist, visible).getText().trim();
+    }
 
     /**
      === Получение статуса модерации резюме ===
      */
-    @Step(value = "Получение статуса модерации резюме")
-    public String moderationStatusCheck() {
-        return resumeModStatusCheck.should(exist, visible).getText();
+    @Step(value = "Статус резюме Одобрено")
+    public String statusApproved() {
+        return statusApproved.should(exist, visible).getText().trim();
     }
 
     /**
@@ -61,8 +60,8 @@ public class MyResumePage {
     @Step(value = "Процесс удаления резюме")
     public void deleteResume() {
         meatBalls.serviceMeatBalls();
-        deleteResumeModal.should(exist, visible, enabled).click();
-        confirmDeleteResume.should(exist, visible, enabled).click();
-        deleteNotification.should(appear, visible);
+        deleteResumeModal.should(visible, enabled).click();
+        confirmDeleteResume.should(visible, enabled).click();
+        notificationCheck.notificationCheck();
     }
 }

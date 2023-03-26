@@ -1,8 +1,9 @@
 package core.constructor;
 
-import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.enabled;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class OptionalBlock {
@@ -10,11 +11,11 @@ public class OptionalBlock {
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
     private void serviceAddOptionalBlock(String block) {
-        $x("//button[normalize-space(text())='"+block+"'][@data-change='show-block']").should(Condition.enabled).click();
+        $x("//button[normalize-space(text())='"+block+"'][@data-change='show-block']").should(visible, enabled).click();
     }
 
     private void serviceRemoveOptionalBlock(String block) {
-        $x("//h2[normalize-space(text())='"+block+"']/../following-sibling::div//button").should(Condition.enabled).click();
+        $x("//h2[normalize-space(text())='"+block+"']/../following-sibling::div//button").should(visible, enabled).click();
     }
 
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\

@@ -13,11 +13,13 @@ public class ActualHashMaps {
      */
     public Map<String, Object> actualValueResume() {
         return new HashMap<String, Object>() {{
-            put(infoBlockError, infoBlockHealth.errorInfoBlock());
-            put(myResumeTitle, myResumePage.myResumeTitle());
-            put(resumeName, myResumePage.resumeNameCheck());
-            put(progressBar, myResumePage.progressBarCheck());
-            put(resumeModStatusCheck, myResumePage.moderationStatusCheck());
+            put(pageHeader, getPageTitle.pageTitleIsVisible(testValues.position));
+            put(myName, resumePage.getName());
+            put(resumeName, resumePage.getPosition());
+            put(workSphere, resumePage.getWorkSphere());
+            put(salary, resumePage.getSalary());
+            put(progressBar, resumePage.progressBar());
+            put(creationDate, resumePage.getResumeDate());
         }};
     }
 
@@ -26,10 +28,14 @@ public class ActualHashMaps {
      */
     public Map<String, Object> actualValueVacancy() {
         return new HashMap<String, Object>() {{
-            put(infoBlockError, infoBlockHealth.errorInfoBlock());
-            put(myVacancyTitle, myVacancyPage.myVacancyTitle());
-            put(vacancyName, myVacancyPage.vacancyName());
-            put(vacancyModStatusCheck, myVacancyPage.moderationStatus());
+            put(pageHeader, getPageTitle.pageTitleIsVisible(testValues.position));
+            put(companyName, vacancyPage.getCompany());
+            put(vacancyName, vacancyPage.getVacancyName());
+            put(salary, vacancyPage.getSalary());
+            put(jobResponsibilities, vacancyPage.getJobResponsibilities());
+            put(jobRequirements, vacancyPage.getJobRequirements());
+            put(contactPerson, vacancyPage.getContactPerson());
+            put(creationDate, vacancyPage.getVacancyDate());
         }};
     }
     /*
@@ -37,8 +43,7 @@ public class ActualHashMaps {
     */
     public Map<String, Object> actualValueCv() {
         return new HashMap<String, Object>() {{
-            put(infoBlockError, infoBlockHealth.errorInfoBlock());
-            put(myCabinetTitle, getPageTitle.pageTitle());
+            put(pageHeader, getPageTitle.pageTitleIsVisible("Мой кабинет"));
             put(myName, mainPage.myNameCheck());
         }};
     }
@@ -47,8 +52,7 @@ public class ActualHashMaps {
     */
     public Map<String, Object> actualValueManager() {
         return new HashMap<String, Object>() {{
-            put(infoBlockError, infoBlockHealth.errorInfoBlock());
-            put(myCabinetTitle, getPageTitle.pageTitle());
+            put(pageHeader, getPageTitle.pageTitleIsVisible("Мой кабинет"));
             put(companyName, mainPage.myCompanyCheck());
         }};
     }
@@ -58,8 +62,7 @@ public class ActualHashMaps {
      */
     public Map<String, Object> actualMegaMenu() {
         return new HashMap<String, Object>() {{
-            put(infoBlockError, infoBlockHealth.errorInfoBlock());
-//            put(mobilityProgram, getTitle.getTitle());
+            put(mobilityProgram, "");
         }};
     }
 }

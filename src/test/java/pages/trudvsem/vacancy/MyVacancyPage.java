@@ -1,6 +1,5 @@
 package pages.trudvsem.vacancy;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
@@ -11,20 +10,12 @@ import static helpers.other.ClassObjects.meatBalls;
 public class MyVacancyPage {
 
     private final SelenideElement
-            myVacancyTitleCheck = $x("//h1[text()='Вакансии компании']"),
             vacancyNameCheck = $x("(//a[@data-content='title'])[last()]"),
-            vacancyModStatusCheck = $x("(//div[contains(@class, 'status ')]//span[@class])[last()]"),
+            statusWaitForModeration = $x("(//div[@class='status status_warning']//span[text()='Ожидает модерации '])[last()]"),
+            statusApproved = $x("(//div[@class='status ']//span[text()='Одобрена '])[last()]"),
             deleteVacancyModal = $x("(//div[@class='dropdown-menu dropdown-menu-right show']//button)[last()]"),
-            confirmDeleteVacancy = $x("(//div[@class='modal__content'])[last()]//div[3]//*[text()='Удалить']"),
-            foundCandidateQ = $x("//div[@class='modal__content']//*[text()='Да']");
-
-    /**
-     === Получение загаовка старницы Вакансии компании ===
-     */
-    @Step(value = "Получение заголовка страницы")
-    public String myVacancyTitle() {
-        return myVacancyTitleCheck.should(exist, visible).getText();
-    }
+            confirmDeleteVacancy = $x("(//div[@class='modal__content'])/..//button[text()='Удалить']"),
+            foundCandidateQuestion = $x("//div[@class='modal__content']//button[text()='Да']");
 
     /**
      === Получение наименование вакансии ===
@@ -37,9 +28,17 @@ public class MyVacancyPage {
     /**
      === Получение статуса модерации вакансии ===
      */
-    @Step(value = "Получение статуса модерации ")
-    public String moderationStatus() {
-       return vacancyModStatusCheck.should(exist, visible).getText();
+    @Step(value = "Статус вакансии Ожидает модерации")
+    public String statusWaitForModeration() {
+       return statusWaitForModeration.should(exist, visible).getText().trim();
+    }
+
+    /**
+     === Получение статуса модерации вакансии ===
+     */
+    @Step(value = "Статус вакансии Одобрена")
+    public String statusApproved() {
+        return statusApproved.should(exist, visible).getText().trim();
     }
 
     /**
@@ -48,8 +47,8 @@ public class MyVacancyPage {
     @Step(value = "Процесс удаления вакансии")
     public void deleteVacancy() {
         meatBalls.serviceMeatBalls();
-        deleteVacancyModal.should(exist, visible, enabled).click();
-        confirmDeleteVacancy.should(exist, visible, enabled).click();
-        foundCandidateQ.should(exist, visible, enabled).click();
+        deleteVacancyModal.should(visible, enabled).click();
+        confirmDeleteVacancy.should(visible, enabled).click();
+        foundCandidateQuestion.should(visible, enabled).click();
     }
 }

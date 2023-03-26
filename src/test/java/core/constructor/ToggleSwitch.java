@@ -3,6 +3,8 @@ package core.constructor;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.enabled;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class ToggleSwitch {
@@ -11,7 +13,7 @@ public class ToggleSwitch {
 
 
     private void serviceToggle(String toggle) {
-        $x("//*[normalize-space(text())='"+toggle+"']/..").should(Condition.enabled).click();
+        $x("//*[normalize-space(text())='"+toggle+"']/..").should(visible, enabled).click();
     }
 
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\

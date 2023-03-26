@@ -17,17 +17,7 @@ public class Click {
         $x("//*[text()[normalize-space() = '"+button+"']]").should(visible, enabled).click();
     }
 
-    private void serviceClickButton(String button, int milliseconds) {
-        sleep(milliseconds);
-        $x("//*[text()[normalize-space() = '"+button+"']]").should(visible, enabled).click();
-    }
-
     private void serviceClickButton(String button, String index) {
-        $x("(//*[text()[normalize-space() = '"+button+"']])["+index+"]").should(visible, enabled).click();
-    }
-
-    private void serviceClickButton(String button, int milliseconds, String index) {
-        sleep(milliseconds);
         $x("(//*[text()[normalize-space() = '"+button+"']])["+index+"]").should(visible, enabled).click();
     }
 
@@ -39,11 +29,6 @@ public class Click {
         $x("//*[normalize-space(text())='"+titleName+"']").should(visible);
         new ElementCollections().elementsCollectionsClick($$x("//*[normalize-space(text())='"+titleName+"']" +
                 "/..//div//div//label"));
-    }
-
-    private void serviceClickCheckboxes(String titleName, int milliseconds) {
-        sleep(milliseconds);
-        new ElementCollections().elementsCollectionsClick($$x("//*[normalize-space(text())='"+titleName+"']/..//div//div//label"));
     }
 
     private void serviceRadioButton(String radioButton) {
@@ -65,32 +50,10 @@ public class Click {
     /**
      * === Основные функциональные кнопки ===
      * @param button - Функциональные кнопки (Сохранить и опубликовать, Предпросмотр и тд...)
-     * @param milliseconds - Ожидание перед началом выполнения метода
-     */
-    @Step(value = "Кликаем на кнопку {button}")
-    public Click clickButton(String button, int milliseconds) {
-        serviceClickButton(button, milliseconds);
-        return this;
-    }
-
-    /**
-     * === Основные функциональные кнопки ===
-     * @param button - Функциональные кнопки (Сохранить и опубликовать, Предпросмотр и тд...)
      */
     @Step(value = "Кликаем на кнопку {button}")
     public Click clickButton(String button, String index) {
         serviceClickButton(button, index);
-        return this;
-    }
-
-    /**
-     * === Основные функциональные кнопки ===
-     * @param button - Функциональные кнопки (Сохранить и опубликовать, Предпросмотр и тд...)
-     * @param milliseconds - Ожидание перед началом выполнения метода
-     */
-    @Step(value = "Кликаем на кнопку {button}")
-    public Click clickButton(String button, int milliseconds, String index) {
-        serviceClickButton(button, milliseconds, index);
         return this;
     }
 
@@ -111,17 +74,6 @@ public class Click {
     @Step(value = "Активация чекбоксов по коллекции элементов")
     public Click clickCheckboxes(String titleName) {
         serviceClickCheckboxes(titleName);
-        return this;
-    }
-
-    /**
-     === Метод перебора чекбоксов по коллекции элементов ===
-     * @param titleName - наименвоание заголовка, в котором находятся чекбоксы
-     * @param milliseconds - Ожидание перед зачаном выполнения метода
-     */
-    @Step(value = "Активация чекбоксов по коллекции элементов с ожиданием {milliseconds} миллисекунд")
-    public Click clickCheckboxes(String titleName, int milliseconds) {
-        serviceClickCheckboxes(titleName, milliseconds);
         return this;
     }
 

@@ -1,7 +1,10 @@
 package core.main;
 
+import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.exist;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -10,11 +13,11 @@ public class OpenLink {
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
     private String serviceGetLink(String link) {
-        return $x("//a[text()[normalize-space() = '"+link+"']]").getAttribute("href");
+        return $x("//a[text()[normalize-space() = '"+link+"']]").should(exist, visible).getAttribute("href");
     }
 
     private String serviceGetLink(String link, String index) {
-        return $x("(//a[text()[normalize-space() = '"+link+"']])["+index+"]").getAttribute("href");
+        return $x("(//a[text()[normalize-space() = '"+link+"']])["+index+"]").should(exist, visible).getAttribute("href");
     }
 
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\
@@ -46,18 +49,6 @@ public class OpenLink {
      */
     @Step(value = "Открываем {url}")
     public OpenLink openUrl (String url){
-        open(url);
-        return this;
-    }
-
-    /**
-     === Метод открытия базового URL ===
-     * @param url - https ссылка
-     * @param milliseconds - Ожидание перед выполнением метода
-     */
-    @Step(value = "Открываем {url} с задержкой {milliseconds} миллисекунд")
-    public OpenLink openUrl (String url, int milliseconds){
-        sleep(milliseconds);
         open(url);
         return this;
     }

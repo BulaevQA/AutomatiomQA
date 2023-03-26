@@ -17,33 +17,42 @@ public class VacancyFullProcess extends BrowserConfig {
         // Авторизируемся на ПРР
         authTestManager.authTest();
         // Созадем вакансию
-        openLink.openLink("Добавить вакансию");
-        dropDown.inputValueDropDown("Название вакансии", "Автотест");
-        dropDown.inputValueDropDown("Профессия", "Учитель");
-        dropDown.selectDropDown("Сфера деятельности", "Высший менеджмент");
-        input.inputIframeField("Обязанности", "Обязанность на рабочем месте");
-        input.inputIframeField("Требования", "Требование для рабочего места");
-        input.inputValueField("Контактное лицо", "Булаев Денис");
+        openLink.openLink("Добавить вакансию", "3");
+        getPageTitle.pageTitleIsVisible("Создание вакансии");
+        dropDown.inputValueDropDown("Название вакансии", testValues.position);
+        dropDown.inputValueDropDown("Профессия", testValues.profession);
+        dropDown.selectDropDown("Сфера деятельности", testValues.workSphere);
+        input.inputIframeField("Обязанности", testValues.jobFields);
+        input.inputIframeField("Требования", testValues.jobFields);
+        input.inputValueField("Контактное лицо", testValues.myName);
         click.clickButton("Сохранить и опубликовать");
+        getPageTitle.pageTitleIsVisible("Вакансии компании");
+        myVacancyPage.statusWaitForModeration();
         // Открываем АРМ АДМ и находим нашу вакансию
-        openLink.openUrl(urlAdm);
-        input.inputValueField("Имя пользователя", loginAdm);
-        input.inputValueField("Пароль", passwordAdm);
+        openLink.openUrl(testValues.urlAdm);
+        input.inputValueField("Имя пользователя", testValues.loginAdm);
+        input.inputValueField("Пароль", testValues.passwordAdm);
         click.clickButton("Вход", "2");
         click.clickButton("Модерация");
         click.clickButton("Модерация вакансий");
-        input.inputValueField("Дата от", getCurrentDate.getCurrentDate());
+        input.inputValueField("Дата от", testValues.currentDate);
         click.clickButton("Применить");
-        mainAdmPage.moderationObject("Автотест");
+        mainAdmPage.moderationObject(testValues.position);
         // Проводим положительную модерацию вакансии
         switchWindow.switchToActiveWindow();
         click.clickButton("Модерация", "2");
         click.clickCheckboxes("Проводимые проверки");
         click.clickButton("Модерация", "3");
-        openLink.openUrl(url+"auth/manager/vacancies");
+        openLink.openUrl(testValues.url);
+        openLink.openLink("Вакансии компании");
+        myVacancyPage.statusApproved();
+        openLink.openLink(testValues.position);
         // Делаем ассерт для подтверждения корректности теста
         Assertions.assertEquals(expectedHashMaps.expectedVacancy(), actualHashMaps.actualValueVacancy());
         // Удаляем вакансию
+        click.clickButton("Вакансии компании");
+        openLink.openLink("Управление вакансиями");
+        getPageTitle.pageTitleIsVisible("Вакансии компании");
         myVacancyPage.deleteVacancy();
     }
 }

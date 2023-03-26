@@ -18,31 +18,43 @@ public class ResumeFullProcess extends BrowserConfig {
         authTestCv.authTest();
         //Создаем резюме
         openLink.openLink("Создать резюме");
-        input.inputValueField("Желаемая должность", "Автотест");
-        dropDown.inputValueDropDown("Профессия", "Учитель");
-        dropDown.selectDropDown("Сфера деятельности", "Домашний персонал");
-        input.inputValueField("Заработная плата (руб.)", "30000");
+        getPageTitle.pageTitleIsVisible("Создание резюме");
+        input.inputValueField("Желаемая должность", testValues.position);
+        dropDown.inputValueDropDown("Профессия", testValues.profession);
+        dropDown.selectDropDown("Сфера деятельности", testValues.workSphere);
+        input.inputValueField("Заработная плата (руб.)", testValues.salary);
         toggleSwitch.switchToggle("Есть опыт работы");
         click.clickButton("Сохранить и опубликовать");
+        notificationCheck.notificationCheck();
+        getPageTitle.pageTitleIsVisible("Мои резюме");
+        myResumePage.statusWaitForModeration();
         // Открываем АРМ АДМ и находим наше резюме
-        openLink.openUrl(urlAdm);
-        input.inputValueField("Имя пользователя", loginAdm);
-        input.inputValueField("Пароль", passwordAdm);
+        openLink.openUrl(testValues.urlAdm);
+        input.inputValueField("Имя пользователя", testValues.loginAdm);
+        input.inputValueField("Пароль", testValues.passwordAdm);
         click.clickButton("Вход", "2");
         click.clickButton("Модерация");
         click.clickButton("Модерация резюме");
-        input.inputValueField("Дата от", getCurrentDate.getCurrentDate());
+        input.inputValueField("Дата от", testValues.currentDate);
         click.clickButton("Применить");
-        mainAdmPage.moderationObject("Автотест");
+        mainAdmPage.moderationObject(testValues.position);
         // Проводим положительную модерацию резюме
         switchWindow.switchToActiveWindow();
         click.clickButton("Модерация", "2");
         click.clickCheckboxes("Проводимые проверки");
         click.clickButton("Модерация", "3");
-        openLink.openUrl(url+"auth/candidate/cvs");
+        openLink.openUrl(testValues.url);
+        getPageTitle.pageTitleIsVisible("Мой кабинет");
+        openLink.openLink("Резюме");
+        getPageTitle.pageTitleIsVisible("Мои резюме");
+        myResumePage.statusApproved();
+        openLink.openLink(testValues.position);
         // Делаем ассерт для подтверждения корректности теста
         Assertions.assertEquals(expectedHashMaps.expectedResume(), actualHashMaps.actualValueResume());
         // Удаляем резюме
+        click.clickButton("Мои резюме");
+        openLink.openLink("Список моих резюме");
+        getPageTitle.pageTitleIsVisible("Мои резюме");
         myResumePage.deleteResume();
     }
 }

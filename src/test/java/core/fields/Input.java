@@ -1,10 +1,8 @@
 package core.fields;
 
-import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.editable;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.switchTo;
 
@@ -17,26 +15,14 @@ public class Input {
         $x("//*[text()[normalize-space() = '"+field+"']]/..//input").setValue(value);
     }
 
-    private void serviceInputField(String field, String value, int milliseconds) {
-        sleep(milliseconds);
-        $x("//*[text()[normalize-space() = '"+field+"']]/..//input").should(visible, editable).clear();
-        $x("//*[text()[normalize-space() = '"+field+"']]/..//input").setValue(value);
-    }
-
     private void serviceInputField(String field, String value, String index) {
-        $x("(//*[text()[normalize-space() = '"+field+"']]/..//input)["+index+"]").should(visible, editable).clear();
-        $x("(//*[text()[normalize-space() = '"+field+"']]/..//input)["+index+"]").setValue(value);
-    }
-
-    private void serviceInputField(String field, String value, int milliseconds, String index) {
-        sleep(milliseconds);
         $x("(//*[text()[normalize-space() = '"+field+"']]/..//input)["+index+"]").should(visible, editable).clear();
         $x("(//*[text()[normalize-space() = '"+field+"']]/..//input)["+index+"]").setValue(value);
     }
 
     private void serviceInputIframe(String field, String value) {
         $x("//*[text()[normalize-space() = '"+field+"']]/preceding-sibling::div[@class='tox tox-tinymce']" +
-                "/descendant::iframe").should(Condition.exist);
+                "/descendant::iframe").should(exist);
         switchTo().frame($x("//*[text()[normalize-space() = '"+field+"']]/preceding-sibling::div[@class='tox tox-tinymce']" +
                 "/descendant::iframe"));
         $x("//body/p").should(editable).setValue(value);
@@ -57,18 +43,6 @@ public class Input {
     }
 
     /**
-     * === Заполнение уникального поля ===
-     * @param field - Наименование поля
-     * @param value - Заполнение поля желаемым значением
-     * @param milliseconds - Ожидание перед началом выполнения метода
-     */
-    @Step(value = "Заполняем поле {field} значением {value}")
-    public Input inputValueField(String field, String value, int milliseconds) {
-        serviceInputField(field, value, milliseconds);
-        return this;
-    }
-
-    /**
      * === Заполнение повторяющегося поля ===
      * @param field - Наименование поля
      * @param value - Заполнение поля желаемым значением
@@ -77,19 +51,6 @@ public class Input {
     @Step(value = "Заполняем поле {field} значением {value} с позицией в DOM {index}")
     public Input inputValueField(String field, String value, String index) {
         serviceInputField(field, value, index);
-        return this;
-    }
-
-    /**
-     * === Заполнение повторяющегося поля ===
-     * @param field - Наименование поля
-     * @param value - Заполнение поля желаемым значением
-     * @param milliseconds - Ожидание перед началом выполнения метода
-     * @param index - Позиция поля в DOM
-     */
-    @Step(value = "Заполняем поле {field} значением {value} с позицией в DOM {index}")
-    public Input inputValueField(String field, String value, int milliseconds, String index) {
-        serviceInputField(field, value, milliseconds, index);
         return this;
     }
 

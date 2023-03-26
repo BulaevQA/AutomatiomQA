@@ -15,12 +15,12 @@ public class AuthTestManager extends BrowserConfig {
     @DisplayName("Auth manager test")
     public void authTest() {
         // Открываем портал и авторизуемся
-        openLink.openUrl(url);
+        openLink.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Войти");
         click.clickButton("«Госуслуги»");
-        input.inputValueField("Телефон / Email / СНИЛС", login);
-        input.inputValueField("Пароль", password);
+        input.inputValueField("Телефон / Email / СНИЛС", testValues.login);
+        input.inputValueField("Пароль", testValues.password);
         click.clickButton("Войти");
         click.clickButton("Индивидуальный предприниматель");
         // Делаем ассерт для подтверждения корректности теста
