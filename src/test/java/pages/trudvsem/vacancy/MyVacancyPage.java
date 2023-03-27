@@ -17,33 +17,21 @@ public class MyVacancyPage {
             confirmDeleteVacancy = $x("(//div[@class='modal__content'])/..//button[text()='Удалить']"),
             foundCandidateQuestion = $x("//div[@class='modal__content']//button[text()='Да']");
 
-    /**
-     === Получение наименование вакансии ===
-     */
     @Step(value = "Получение наименования вакансии")
     public String vacancyName() {
         return vacancyNameCheck.should(exist, visible).getText();
     }
 
-    /**
-     === Получение статуса модерации вакансии ===
-     */
     @Step(value = "Статус вакансии Ожидает модерации")
     public String statusWaitForModeration() {
        return statusWaitForModeration.should(exist, visible).getText().trim();
     }
 
-    /**
-     === Получение статуса модерации вакансии ===
-     */
     @Step(value = "Статус вакансии Одобрена")
     public String statusApproved() {
         return statusApproved.should(exist, visible).getText().trim();
     }
 
-    /**
-     === Метод удаления вакансии ===
-     */
     @Step(value = "Процесс удаления вакансии")
     public void deleteVacancy() {
         meatBalls.serviceMeatBalls();

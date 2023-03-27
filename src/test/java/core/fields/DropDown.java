@@ -5,6 +5,8 @@ import com.codeborne.selenide.SelenideElement;
 import helpers.other.ElementCollections;
 import io.qameta.allure.Step;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$$x;
@@ -14,62 +16,64 @@ public class DropDown {
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
     private void serviceInputDropDown(String select, String value) {
+        final SelenideElement optionExist = $x("//div[@class='dropdown-menu show']//div[@class='inner show']" +
+                "//a//span[text()='"+value+"']");
         sleep(1000);
-        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button[@aria-expanded='false']")
-                .should(visible, enabled).click();
-        $x("//div[@class='dropdown-menu show']//input").should(visible).clear();
-        $x("//div[@class='dropdown-menu show']//input").should(editable).setValue(value);
+        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button").should(exist, visible, enabled).click();
+        $x("//div[@class='dropdown-menu show']").should(exist, visible);
+        $x("//div[@class='dropdown-menu show']//input").should(visible, editable).clear();
+        $x("//div[@class='dropdown-menu show']//input").should(visible, editable).setValue(value);
         sleep(1000);
-        if (!serviceCheckDropDownOptions(select, value)) {
-            $x("//div[@class='dropdown-menu show']//*[@data-action='add-item']").should(visible, enabled).click();
+        if(optionExist.exists()) {
+            $x("//div[@class='dropdown-menu show']//div[@class='inner show']//a//span[text()='"+value+"']")
+                    .should(exist, editable).click();
         } else {
-            $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//select").should(exist).selectOption(value);
+            $x("//div[@class='dropdown-menu show']//*[@data-action='add-item']").should(exist, visible).click();
         }
     }
 
     private void serviceInputDropDown(String select, String value, String index) {
+        final SelenideElement optionExist = $x("//div[@class='dropdown-menu show']//div[@class='inner show']" +
+                "//a//span[text()='"+value+"']");
         sleep(1000);
-        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button[@aria-expanded='false'])["+index+"]")
-                .should(visible, enabled).click();
-        $x("//div[@class='dropdown-menu show']//input").should(visible).clear();
-        $x("//div[@class='dropdown-menu show']//input").should(editable).setValue(value);
+        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button)["+index+"]")
+                .should(exist, visible, enabled).click();
+        $x("//div[@class='dropdown-menu show']").should(exist, visible);
+        $x("//div[@class='dropdown-menu show']//input").should(visible, editable).clear();
+        $x("//div[@class='dropdown-menu show']//input").should(visible, editable).setValue(value);
         sleep(1000);
-        if (!serviceCheckDropDownOptions(select, value)) {
-            $x("//div[@class='dropdown-menu show']//*[@data-action='add-item']").should(visible, enabled).click();
+        if(optionExist.exists()) {
+            $x("//div[@class='dropdown-menu show']//div[@class='inner show']//a//span[text()='"+value+"']")
+                    .should(exist, editable).click();
         } else {
-            $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//select)["+index+"]")
-                    .should(exist).selectOption(value);
+            $x("//div[@class='dropdown-menu show']//*[@data-action='add-item']").should(exist, visible).click();
         }
     }
 
-    private boolean serviceCheckDropDownOptions(String select, String value) {
-       return  $x("//*[text()[normalize-space() = '"+select+"']]/..//select[@class='select__control']" +
-               "//option[text()[normalize-space() = '"+value+"']]").exists();
+    private void serviceSelectDropDown(String select, String value) {
+        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button").should(exist, visible, enabled).click();
+        $x("//div[@class='dropdown-menu show']").should(exist, visible);
+        $x("//div[@class='dropdown-menu show']//div[@class='inner show']//a//span[text()='"+value+"']")
+                .should(exist, editable).click();
     }
 
-    private void serviceSelectDropDown(String select, String options) {
-        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button[@aria-expanded='false']")
-                .should(visible, enabled).click();
-        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//select").should(exist).selectOption(options);
-    }
-
-    private void serviceSelectDropDown(String select, String options, String index) {
-        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button[@aria-expanded='false'])["+index+"]")
-                .should(visible, enabled).click();
-        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//select)["+index+"]")
-                .should(exist).selectOption(options);
+    private void serviceSelectDropDown(String select, String value, String index) {
+        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button").should(exist, visible, enabled).click();
+        $x("//div[@class='dropdown-menu show'])["+index+"]").should(exist, visible);
+        $x("//div[@class='dropdown-menu show']//div[@class='inner show']//a//span[text()='"+value+"']")
+                .should(exist, editable).click();
     }
 
     private void serviceRandomDropDown(String select) {
-        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button[@aria-expanded='false']")
-                .should(visible, enabled).click();
+        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button")
+                .should(exist, visible, enabled).click();
         new ElementCollections().randomElementCollectionClick(
                 $$x("//div[@class='dropdown-menu show']//a[not(contains(@class, 'active'))]"));
     }
 
     private void serviceRandomDropDown(String select, String index) {
-        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button[@aria-expanded='false'])["+index+"]")
-                .should(visible, enabled).click();
+        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button)["+index+"]")
+                .should(exist, visible, enabled).click();
         new ElementCollections().randomElementCollectionClick
                 ($$x("//div[@class='dropdown-menu show']//a[not(contains(@class, 'active'))]"));
     }

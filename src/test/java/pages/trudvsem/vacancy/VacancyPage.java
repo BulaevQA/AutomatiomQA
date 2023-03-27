@@ -19,38 +19,42 @@ public class VacancyPage {
             contactPerson = $x("//*[text()[normalize-space() = 'Контактное лицо:']]/following-sibling::dd"),
             vacancyDate = $x("//time[@data-content='published-date']");
 
+    @Step(value = "Получение наименования компании")
     public String getCompany() {
         return companyName.should(exist, visible).getText().trim().equals("Индивидуальный предприниматель "
-                + testValues.myName) ? testValues.companyName : "Наименование компании не соответсвует ожидаемому";
+                + testValues.myName) ? testValues.companyName : "Наименование компании не соответствует ожидаемому";
     }
 
+    @Step(value = "Получение наименования вакансии")
     public String getVacancyName() {
         return vacancyName.should(exist, visible).getText().trim();
     }
 
+    @Step(value = "Получение профессии компании")
     public String getProfession() {
         return profession.should(exist, visible).getText().trim();
     }
 
+    @Step(value = "Получение заработной платы")
     public String getSalary() {
         return salary.should(exist, visible).getText().trim();
     }
 
+    @Step(value = "Получение обязанностей вакансии")
     public String getJobResponsibilities() {
         return jobResponsibilities.should(exist, visible).getText().trim();
     }
 
+    @Step(value = "Получение требований вакансии")
     public String getJobRequirements() {
         return jobRequirements.should(exist, visible).getText().trim();
     }
 
+    @Step(value = "Получение контакнтого лица вакансии")
     public String getContactPerson() {
         return contactPerson.should(exist, visible).getText().trim();
     }
 
-    /**
-     === Получение даты создания из карточки вакансии ===
-     */
     @Step(value = "Получение даты создания вакансии")
     public String getVacancyDate() {
         return vacancyDate.should(exist, visible).getAttribute("datetime");
