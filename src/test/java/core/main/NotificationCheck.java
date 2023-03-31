@@ -11,10 +11,10 @@ public class NotificationCheck {
     private final SelenideElement notification = $x("//div[@class='notifications__card-title']");
 
     /**
-     === Метод проверки отображения уведомления
+     * === Метод проверки отображения уведомления
      */
     @Step(value = "Проверка всплывающего уведомления")
-    public boolean notificationCheck() {
+    public boolean notification() {
         return notification.should(appear).exists();
     }
 

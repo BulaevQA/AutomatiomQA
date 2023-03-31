@@ -1,6 +1,5 @@
 package core.constructor;
 
-import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
@@ -10,25 +9,28 @@ public class SelectLanguages {
 
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
-    private void serviceSelectLanguages(String language, String options) {
-        $x("//*[text()='Владение языками']/following-sibling::div//button[not(contains(@class, 'button'))]" +
-                "[not(contains(@title, 'Базовый'))]").should(visible, enabled).click();
-        $x("//*[text()='Владение языками']/following-sibling::div//select[not(contains(@class, 'button'))]" +
-                "[not(contains(@id, 'know'))]").should(exist).selectOption(language);
-        $x("//*[text()='Владение языками']/following-sibling::div//button[@title='Базовый']").should(visible, enabled).click();
-        $x("//*[text()='Владение языками']/following-sibling::div//button[@title='Базовый']" +
-                "/..//select").should(exist).selectOption(options);
+    private void serviceSelectLanguages(String language, String lvl) {
+        $x("//div[@*='languages']//fieldset//button[not(contains(@title, 'Базовый'))]").should(visible, enabled).click();
+        $x("//div[@class='dropdown-menu show']").should(exist, visible);
+        $x("//div[@class='dropdown-menu show']//input").should(visible, editable).setValue(language);
+        $x("//div[@class='dropdown-menu show']//div[@class='inner show']//a//span[text()='"+language+"']")
+                .should(exist, editable).click();
+        $x("//div[@*='languages']//fieldset//button[contains(@title, 'Базовый')]").should(visible, enabled).click();
+        $x("//div[@class='dropdown-menu show']").should(exist, visible);
+        $x("//div[@class='dropdown-menu show']//span[text()='"+lvl+"']").should(exist, visible).click();
     }
 
-    private void serviceSelectLanguages(String language, String options, String index) {
-        $x("(//*[text()='Владение языками']/following-sibling::div//button[not(contains(@class, 'button'))]" +
-                "[not(contains(@title, 'Базовый'))])["+index+"]").should(visible, enabled).click();
-        $x("(//*[text()='Владение языками']/following-sibling::div//select[not(contains(@class, 'button'))]" +
-                "[not(contains(@id, 'know'))])[not(contains(@name, 'proficiency-level'))]" +
-                "["+index+"]").should(exist).selectOption(language);
-        $x("//*[text()='Владение языками']/following-sibling::div//button[@title='Базовый']").should(visible, enabled).click();
-        $x("//*[text()='Владение языками']/following-sibling::div//button[@title='Базовый']" +
-                "/..//select").should(exist).selectOption(options);
+    private void serviceSelectLanguages(String language, String lvl, String index) {
+        $x("(//div[@*='languages']//fieldset//button[not(contains(@title, 'Базовый'))])["+index+"]")
+                .should(visible, enabled).click();
+        $x("//div[@class='dropdown-menu show']").should(exist, visible);
+        $x("//div[@class='dropdown-menu show']//input").should(visible, editable).setValue(language);
+        $x("//div[@class='dropdown-menu show']//div[@class='inner show']//a//span[text()='"+language+"']")
+                .should(exist, editable).click();
+        $x("//div[@*='languages']//fieldset//button[contains(@title, 'Базовый')]["+index+"]")
+                .should(visible, enabled).click();
+        $x("//div[@class='dropdown-menu show']").should(exist, visible);
+        $x("//div[@class='dropdown-menu show']//span[text()='"+lvl+"']").should(exist, visible).click();
     }
 
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\

@@ -23,8 +23,8 @@ public class Input {
     private void serviceInputIframe(String field, String value) {
         $x("//*[text()[normalize-space() = '"+field+"']]/preceding-sibling::div[@class='tox tox-tinymce']" +
                 "/descendant::iframe").should(exist);
-        switchTo().frame($x("//*[text()[normalize-space() = '"+field+"']]/preceding-sibling::div[@class='tox tox-tinymce']" +
-                "/descendant::iframe"));
+        switchTo().frame($x("//*[text()[normalize-space() = '"+field+"']]/preceding-sibling::div" +
+                "[@class='tox tox-tinymce']/descendant::iframe"));
         $x("//body/p").should(editable).setValue(value);
         switchTo().defaultContent();
     }

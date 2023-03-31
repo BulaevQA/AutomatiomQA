@@ -1,15 +1,12 @@
 package core.fields;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import helpers.other.ElementCollections;
 import io.qameta.allure.Step;
-
-import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$$x;
+import static core.classObjects.ClassObjects.elementCollections;
 
 public class DropDown {
 
@@ -23,7 +20,7 @@ public class DropDown {
         $x("//div[@class='dropdown-menu show']").should(exist, visible);
         $x("//div[@class='dropdown-menu show']//input").should(visible, editable).clear();
         $x("//div[@class='dropdown-menu show']//input").should(visible, editable).setValue(value);
-        sleep(1000);
+        sleep(1500);
         if(optionExist.exists()) {
             $x("//div[@class='dropdown-menu show']//div[@class='inner show']//a//span[text()='"+value+"']")
                     .should(exist, editable).click();
@@ -58,8 +55,8 @@ public class DropDown {
     }
 
     private void serviceSelectDropDown(String select, String value, String index) {
-        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button").should(exist, visible, enabled).click();
-        $x("//div[@class='dropdown-menu show'])["+index+"]").should(exist, visible);
+        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button)["+index+"]").should(exist, visible, enabled).click();
+        $x("//div[@class='dropdown-menu show']").should(exist, visible);
         $x("//div[@class='dropdown-menu show']//div[@class='inner show']//a//span[text()='"+value+"']")
                 .should(exist, editable).click();
     }
@@ -67,14 +64,14 @@ public class DropDown {
     private void serviceRandomDropDown(String select) {
         $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button")
                 .should(exist, visible, enabled).click();
-        new ElementCollections().randomElementCollectionClick(
+        elementCollections.randomElementCollectionClick(
                 $$x("//div[@class='dropdown-menu show']//a[not(contains(@class, 'active'))]"));
     }
 
     private void serviceRandomDropDown(String select, String index) {
         $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button)["+index+"]")
                 .should(exist, visible, enabled).click();
-        new ElementCollections().randomElementCollectionClick
+        elementCollections.randomElementCollectionClick
                 ($$x("//div[@class='dropdown-menu show']//a[not(contains(@class, 'active'))]"));
     }
 

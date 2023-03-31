@@ -1,6 +1,5 @@
 package helpers.owner;
 
-import helpers.owner.OwnerAPI;
 import org.aeonbits.owner.ConfigFactory;
 
 public class OwnerData {

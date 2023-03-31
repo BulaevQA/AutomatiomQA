@@ -2,7 +2,6 @@ package core.main;
 
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.Selenide.switchTo;
 
 public class SwitchWindow {

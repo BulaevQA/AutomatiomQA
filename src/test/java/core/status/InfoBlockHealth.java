@@ -17,6 +17,6 @@ public class InfoBlockHealth {
      */
     @Step(value = "Проверка наличия упавших инфоблоков на странице")
     public boolean errorInfoBlock() {
-        return errorInfoBlock.should(visible).exists();
+        return !errorInfoBlock.exists();
     }
 }

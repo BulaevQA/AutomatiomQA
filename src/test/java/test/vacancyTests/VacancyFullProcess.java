@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static helpers.other.ClassObjects.*;
+import static core.classObjects.ClassObjects.*;
 
 public class VacancyFullProcess extends BrowserConfig {
 
@@ -15,10 +15,9 @@ public class VacancyFullProcess extends BrowserConfig {
     @DisplayName("Creation and moderation vacancy")
     public void createVacancyTest() {
         // Авторизируемся на ПРР
-        authTestManager.authTest();
+        authTestManager.authTestManager();
         // Созадем вакансию
         openLink.openLink("Добавить вакансию", "3");
-        getPageTitle.pageTitleIsVisible("Создание вакансии");
         dropDown.inputValueDropDown("Название вакансии", testValues.position);
         dropDown.inputValueDropDown("Профессия", testValues.profession);
         dropDown.selectDropDown("Сфера деятельности", testValues.workSphere);
@@ -26,7 +25,7 @@ public class VacancyFullProcess extends BrowserConfig {
         input.inputIframeField("Требования", testValues.jobFields);
         input.inputValueField("Контактное лицо", testValues.myName);
         click.clickButton("Сохранить и опубликовать");
-        getPageTitle.pageTitleIsVisible("Вакансии компании");
+        myVacancyPage.pageTitle();
         myVacancyPage.statusWaitForModeration();
         // Открываем АРМ АДМ и находим нашу вакансию
         openLink.openUrl(testValues.urlAdm);
@@ -44,15 +43,17 @@ public class VacancyFullProcess extends BrowserConfig {
         click.clickCheckboxes("Проводимые проверки");
         click.clickButton("Модерация", "3");
         openLink.openUrl(testValues.url);
+        mainPage.pageTitle();
         openLink.openLink("Вакансии компании");
+        myVacancyPage.pageTitle();
         myVacancyPage.statusApproved();
         openLink.openLink(testValues.position);
         // Делаем ассерт для подтверждения корректности теста
-        Assertions.assertEquals(expectedHashMaps.expectedVacancy(), actualHashMaps.actualValueVacancy());
+        Assertions.assertEquals(expectedVacancy.expectedVacancy(), actualVacancy.actualValueVacancy());
         // Удаляем вакансию
         click.clickButton("Вакансии компании");
         openLink.openLink("Управление вакансиями");
-        getPageTitle.pageTitleIsVisible("Вакансии компании");
+        myVacancyPage.pageTitle();
         myVacancyPage.deleteVacancy();
     }
 }

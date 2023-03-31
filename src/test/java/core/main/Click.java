@@ -1,6 +1,5 @@
 package core.main;
 
-import com.codeborne.selenide.Condition;
 import helpers.other.ElementCollections;
 import io.qameta.allure.Step;
 
@@ -28,7 +27,7 @@ public class Click {
     private void serviceClickCheckboxes(String titleName) {
         $x("//*[normalize-space(text())='"+titleName+"']").should(visible);
         new ElementCollections().elementsCollectionsClick($$x("//*[normalize-space(text())='"+titleName+"']" +
-                "/..//div//div//label"));
+                "/following-sibling::div//label"));
     }
 
     private void serviceRadioButton(String radioButton) {

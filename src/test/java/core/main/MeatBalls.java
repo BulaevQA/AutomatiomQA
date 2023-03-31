@@ -1,18 +1,17 @@
 package core.main;
 
-import com.codeborne.selenide.Condition;
+import base.BrowserConfig;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class MeatBalls {
+public class MeatBalls extends BrowserConfig {
 
     /**
      === XPath для клика на митбол ===
      */
-    private final SelenideElement meatBalls = $x("(//div[@class='row row_middle']//div[@class='col-auto']" +
-            "//button[@data-toggle='dropdown'])[last()]");
+    private final SelenideElement meatBalls = $x("//div[@class='col-auto']//button[@data-toggle='dropdown']");
 
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\
 

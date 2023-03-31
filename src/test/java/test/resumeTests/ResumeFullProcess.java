@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static helpers.other.ClassObjects.*;
+import static core.classObjects.ClassObjects.*;
 
 public class ResumeFullProcess extends BrowserConfig {
 
@@ -15,18 +15,18 @@ public class ResumeFullProcess extends BrowserConfig {
     @DisplayName("Creation and moderation resume")
     public void resumeModerationTest() {
         //Авторизируемся на портал
-        authTestCv.authTest();
+        authTestCv.authTestCv();
         //Создаем резюме
         openLink.openLink("Создать резюме");
-        getPageTitle.pageTitleIsVisible("Создание резюме");
+        resumeConstructorPage.pageTitle();
         input.inputValueField("Желаемая должность", testValues.position);
         dropDown.inputValueDropDown("Профессия", testValues.profession);
         dropDown.selectDropDown("Сфера деятельности", testValues.workSphere);
         input.inputValueField("Заработная плата (руб.)", testValues.salary);
         toggleSwitch.switchToggle("Есть опыт работы");
         click.clickButton("Сохранить и опубликовать");
-        notificationCheck.notificationCheck();
-        getPageTitle.pageTitleIsVisible("Мои резюме");
+        notificationCheck.notification();
+        myResumePage.pageTitle();
         myResumePage.statusWaitForModeration();
         // Открываем АРМ АДМ и находим наше резюме
         openLink.openUrl(testValues.urlAdm);
@@ -44,17 +44,16 @@ public class ResumeFullProcess extends BrowserConfig {
         click.clickCheckboxes("Проводимые проверки");
         click.clickButton("Модерация", "3");
         openLink.openUrl(testValues.url);
-        getPageTitle.pageTitleIsVisible("Мой кабинет");
+        mainPage.pageTitle();
         openLink.openLink("Резюме");
-        getPageTitle.pageTitleIsVisible("Мои резюме");
         myResumePage.statusApproved();
         openLink.openLink(testValues.position);
         // Делаем ассерт для подтверждения корректности теста
-        Assertions.assertEquals(expectedHashMaps.expectedResume(), actualHashMaps.actualValueResume());
+        Assertions.assertEquals(expectedResume.expectedResume(), actualResume.actualValueResume());
         // Удаляем резюме
         click.clickButton("Мои резюме");
         openLink.openLink("Список моих резюме");
-        getPageTitle.pageTitleIsVisible("Мои резюме");
+        myResumePage.pageTitle();
         myResumePage.deleteResume();
     }
 }
