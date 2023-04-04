@@ -125,7 +125,7 @@ public class DropDown {
      * @param select  - Наименование поля
      * @param options - Имя значения в выпадающем списке
      */
-    @Step(value = "Выбираем в селекте \"{select}\" значение \"{value}\"")
+    @Step(value = "Выбираем в селекте \"{select}\" значение \"{options}\"")
     public DropDown selectDropDown(String select, String options) {
         serviceSelectDropDown(select, options);
         return this;
@@ -136,7 +136,7 @@ public class DropDown {
      * @param select - Наименование поля
      * @param index  - Позиция поля в DOM
      */
-    @Step(value = "Выбираем в селекте \"{select}\" значение \"{value}\"")
+    @Step(value = "Выбираем в селекте \"{select}\" значение \"{options}\"")
     public DropDown selectDropDown(String select, String options, String index) {
         serviceSelectDropDown(select, options, index);
         return this;
@@ -146,7 +146,7 @@ public class DropDown {
      * === Заполнение уникального поля типа "Селект" с выбором случайного значения ===
      * @param select - Наименование поля
      */
-    @Step(value = "Выбираем в селекте \"{select}\" значение \"{value}\"")
+    @Step(value = "Выбираем в селекте \"{select}\" случайное значение ")
     public DropDown selectRandomIntoDropDown(String select) {
         serviceRandomDropDown(select);
         return this;

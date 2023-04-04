@@ -25,7 +25,7 @@ public class EducationsProgramsTest extends BrowserConfig {
         infoBlockHealth.errorInfoBlock();
         switchWindow.switchToActiveWindow();
         dropDown.selectDropDown("Социальная категория", "Безработные граждане, " +
-                "зарегистрированные в органах службы занятости", "5");
+                "зарегистрированные в органах службы занятости", "2");
         click.clickButton("Применить");
         educationProgramsPage.pageTitle();
     }
