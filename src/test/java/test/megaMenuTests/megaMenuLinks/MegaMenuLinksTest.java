@@ -16,6 +16,7 @@ public class MegaMenuLinksTest extends BrowserConfig {
     @Tag("MegaMenu")
     @Epic(value = "Тесты Мега-меню")
     @Description(value = "Тест страницы мега-меню")
+    @DisplayName("MegaMenuTest")
     public void megaMenuLinksTest() {
         openLink.openUrl(testValues.url);
         click.clickButton("Все сервисы");
