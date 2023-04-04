@@ -11,10 +11,10 @@ import static core.classObjects.ClassObjects.*;
 
 public class SecurityTest extends BrowserConfig {
 
-    @Epic(value = "Тесты Мега-меню")
     @Test
-    @Description(value = "Тест страницы мега-меню")
     @Tag("MegaMenu")
+    @Epic(value = "Тесты Мега-меню")
+    @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void security() {
         openLink.openUrl(testValues.url);
@@ -23,6 +23,6 @@ public class SecurityTest extends BrowserConfig {
         switchWindow.switchToActiveWindow();
         openLink.openLink("Меры безопасности");
         infoBlockHealth.errorInfoBlock();
-        securityPage.checkPageTitle();
+        securityPage.pageTitle();
     }
 }

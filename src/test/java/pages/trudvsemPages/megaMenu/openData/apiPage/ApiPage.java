@@ -1,6 +1,7 @@
 package pages.trudvsemPages.megaMenu.openData.apiPage;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
@@ -11,9 +12,10 @@ public class ApiPage {
     private final SelenideElement pageTitle = $x("//h1[@class][text()[normalize-space()='API «Работа России»']]");
 
     /**
-     === Получение заголовка страницы ===
+     === Провека заголовка страницы ===
      */
-    public String getTitlePage() {
-        return pageTitle.should(exist, visible).getText().trim();
+    @Step(value = "Проверка заголовка страницы")
+    public boolean pageTitle() {
+        return pageTitle.should(visible).exists();
     }
 }

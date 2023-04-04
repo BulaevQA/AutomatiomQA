@@ -11,10 +11,10 @@ import static core.classObjects.ClassObjects.*;
 
 public class EducationsProgramsTest extends BrowserConfig {
 
-    @Epic(value = "Тесты Мега-меню")
     @Test
-    @Description(value = "Тест страницы мега-меню")
     @Tag("MegaMenu")
+    @Epic(value = "Тесты Мега-меню")
+    @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void educationPrograms() {
         openLink.openUrl(testValues.url);
@@ -27,6 +27,6 @@ public class EducationsProgramsTest extends BrowserConfig {
         dropDown.selectDropDown("Социальная категория", "Безработные граждане, " +
                 "зарегистрированные в органах службы занятости", "5");
         click.clickButton("Применить");
-        educationProgramsPage.checkPageTitle();
+        educationProgramsPage.pageTitle();
     }
 }

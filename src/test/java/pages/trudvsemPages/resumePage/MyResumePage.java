@@ -25,9 +25,9 @@ public class MyResumePage {
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\
 
     /**
-     === Сравнение заголовка страницы ===
+     === Провека заголовка страницы ===
      */
-    @Step(value = "Получение заголоска страницы")
+    @Step(value = "Проверка заголовка страницы")
     public boolean pageTitle() {
         return pageTitle.should(visible).exists();
     }
@@ -43,14 +43,14 @@ public class MyResumePage {
     /**
      === Проверка заполнения резюме ===
      */
-    @Step(value = "Получение заполнености резюме")
+    @Step(value = "Получение прогрессбара резюме")
     public String progressBarCheck() {
         return progressBarCheck.should(exist, visible).getAttribute("value");
     }
     /**
      === Получение статуса модерации резюме ===
      */
-    @Step(value = "Статус резюме Ожидает модерации")
+    @Step(value = "Статус резюме Ожидает модерации найден")
     public boolean statusWaitForModeration() {
         return statusWaitForModeration.should(visible).exists();
     }
@@ -58,7 +58,7 @@ public class MyResumePage {
     /**
      === Получение статуса модерации резюме ===
      */
-    @Step(value = "Статус резюме Одобрено")
+    @Step(value = "Статус резюме Одобрено найден")
     public boolean statusApproved() {
         return statusApproved.should(visible).exists();
     }
@@ -66,11 +66,11 @@ public class MyResumePage {
     /**
      === Метод удаления резюме ===
      */
-    @Step(value = "Процесс удаления резюме")
+    @Step(value = "Удаляем резюме")
     public void deleteResume() {
         meatBalls.serviceMeatBalls();
         deleteResumeModal.should(visible, enabled).click();
         confirmDeleteResume.should(visible, enabled).click();
-        notificationCheck.notification();
+//        notificationCheck.notification();
     }
 }

@@ -14,7 +14,7 @@ public class Search {
      === Поисковая строка ===
      * @param value - Искомое значение
      */
-    @Step(value = "Поиск значения {value} в поисковой выдаче")
+    @Step(value = "Поиск значения \"{value}\" в поисковой выдаче")
     public Search searchField(String value) {
         search.should(exist, enabled).clear();
         search.should(editable).setValue(value);

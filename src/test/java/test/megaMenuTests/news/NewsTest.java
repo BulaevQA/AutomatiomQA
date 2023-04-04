@@ -11,10 +11,10 @@ import static core.classObjects.ClassObjects.*;
 
 public class NewsTest extends BrowserConfig {
 
-    @Epic(value = "Тесты Мега-меню")
     @Test
-    @Description(value = "Тест страницы мега-меню")
     @Tag("MegaMenu")
+    @Epic(value = "Тесты Мега-меню")
+    @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void news() {
         openLink.openUrl(testValues.url);
@@ -23,6 +23,6 @@ public class NewsTest extends BrowserConfig {
         switchWindow.switchToActiveWindow();
         openLink.openLink("Новости");
         infoBlockHealth.errorInfoBlock();
-        newsPage.checkPageTitle();
+        newsPage.pageTitle();
     }
 }

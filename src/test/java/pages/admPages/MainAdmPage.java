@@ -24,7 +24,7 @@ public class MainAdmPage {
      === Клик на кнопку "Модерация" у резюме/вакансии (поиск осуществялется по наименованию вакансии/резюме) ===
      * @param positionName - наименование вакансии/резюме
      */
-    @Step(value = "Клик на кнопку Модерация с поиском по наименованию сущности")
+    @Step(value = "Клик на кнопку Модерация у сущности \"{positionName}\"")
     public MainAdmPage moderationObject(String positionName) {
         serviceModerationObject(positionName);
         return this;

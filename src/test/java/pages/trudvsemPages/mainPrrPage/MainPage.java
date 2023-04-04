@@ -1,10 +1,12 @@
 package pages.trudvsemPages.mainPrrPage;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
+import static core.classObjects.ClassObjects.elementCollections;
 
 public class MainPage {
 
@@ -15,12 +17,15 @@ public class MainPage {
             megaMenuUser = $x("//button[@id='megaMenuDropdownUser']"),
             myName = $x("//span[@class='mega-menu__user-name']"),
             myCompanyName = $x("//span[@class='mega-menu__user-text']");
+
+    private final ElementsCollection actualMegaMenu = $$x("//div[@class='mega-menu__content']//a");
+
     ///////////////// Методы взаимодействя со страницей \\\\\\\\\\\\\\\\\\\
 
     /**
-     === Сравнение заголовка страницы ===
+     === Провека заголовка страницы ===
      */
-    @Step(value = "Получение заголоска страницы")
+    @Step(value = "Проверка заголовка страницы")
     public boolean pageTitle() {
         return pageTitle.should(visible).exists();
     }
@@ -28,7 +33,7 @@ public class MainPage {
     /**
      === Получение имени соискателя ===
      */
-    @Step(value = "Проверка имени соискателя")
+    @Step(value = "Получение имени соискателя")
     public String myNameCheck() {
         megaMenuUser.should(visible, enabled).click();
         switchTo().activeElement();
@@ -38,10 +43,18 @@ public class MainPage {
     /**
      === Получение наименования компании ===
      */
-    @Step(value = "Проверка наименования организации")
+    @Step(value = "Получение наименования организации")
     public String myCompanyCheck() {
         megaMenuUser.should(visible, enabled).click();
         switchTo().activeElement();
         return myCompanyName.should(exist, visible).getText();
+    }
+
+    /**
+     === Получение актульных ссылок в мегаменю ===
+     */
+    @Step(value = "Получение актуальных ссылок в мегаменю")
+    public String checkMegaMenu() {
+        return elementCollections.checkTextCollection(actualMegaMenu);
     }
 }

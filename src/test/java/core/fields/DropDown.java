@@ -1,6 +1,5 @@
 package core.fields;
 
-import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
@@ -13,49 +12,47 @@ public class DropDown {
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
     private void serviceInputDropDown(String select, String value) {
-        final SelenideElement optionExist = $x("//div[@class='dropdown-menu show']//div[@class='inner show']" +
-                "//a//span[text()='"+value+"']");
-        sleep(1000);
-        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button").should(exist, visible, enabled).click();
-        $x("//div[@class='dropdown-menu show']").should(exist, visible);
+        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button").should(visible, enabled).click();
         $x("//div[@class='dropdown-menu show']//input").should(visible, editable).clear();
         $x("//div[@class='dropdown-menu show']//input").should(visible, editable).setValue(value);
-        sleep(1500);
-        if(optionExist.exists()) {
-            $x("//div[@class='dropdown-menu show']//div[@class='inner show']//a//span[text()='"+value+"']")
-                    .should(exist, editable).click();
-        } else {
-            $x("//div[@class='dropdown-menu show']//*[@data-action='add-item']").should(exist, visible).click();
-        }
+        $x("//div[@class='dropdown-menu show']//div[@class='inner show']//a//span[text()='"+value+"']")
+                .should(appear).click();
     }
 
     private void serviceInputDropDown(String select, String value, String index) {
-        final SelenideElement optionExist = $x("//div[@class='dropdown-menu show']//div[@class='inner show']" +
-                "//a//span[text()='"+value+"']");
-        sleep(1000);
         $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button)["+index+"]")
-                .should(exist, visible, enabled).click();
-        $x("//div[@class='dropdown-menu show']").should(exist, visible);
+                .should(visible, enabled).click();
         $x("//div[@class='dropdown-menu show']//input").should(visible, editable).clear();
         $x("//div[@class='dropdown-menu show']//input").should(visible, editable).setValue(value);
-        sleep(1000);
-        if(optionExist.exists()) {
-            $x("//div[@class='dropdown-menu show']//div[@class='inner show']//a//span[text()='"+value+"']")
-                    .should(exist, editable).click();
-        } else {
-            $x("//div[@class='dropdown-menu show']//*[@data-action='add-item']").should(exist, visible).click();
-        }
+        $x("//div[@class='dropdown-menu show']//div[@class='inner show']//a//span[text()='"+value+"']")
+                .should(appear).click();
+    }
+
+    private void serviceInputNewDropDown(String select, String value) {
+        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button").should(visible, enabled).click();
+        $x("//div[@class='dropdown-menu show']//input").should(visible, editable).clear();
+        $x("//div[@class='dropdown-menu show']//input").should(visible, editable).setValue(value);
+        $x("//div[@class='dropdown-menu show']//*[@data-action='add-item']").should(enabled).click();
+    }
+
+    private void serviceInputNewDropDown(String select, String value, String index) {
+        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button)["+index+"]")
+                .should(visible, enabled).click();
+        $x("//div[@class='dropdown-menu show']//input").should(visible, editable).clear();
+        $x("//div[@class='dropdown-menu show']//input").should(visible, editable).setValue(value);
+        $x("//div[@class='dropdown-menu show']//*[@data-action='add-item']").should(enabled).click();
     }
 
     private void serviceSelectDropDown(String select, String value) {
-        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button").should(exist, visible, enabled).click();
-        $x("//div[@class='dropdown-menu show']").should(exist, visible);
-        $x("//div[@class='dropdown-menu show']//div[@class='inner show']//a//span[text()='"+value+"']")
-                .should(exist, editable).click();
+        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label")
+                .should(exist, visible, enabled).click();
+        $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//option" +
+                "[text()[normalize-space() = '"+value+"']]").should(exist, enabled).click();
     }
 
     private void serviceSelectDropDown(String select, String value, String index) {
-        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button)["+index+"]").should(exist, visible, enabled).click();
+        $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label)["+index+"]")
+                .should(exist, visible, enabled).click();
         $x("//div[@class='dropdown-menu show']").should(exist, visible);
         $x("//div[@class='dropdown-menu show']//div[@class='inner show']//a//span[text()='"+value+"']")
                 .should(exist, editable).click();
@@ -82,7 +79,7 @@ public class DropDown {
      * @param select  - Наименование поля
      * @param value   - Заполняем поле этим значением
      */
-    @Step(value = "Заполняем поле {select} значением {value} и выбором значения {options}")
+    @Step(value = "Выбираем в селекте \"{select}\" значение \"{value}\"")
     public DropDown inputValueDropDown(String select, String value) {
         serviceInputDropDown(select, value);
         return this;
@@ -94,9 +91,32 @@ public class DropDown {
      * @param value   - Значение, которым заполяем поле
      * @param index   - Позиция поля в DOM
      */
-    @Step(value = "Заполняем поле {select} значением {value} с выбором {options} и позицией в DOM {index}")
+    @Step(value = "Выбираем в селекте \"{select}\" значение \"{value}\"")
     public DropDown inputValueDropDown(String select, String value, String index) {
         serviceInputDropDown(select, value, index);
+        return this;
+    }
+
+    /**
+     === Добабление нового значения селекта в справочник ===
+     * @param select  - Наименование поля
+     * @param value   - Значение, которым заполяем поле
+     */
+    @Step(value = "Выбираем в селекте \"{select}\" значение \"{value}\"")
+    public DropDown inputNewValueDropDown(String select, String value) {
+        serviceInputNewDropDown(select, value);
+        return this;
+    }
+
+    /**
+     === Добабление нового значения селекта в справочник ===
+     * @param select  - Наименование поля
+     * @param value   - Значение, которым заполяем поле
+     * @param index   - Позиция поля в DOM
+     */
+    @Step(value = "Выбираем в селекте \"{select}\" значение \"{value}\"")
+    public DropDown inputNewValueDropDown(String select, String value, String index) {
+        serviceInputNewDropDown(select, value, index);
         return this;
     }
 
@@ -105,7 +125,7 @@ public class DropDown {
      * @param select  - Наименование поля
      * @param options - Имя значения в выпадающем списке
      */
-    @Step(value = "Заполняем поле {select} c выбором {options}")
+    @Step(value = "Выбираем в селекте \"{select}\" значение \"{value}\"")
     public DropDown selectDropDown(String select, String options) {
         serviceSelectDropDown(select, options);
         return this;
@@ -116,7 +136,7 @@ public class DropDown {
      * @param select - Наименование поля
      * @param index  - Позиция поля в DOM
      */
-    @Step(value = "Заполняем поле {select} c выбором {options} и позицией в DOM {index}")
+    @Step(value = "Выбираем в селекте \"{select}\" значение \"{value}\"")
     public DropDown selectDropDown(String select, String options, String index) {
         serviceSelectDropDown(select, options, index);
         return this;
@@ -126,7 +146,7 @@ public class DropDown {
      * === Заполнение уникального поля типа "Селект" с выбором случайного значения ===
      * @param select - Наименование поля
      */
-    @Step(value = "Кликаем на поле {select} и заполняем случайным значением")
+    @Step(value = "Выбираем в селекте \"{select}\" значение \"{value}\"")
     public DropDown selectRandomIntoDropDown(String select) {
         serviceRandomDropDown(select);
         return this;
@@ -137,7 +157,7 @@ public class DropDown {
      * @param select - Наименование поля
      * @param index  - Позиция поля в DOM
      */
-    @Step(value = "Заполняем поле {select} с позицией в DOM {index}")
+    @Step(value = "Выбираем в селекте \"{select}\" значение \"{value}\"")
     public DropDown selectRandomIntoDropDown(String select, String index) {
         serviceRandomDropDown(select, index);
         return this;

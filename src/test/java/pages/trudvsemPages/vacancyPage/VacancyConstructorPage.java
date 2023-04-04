@@ -11,9 +11,9 @@ public class VacancyConstructorPage {
             pageTitle = $x("//h1[@class][text()[normalize-space()='Создание вакансии']]");
 
     /**
-     === Сравнение заголовка страницы ===
+     === Провека заголовка страницы ===
      */
-    @Step(value = "Получение заголоска страницы")
+    @Step(value = "Проверка заголовка страницы")
     public boolean pageTitle() {
         return pageTitle.should(visible).exists();
     }

@@ -11,9 +11,11 @@ import static core.classObjects.ClassObjects.*;
 
 public class CalendarTest extends BrowserConfig {
 
-    @Epic(value = "Тесты Мега-меню")
     @Test
+    @Tag("MegaMenu")
+    @Epic(value = "Тесты Мега-меню")
     @Description(value = "Тест страницы мега-меню")
+    @DisplayName("MegaMenuTest")
     public void calendar() {
         openLink.openUrl(testValues.url);
         click.clickButton("Согласен");
@@ -21,6 +23,6 @@ public class CalendarTest extends BrowserConfig {
         switchWindow.switchToActiveWindow();
         openLink.openLink("2023 год");
         infoBlockHealth.errorInfoBlock();
-        calendarPage.checkPageTitle();
+        calendarPage.pageTitle();
     }
 }

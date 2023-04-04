@@ -13,10 +13,10 @@ public class TadzhikistanPage {
             pageTitle = $x("//h1[@class]//span[text()[normalize-space()='Республика Таджикистан']]");
 
     /**
-     === Получение заголовка страницы ===
+     === Провека заголовка страницы ===
      */
-    @Step(value = "Получение заголовка страницы")
-    public boolean checkPageTitle() {
+    @Step(value = "Проверка заголовка страницы")
+    public boolean pageTitle() {
         return pageTitle.should(visible).exists();
     }
 }

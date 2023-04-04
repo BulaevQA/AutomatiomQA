@@ -2,6 +2,7 @@ package core.main;
 
 import base.BrowserConfig;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
@@ -18,6 +19,7 @@ public class MeatBalls extends BrowserConfig {
     /**
      === Метод клика на митбол ===
      */
+    @Step(value = "Клик на кнопку \"митбол\"")
     public void serviceMeatBalls() {
         meatBalls.should(exist, visible, enabled).click();
         switchTo().activeElement();

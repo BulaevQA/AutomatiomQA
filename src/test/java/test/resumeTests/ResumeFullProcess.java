@@ -1,7 +1,9 @@
 package test.resumeTests;
 
 import base.BrowserConfig;
-import org.junit.jupiter.api.Assertions;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -12,6 +14,8 @@ public class ResumeFullProcess extends BrowserConfig {
 
     @Test
     @Tag("Smoke")
+    @Epic(value = "Конструкторы")
+    @Description(value = "Тест создания, модерации и удаления резюме")
     @DisplayName("Creation and moderation resume")
     public void resumeModerationTest() {
         //Авторизируемся на портал
@@ -19,23 +23,21 @@ public class ResumeFullProcess extends BrowserConfig {
         //Создаем резюме
         openLink.openLink("Создать резюме");
         resumeConstructorPage.pageTitle();
-        input.inputValueField("Желаемая должность", testValues.position);
-        dropDown.inputValueDropDown("Профессия", testValues.profession);
-        dropDown.selectDropDown("Сфера деятельности", testValues.workSphere);
-        input.inputValueField("Заработная плата (руб.)", testValues.salary);
+        input.inputStringField("Желаемая должность", testValues.position);
+        dropDown.selectDropDown("Сфера деятельности", "Производство");
+        input.inputStringField("Заработная плата (руб.)", testValues.salary);
         toggleSwitch.switchToggle("Есть опыт работы");
         click.clickButton("Сохранить и опубликовать");
-        notificationCheck.notification();
         myResumePage.pageTitle();
         myResumePage.statusWaitForModeration();
         // Открываем АРМ АДМ и находим наше резюме
         openLink.openUrl(testValues.urlAdm);
-        input.inputValueField("Имя пользователя", testValues.loginAdm);
-        input.inputValueField("Пароль", testValues.passwordAdm);
+        input.inputStringField("Имя пользователя", testValues.loginAdm);
+        input.inputStringField("Пароль", testValues.passwordAdm);
         click.clickButton("Вход", "2");
         click.clickButton("Модерация");
         click.clickButton("Модерация резюме");
-        input.inputValueField("Дата от", testValues.currentDate);
+        input.inputStringField("Дата от", testValues.currentDate);
         click.clickButton("Применить");
         mainAdmPage.moderationObject(testValues.position);
         // Проводим положительную модерацию резюме
@@ -49,7 +51,7 @@ public class ResumeFullProcess extends BrowserConfig {
         myResumePage.statusApproved();
         openLink.openLink(testValues.position);
         // Делаем ассерт для подтверждения корректности теста
-        Assertions.assertEquals(expectedResume.expectedResume(), actualResume.actualValueResume());
+        Assertions.assertThat(actualResume.actualValueResume()).isEqualTo(expectedResume.expectedResume());
         // Удаляем резюме
         click.clickButton("Мои резюме");
         openLink.openLink("Список моих резюме");

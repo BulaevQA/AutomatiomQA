@@ -21,7 +21,7 @@ public class ToggleSwitch {
      * === Переключатели в конструкторе резюме ===
      * @param toggle - Имя переключателя
      */
-    @Step(value = "Активируем/Деативируем переключатель {toggle}")
+    @Step(value = "Активируем/Деативируем переключатель \"{toggle}\"")
     public ToggleSwitch switchToggle(String toggle) {
         serviceToggle(toggle);
         return this;

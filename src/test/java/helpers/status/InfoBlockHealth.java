@@ -1,8 +1,9 @@
-package core.status;
+package helpers.status;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -16,7 +17,7 @@ public class InfoBlockHealth {
      * === Метот поиска кранов на странице ===
      */
     @Step(value = "Проверка наличия упавших инфоблоков на странице")
-    public boolean errorInfoBlock() {
-        return !errorInfoBlock.exists();
+    public SelenideElement errorInfoBlock() {
+        return errorInfoBlock.shouldNot(exist);
     }
 }

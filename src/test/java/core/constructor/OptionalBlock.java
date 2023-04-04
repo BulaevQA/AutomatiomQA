@@ -24,7 +24,7 @@ public class OptionalBlock {
      * === Добавление опционального блока ===
      * @param block - Наименование(h2 заголовок) блока
      */
-    @Step(value = "Добавление опционального блока {block}")
+    @Step(value = "Добавление опционального блока \"{block}\"")
     public OptionalBlock addOptionalBlock(String block) {
         serviceAddOptionalBlock(block);
         return this;
@@ -34,7 +34,7 @@ public class OptionalBlock {
      * === Удаление опционального блока ===
      * @param block - Наименование(h2 заголовок) блока
      */
-    @Step(value = "Удаление опционального блока {block}")
+    @Step(value = "Удаление опционального блока \"{block}\"")
     public OptionalBlock removeOptionalBlock(String block) {
         serviceRemoveOptionalBlock(block);
         return this;

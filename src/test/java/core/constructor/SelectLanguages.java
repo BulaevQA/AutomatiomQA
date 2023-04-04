@@ -38,23 +38,23 @@ public class SelectLanguages {
     /**
      * === Заполняем поля знания языков ===
      * @param language - Значение, которым заполяем поле
-     * @param options  - Имя значения в выпадающем списке
+     * @param lvl  - Имя значения в выпадающем списке
      */
-    @Step(value = "Выбираем {value} язык с уровнем владения {options}")
-    public SelectLanguages selectLanguage(String language, String options) {
-        serviceSelectLanguages(language, options);
+    @Step(value = "Выбираем \"{language}\" с уровнем владения \"{lvl}\"")
+    public SelectLanguages selectLanguage(String language, String lvl) {
+        serviceSelectLanguages(language, lvl);
         return this;
     }
 
     /**
      * === Заполняем поля знания языков ===
      * @param language - Значение, которым заполяем поле
-     * @param options  - Имя значения в выпадающем списке
+     * @param lvl  - Имя значения в выпадающем списке
      * @param index - Позиция элемента в DOM
      */
-    @Step(value = "Выбираем {value} язык с уровнем владения {options}")
-    public SelectLanguages selectLanguage(String language, String options, String index) {
-        serviceSelectLanguages(language, options, index);
+    @Step(value = "Выбираем \"{language}\" с уровнем владения \"{lvl}\"")
+    public SelectLanguages selectLanguage(String language, String lvl, String index) {
+        serviceSelectLanguages(language, lvl, index);
         return this;
     }
 }

@@ -8,14 +8,14 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class NotificationCheck {
 
-    private final SelenideElement notification = $x("//div[@class='notifications__card-title']");
+    private final SelenideElement notification = $x("//div[@class='notifications__card-title-one']");
 
     /**
      * === Метод проверки отображения уведомления
      */
     @Step(value = "Проверка всплывающего уведомления")
-    public boolean notification() {
-        return notification.should(appear).exists();
+    public SelenideElement notification() {
+        return notification.should(appear, visible, disappear);
     }
 
 }

@@ -11,10 +11,10 @@ import static core.classObjects.ClassObjects.*;
 
 public class AboutMobileAppTest extends BrowserConfig {
 
-    @Epic(value = "Тесты Мега-меню")
     @Test
-    @Description(value = "Тест страницы мега-меню")
     @Tag("MegaMenu")
+    @Epic(value = "Тесты Мега-меню")
+    @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void aboutMobileApp() {
         openLink.openUrl(testValues.url);
@@ -23,6 +23,6 @@ public class AboutMobileAppTest extends BrowserConfig {
         switchWindow.switchToActiveWindow();
         openLink.openLink("О мобильном приложении");
         infoBlockHealth.errorInfoBlock();
-        aboutMobilePage.checkPageTitle();
+        aboutMobilePage.pageTitle();
     }
 }

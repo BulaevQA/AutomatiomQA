@@ -22,7 +22,7 @@ public class ImportFile {
      * === Загрузка фото соискателя в конструктор ===
      * @File - Задаем путь имя переменной для файла
      */
-    @Step(value = "Загружаем файл")
+    @Step(value = "Загружаем фото")
     public ImportFile uploadPhoto(String filePath) {
         File cvPhoto = new File(filePath);
         buttonPhoto.should(visible, enabled).click();

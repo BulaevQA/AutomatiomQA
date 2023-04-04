@@ -35,7 +35,7 @@ public class SelectDoubleForms {
      * @param options - Имя значения в выпадающем списке
      * @param value - Значение, которым заполяем поле
      */
-    @Step(value = "Заполняем поле {select} значением {value} c выбором {options}")
+    @Step(value = "Заполняем селект \"{select}\" значением \"{value}\" c выбором \"{options}\"")
     public SelectDoubleForms selectDoubleField(String select, String options, String value) {
         serviceDoubleFieldForms(select, options, value);
         return this;
@@ -48,7 +48,7 @@ public class SelectDoubleForms {
      * @param value   - Значение, которым заполяем поле
      * @param index   - Позиция поля в DOM
      */
-    @Step(value = "Заполняем поле {select} значением {value} c выбором {options} и позицией в DOM {index}")
+    @Step(value = "Заполняем селект \"{select}\" значением \"{value}\" c выбором \"{options}\"")
     public SelectDoubleForms selectDoubleField(String select, String options, String value, String index) {
         serviceDoubleFieldForms(select, options, value, index);
         return this;

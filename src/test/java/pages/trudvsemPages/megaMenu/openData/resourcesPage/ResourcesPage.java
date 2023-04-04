@@ -15,7 +15,7 @@ public class ResourcesPage {
      === Получение заголовка страницы ===
      */
     @Step(value = "Получение заголовка страницы")
-    public boolean checkPageTitle() {
+    public boolean pageTitle() {
         return pageTitle.should(visible).exists();
     }
 }

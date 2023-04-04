@@ -16,7 +16,8 @@ public class Input {
     }
 
     private void serviceInputField(String field, String value, String index) {
-        $x("(//*[text()[normalize-space() = '"+field+"']]/..//input)["+index+"]").should(visible, editable).clear();
+        $x("(//*[text()[normalize-space() = '"+field+"']]/..//input)["+index+"]")
+                .should(visible, editable).clear();
         $x("(//*[text()[normalize-space() = '"+field+"']]/..//input)["+index+"]").setValue(value);
     }
 
@@ -29,6 +30,11 @@ public class Input {
         switchTo().defaultContent();
     }
 
+    private void serviceInputTextArea(String field, String value) {
+        $x("//*[text()[normalize-space() = '"+field+"']]/..//textarea").should(enabled).click();
+        $x("//*[text()[normalize-space() = '"+field+"']]/..//textarea").should(editable).setValue(value);
+    }
+
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\
 
     /**
@@ -36,8 +42,8 @@ public class Input {
      * @param field - Наименование поля
      * @param value - Заполнение поля желаемым значением
      */
-    @Step(value = "Заполняем поле {field} значением {value}")
-    public Input inputValueField(String field, String value) {
+    @Step(value = "Заполняем поле \"{field}\" значением \"{value}\"")
+    public Input inputStringField(String field, String value) {
         serviceInputField(field, value);
         return this;
     }
@@ -48,8 +54,8 @@ public class Input {
      * @param value - Заполнение поля желаемым значением
      * @param index - Позиция поля в DOM
      */
-    @Step(value = "Заполняем поле {field} значением {value} с позицией в DOM {index}")
-    public Input inputValueField(String field, String value, String index) {
+    @Step(value = "Заполняем поле \"{field}\" значением \"{value}\"")
+    public Input inputStringField(String field, String value, String index) {
         serviceInputField(field, value, index);
         return this;
     }
@@ -59,9 +65,20 @@ public class Input {
      * @param field - Наименование поля
      * @param value - Значение, которым заполяем поле
      */
-    @Step(value = "Заполняем поле {field} значением {value}")
+    @Step(value = "Заполняем поле \"{field}\" значением \"{value}\"")
     public Input inputIframeField(String field, String value) {
         serviceInputIframe(field, value);
+        return this;
+    }
+
+    /**
+     === Заполнение поле типа textarea ===
+     * @param field - Наименование поля
+     * @param value - Значение, которым заполяем поле
+     */
+    @Step(value = "Заполняем поле \"{field}\" значением \"{value}\"")
+    public Input inputTextArea(String field, String value) {
+        serviceInputTextArea(field, value);
         return this;
     }
 }

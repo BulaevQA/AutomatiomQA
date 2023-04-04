@@ -1,7 +1,6 @@
 package base;
 
 import com.codeborne.selenide.WebDriverRunner;
-import core.classObjects.ClassObjects;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import com.codeborne.selenide.Configuration;

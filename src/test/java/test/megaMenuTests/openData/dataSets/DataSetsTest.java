@@ -11,10 +11,10 @@ import static core.classObjects.ClassObjects.*;
 
 public class DataSetsTest extends BrowserConfig {
 
-    @Epic(value = "Тесты Мега-меню")
     @Test
-    @Description(value = "Тест страницы мега-меню")
     @Tag("MegaMenu")
+    @Epic(value = "Тесты Мега-меню")
+    @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void dataSets() {
         openLink.openUrl(testValues.url);
@@ -23,6 +23,6 @@ public class DataSetsTest extends BrowserConfig {
         switchWindow.switchToActiveWindow();
         openLink.openLink("Наборы данных");
         infoBlockHealth.errorInfoBlock();
-        dataSetsPage.checkPageTitle();
+        dataSetsPage.pageTitle();
     }
 }

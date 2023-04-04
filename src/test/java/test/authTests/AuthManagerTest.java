@@ -1,6 +1,8 @@
 package test.authTests;
 
 import base.BrowserConfig;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -12,6 +14,8 @@ public class AuthManagerTest extends BrowserConfig {
 
     @Test
     @Tag("Auth")
+    @Epic(value = "Тесты авторизации")
+    @Description(value = "Тест авторизации работодателем")
     @DisplayName("Auth manager test")
     public void authTestManager() {
         // Открываем портал и авторизуемся
@@ -19,8 +23,8 @@ public class AuthManagerTest extends BrowserConfig {
         click.clickButton("Согласен");
         click.clickButton("Войти");
         click.clickButton("«Госуслуги»");
-        input.inputValueField("Телефон / Email / СНИЛС", testValues.login);
-        input.inputValueField("Пароль", testValues.password);
+        input.inputStringField("Телефон / Email / СНИЛС", testValues.login);
+        input.inputStringField("Пароль", testValues.password);
         click.clickButton("Войти");
         click.clickButton("Индивидуальный предприниматель");
         // Делаем ассерт для подтверждения корректности теста

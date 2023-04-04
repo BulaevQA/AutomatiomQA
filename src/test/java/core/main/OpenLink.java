@@ -25,7 +25,7 @@ public class OpenLink {
      === Открытие ссылки href ===
      * @param link - наименование элемента на странице
      */
-    @Step(value = "Переход по ссылке {link}")
+    @Step(value = "Переход по ссылке \"{link}\"")
     public OpenLink openLink(String link) {
         open(serviceGetLink(link));
         return this;
@@ -36,7 +36,7 @@ public class OpenLink {
      * @param link - наименование элемента на странице
      * @param index - порзиция жлемента в DOM
      */
-    @Step(value = "Переход по ссылке {link} с позицией в DOM {index}")
+    @Step(value = "Переход по ссылке \"{link}\"")
     public OpenLink openLink(String link, String index) {
         open(serviceGetLink(link, index));
         return this;
@@ -46,7 +46,7 @@ public class OpenLink {
      === Метод открытия базового URL ===
      * @param url - https ссылка
      */
-    @Step(value = "Открываем {url}")
+    @Step(value = "Открываем \"{url}\"")
     public OpenLink openUrl (String url){
         open(url);
         return this;

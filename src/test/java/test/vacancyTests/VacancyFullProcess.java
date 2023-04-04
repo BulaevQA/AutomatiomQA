@@ -1,6 +1,8 @@
 package test.vacancyTests;
 
 import base.BrowserConfig;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -12,29 +14,31 @@ public class VacancyFullProcess extends BrowserConfig {
 
     @Test
     @Tag("Smoke")
+    @Epic(value = "Конструкторы")
+    @Description(value = "Тест создания, модерации и удаления вакансии")
     @DisplayName("Creation and moderation vacancy")
     public void createVacancyTest() {
         // Авторизируемся на ПРР
         authTestManager.authTestManager();
         // Созадем вакансию
         openLink.openLink("Добавить вакансию", "3");
-        dropDown.inputValueDropDown("Название вакансии", testValues.position);
+        dropDown.inputNewValueDropDown("Название вакансии", testValues.position);
         dropDown.inputValueDropDown("Профессия", testValues.profession);
         dropDown.selectDropDown("Сфера деятельности", testValues.workSphere);
         input.inputIframeField("Обязанности", testValues.jobFields);
         input.inputIframeField("Требования", testValues.jobFields);
-        input.inputValueField("Контактное лицо", testValues.myName);
+        input.inputStringField("Контактное лицо", testValues.myName);
         click.clickButton("Сохранить и опубликовать");
         myVacancyPage.pageTitle();
         myVacancyPage.statusWaitForModeration();
         // Открываем АРМ АДМ и находим нашу вакансию
         openLink.openUrl(testValues.urlAdm);
-        input.inputValueField("Имя пользователя", testValues.loginAdm);
-        input.inputValueField("Пароль", testValues.passwordAdm);
+        input.inputStringField("Имя пользователя", testValues.loginAdm);
+        input.inputStringField("Пароль", testValues.passwordAdm);
         click.clickButton("Вход", "2");
         click.clickButton("Модерация");
         click.clickButton("Модерация вакансий");
-        input.inputValueField("Дата от", testValues.currentDate);
+        input.inputStringField("Дата от", testValues.currentDate);
         click.clickButton("Применить");
         mainAdmPage.moderationObject(testValues.position);
         // Проводим положительную модерацию вакансии

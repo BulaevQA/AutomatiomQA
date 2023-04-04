@@ -1,5 +1,7 @@
 package test.authTests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
 import org.junit.jupiter.api.*;
 import base.BrowserConfig;
 
@@ -9,6 +11,8 @@ public class AuthCvTest extends BrowserConfig {
 
     @Test
     @Tag("Auth")
+    @Epic(value = "Тесты авторизации")
+    @Description(value = "Тест авторизации соискателем")
     @DisplayName("Auth cv test")
     public void authTestCv() {
         // Открываем портал и авторизуемся
@@ -16,8 +20,8 @@ public class AuthCvTest extends BrowserConfig {
         click.clickButton("Согласен");
         click.clickButton("Войти");
         click.clickButton("«Госуслуги»");
-        input.inputValueField("Телефон / Email / СНИЛС", testValues.login);
-        input.inputValueField("Пароль", testValues.password);
+        input.inputStringField("Телефон / Email / СНИЛС", testValues.login);
+        input.inputStringField("Пароль", testValues.password);
         click.clickButton("Войти");
         click.clickButton("Частное лицо");
         // Делаем ассерт для подтверждения корректности теста

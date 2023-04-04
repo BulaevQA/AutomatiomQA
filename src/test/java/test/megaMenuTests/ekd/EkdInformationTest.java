@@ -11,10 +11,10 @@ import static core.classObjects.ClassObjects.*;
 
 public class EkdInformationTest extends BrowserConfig {
 
-    @Epic(value = "Тесты Мега-меню")
     @Test
-    @Description(value = "Тест страницы мега-меню")
     @Tag("MegaMenu")
+    @Epic(value = "Тесты Мега-меню")
+    @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void ekdInformationTest() {
             openLink.openUrl(testValues.url);
@@ -23,6 +23,6 @@ public class EkdInformationTest extends BrowserConfig {
             switchWindow.switchToActiveWindow();
             openLink.openLink("Об Электронном кадровом документообороте");
             infoBlockHealth.errorInfoBlock();
-            ekdPage.checkPageTitle();
+            ekdPage.pageTitle();
     }
 }

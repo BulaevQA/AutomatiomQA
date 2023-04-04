@@ -12,10 +12,10 @@ public class HelpAndSupportPage {
     private final SelenideElement pageTitle = $x("//h1[@class][text()[normalize-space()='Помощь и поддержка']]");
 
     /**
-     === Получение заголовка страницы ===
+     === Провека заголовка страницы ===
      */
-    @Step(value = "Получение заголовка страницы")
-    public boolean checkPageTitle() {
+    @Step(value = "Проверка заголовка страницы")
+    public boolean pageTitle() {
         return pageTitle.should(visible).exists();
     }
 }

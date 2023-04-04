@@ -19,28 +19,42 @@ public class MyVacancyPage extends BrowserConfig {
             confirmDeleteVacancy = $x("(//div[@class='modal__content'])/..//button[text()='Удалить']"),
             foundCandidateQuestion = $x("//div[@class='modal__content']//button[text()='Да']");
 
-
-    @Step(value = "Получение заголоска страницы")
+    /**
+     === Провека заголовка страницы ===
+     */
+    @Step(value = "Проверка заголовка страницы")
     public boolean pageTitle() {
         return pageTitle.should(visible).exists();
     }
 
+    /**
+     === Получение наименования вакансии
+     */
     @Step(value = "Получение наименования вакансии")
     public String vacancyName() {
         return vacancyNameCheck.should(exist, visible).getText();
     }
 
-    @Step(value = "Статус вакансии Ожидает модерации")
+    /**
+     === Проверка статуса модерации ===
+     */
+    @Step(value = "Статус вакансии Ожидает модерации найден")
     public boolean statusWaitForModeration() {
        return statusWaitForModeration.should(visible).exists();
     }
 
-    @Step(value = "Статус вакансии Одобрена")
+    /**
+     === Проверка статуса модерации ===
+     */
+    @Step(value = "Статус вакансии Одобрена найден")
     public boolean statusApproved() {
         return statusApproved.should(visible).exists();
     }
 
-    @Step(value = "Процесс удаления вакансии")
+    /**
+     === Процесс удаления вакансии
+     */
+    @Step(value = "Удаляем вакансию")
     public void deleteVacancy() {
         meatBalls.serviceMeatBalls();
         deleteVacancyModal.should(visible, enabled).click();

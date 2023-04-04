@@ -40,7 +40,7 @@ public class Click {
      * === Основные функциональные кнопки ===
      * @param button - Функциональные кнопки (Сохранить и опубликовать, Предпросмотр и тд...)
      */
-    @Step(value = "Кликаем на кнопку {button}")
+    @Step(value = "Кликаем на кнопку \"{button}\"")
     public Click clickButton(String button) {
         serviceClickButton(button);
         return this;
@@ -50,7 +50,7 @@ public class Click {
      * === Основные функциональные кнопки ===
      * @param button - Функциональные кнопки (Сохранить и опубликовать, Предпросмотр и тд...)
      */
-    @Step(value = "Кликаем на кнопку {button}")
+    @Step(value = "Кликаем на кнопку \"{button}\"")
     public Click clickButton(String button, String index) {
         serviceClickButton(button, index);
         return this;
@@ -60,7 +60,7 @@ public class Click {
      * === Активируем/деактивируем чек бокс ===
      * @param checkbox - Наименование чекбокса
      */
-    @Step(value = "Активация чекбокса {checkbox}")
+    @Step(value = "Клик на чекбокс \"{checkbox}\"")
     public Click clickCheckbox(String checkbox) {
         serviceCheckBox(checkbox);
         return this;
@@ -70,7 +70,7 @@ public class Click {
      === Метод перебора чекбоксов по коллекции элементов ===
      * @param titleName - наименвоание заголовка, в котором находятся чекбоксы
      */
-    @Step(value = "Активация чекбоксов по коллекции элементов")
+    @Step(value = "Клик на коллекцию чекбоксов")
     public Click clickCheckboxes(String titleName) {
         serviceClickCheckboxes(titleName);
         return this;
@@ -80,7 +80,7 @@ public class Click {
      * === Активация радиобаттона ===
      * @param radioButton - Наименование радиобаттона
      */
-    @Step(value = "Активация радиобаттона {radioButton}")
+    @Step(value = "Активация радиобаттона \"{radioButton}\"")
     public Click clickRadioButton(String radioButton) {
         serviceRadioButton(radioButton);
         return this;

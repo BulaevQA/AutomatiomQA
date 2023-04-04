@@ -11,10 +11,10 @@ import static core.classObjects.ClassObjects.*;
 
 public class AboutWorkWithoutBordersTest extends BrowserConfig {
 
-    @Epic(value = "Тесты Мега-меню")
     @Test
-    @Description(value = "Тест страницы мега-меню")
     @Tag("MegaMenu")
+    @Epic(value = "Тесты Мега-меню")
+    @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void aboutWorkWithoutBorders() {
         openLink.openUrl(testValues.url);
@@ -23,6 +23,6 @@ public class AboutWorkWithoutBordersTest extends BrowserConfig {
         switchWindow.switchToActiveWindow();
         openLink.openLink("О Работе без границ");
         infoBlockHealth.errorInfoBlock();
-        aboutWorkWithoutBordersPage.checkPageTitle();
+        aboutWorkWithoutBordersPage.pageTitle();
     }
 }
