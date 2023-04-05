@@ -3,7 +3,7 @@ package test.authTests;
 import base.BrowserConfig;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
-import org.junit.jupiter.api.Assertions;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -28,6 +28,6 @@ public class AuthManagerTest extends BrowserConfig {
         click.clickButton("Войти");
         click.clickButton("Индивидуальный предприниматель");
         // Делаем ассерт для подтверждения корректности теста
-        Assertions.assertEquals(expectedAuth.expectedManagerAuth(), actualAuth.actualValueManager());
+        Assertions.assertThat(actualAuth.actualValueManager()).isEqualTo(expectedAuth.expectedManagerAuth());
     }
 }

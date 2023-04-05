@@ -3,7 +3,8 @@ package test.vacancyTests;
 import base.BrowserConfig;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
-import org.junit.jupiter.api.Assertions;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -53,7 +54,7 @@ public class VacancyFullProcess extends BrowserConfig {
         myVacancyPage.statusApproved();
         openLink.openLink(testValues.position);
         // Делаем ассерт для подтверждения корректности теста
-        Assertions.assertEquals(expectedVacancy.expectedVacancy(), actualVacancy.actualValueVacancy());
+        Assertions.assertThat(actualVacancy.actualValueVacancy()).isEqualTo(expectedVacancy.expectedVacancy());
         // Удаляем вакансию
         click.clickButton("Вакансии компании");
         openLink.openLink("Управление вакансиями");

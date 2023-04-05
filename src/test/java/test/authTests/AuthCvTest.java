@@ -2,6 +2,7 @@ package test.authTests;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.*;
 import base.BrowserConfig;
 
@@ -25,6 +26,6 @@ public class AuthCvTest extends BrowserConfig {
         click.clickButton("Войти");
         click.clickButton("Частное лицо");
         // Делаем ассерт для подтверждения корректности теста
-        Assertions.assertEquals(expectedAuth.expectedCvAuth(), actualAuth.actualValueCv());
+        Assertions.assertThat(actualAuth.actualValueCv()).isEqualTo(expectedAuth.expectedCvAuth());
     }
 }
