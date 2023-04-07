@@ -5,7 +5,6 @@ import com.github.javafaker.Faker;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 
 public class TestValues {
 
@@ -15,7 +14,7 @@ public class TestValues {
     public final String
 
             //Креды ПРР
-            url = System.getProperty("base_url", "https://hotfix.rtportal.show.pbs.bftcom.com/"),
+            url = System.getProperty("base_url", "https://web-stable-test01.k8s.trudvsem.ru/"),
             login = System.getProperty("login", "abilimpiks@pbs.bftcom.com"),
             password = System.getProperty("password", "Ex3t8yh96mj!"),
 
@@ -53,7 +52,8 @@ public class TestValues {
             schedule = "Полный рабочий день",
             employmentType = "Полная занятость",
             amountWorkPlaces = "1",
-            jobFields = "Тестовое значение";
+            jobFields = "Тестовое значение",
+            ogrn = "321774600790221";
 
             //Мега-меню
     public final String megaMenuArray =

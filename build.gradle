@@ -1,6 +1,6 @@
 plugins {
     id'java-library'
-    id"io.qameta.allure" version"2.11.2"
+    id'io.qameta.allure' version'2.11.2'
 }
 
 group 'org.example'
@@ -27,7 +27,8 @@ dependencies {
             'io.rest-assured:json-path:5.3.0',
             'io.rest-assured:xml-path:5.3.0',
             'io.rest-assured:json-schema-validator:5.3.0',
-            'io.github.artsok:rerunner-jupiter:2.1.6')
+            'io.github.artsok:rerunner-jupiter:2.1.6',
+            'org.junit.platform:junit-platform-suite-engine:1.8.2')
 }
 
 tasks.withType(JavaCompile).configureEach {

@@ -4,14 +4,13 @@ import base.BrowserConfig;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static core.classObjects.ClassObjects.*;
 
-public class VacancyFullProcess extends BrowserConfig {
+public class VacancyConstructorTest extends BrowserConfig {
 
     @Test
     @Tag("Smoke")
@@ -21,8 +20,10 @@ public class VacancyFullProcess extends BrowserConfig {
     public void createVacancyTest() {
         // Авторизируемся на ПРР
         authTestManager.authTestManager();
-        // Созадем вакансию
+        // Открываем конструктор вакансии
         openLink.openLink("Добавить вакансию", "3");
+        vacancyConstructorPage.pageTitle();
+        // Заполняем конструктор и подтверждаем создание вакансии
         dropDown.inputNewValueDropDown("Название вакансии", testValues.position);
         dropDown.inputValueDropDown("Профессия", testValues.profession);
         dropDown.selectDropDown("Сфера деятельности", testValues.workSphere);
@@ -32,7 +33,7 @@ public class VacancyFullProcess extends BrowserConfig {
         click.clickButton("Сохранить и опубликовать");
         myVacancyPage.pageTitle();
         myVacancyPage.statusWaitForModeration();
-        // Открываем АРМ АДМ и находим нашу вакансию
+        // Открываем АРМ АДМ и переходим на страницу подерации
         openLink.openUrl(testValues.urlAdm);
         input.inputStringField("Имя пользователя", testValues.loginAdm);
         input.inputStringField("Пароль", testValues.passwordAdm);
@@ -40,6 +41,7 @@ public class VacancyFullProcess extends BrowserConfig {
         click.clickButton("Модерация");
         click.clickButton("Модерация вакансий");
         input.inputStringField("Дата от", testValues.currentDate);
+        input.inputStringField("ОГРН", testValues.ogrn);
         click.clickButton("Применить");
         mainAdmPage.moderationObject(testValues.position);
         // Проводим положительную модерацию вакансии

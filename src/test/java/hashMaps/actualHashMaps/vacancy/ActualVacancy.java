@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static core.classObjects.ClassObjects.*;
-import static core.classObjects.ClassObjects.testValues;
 
 public class ActualVacancy {
 

@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static core.classObjects.ClassObjects.hashKeys;
-import static core.classObjects.ClassObjects.mainPage;
 
 public class ExpectedAuth extends TestValues {
 

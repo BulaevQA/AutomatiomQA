@@ -13,7 +13,6 @@ import hashMaps.actualHashMaps.resume.ActualResume;
 import hashMaps.expectedHashMaps.auth.ExpectedAuth;
 import hashMaps.actualHashMaps.vacancy.ActualVacancy;
 import helpers.other.ElementCollections;
-import org.assertj.core.api.SoftAssertions;
 import pages.admPages.MainAdmPage;
 import pages.trudvsemPages.mainPrrPage.MainPage;
 import pages.trudvsemPages.megaMenu.analytics.analyticsInformationPage.AnalyticInformationPage;
@@ -76,7 +75,6 @@ public class ClassObjects {
     //Экземпляры классов получения информации со страницы
     public static InfoBlockHealth infoBlockHealth = new InfoBlockHealth();
     public static NotificationCheck notificationCheck = new NotificationCheck();
-    public static SoftAssertions softAssertions = new SoftAssertions();
 
     //Экземпляры классов тестов
     public static AuthCvTest authTestCv = new AuthCvTest();

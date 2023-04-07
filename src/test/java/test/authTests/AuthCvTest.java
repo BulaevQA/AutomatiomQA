@@ -10,13 +10,13 @@ import static core.classObjects.ClassObjects.*;
 
 public class AuthCvTest extends BrowserConfig {
 
-    @Test
+    @Test()
     @Tag("Auth")
     @Epic(value = "Тесты авторизации")
     @Description(value = "Тест авторизации соискателем")
     @DisplayName("Auth cv test")
     public void authTestCv() {
-        // Открываем портал и авторизуемся
+        // Открываем портал
         openLink.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Войти");

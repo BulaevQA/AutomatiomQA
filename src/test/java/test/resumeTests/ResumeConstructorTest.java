@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import static core.classObjects.ClassObjects.*;
 
-public class ResumeFullProcess extends BrowserConfig {
+public class ResumeConstructorTest extends BrowserConfig {
 
     @Test
     @Tag("Smoke")
@@ -24,7 +24,7 @@ public class ResumeFullProcess extends BrowserConfig {
         openLink.openLink("Создать резюме");
         resumeConstructorPage.pageTitle();
         input.inputStringField("Желаемая должность", testValues.position);
-        dropDown.selectDropDown("Сфера деятельности", "Производство");
+        dropDown.selectDropDown("Сфера деятельности", testValues.workSphere);
         input.inputStringField("Заработная плата (руб.)", testValues.salary);
         toggleSwitch.switchToggle("Есть опыт работы");
         click.clickButton("Сохранить и опубликовать");

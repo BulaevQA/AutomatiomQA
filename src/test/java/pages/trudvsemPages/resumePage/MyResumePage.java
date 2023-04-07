@@ -6,7 +6,6 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$x;
 import static core.classObjects.ClassObjects.meatBalls;
-import static core.classObjects.ClassObjects.notificationCheck;
 
 public class MyResumePage {
 
@@ -71,6 +70,5 @@ public class MyResumePage {
         meatBalls.serviceMeatBalls();
         deleteResumeModal.should(visible, enabled).click();
         confirmDeleteResume.should(visible, enabled).click();
-//        notificationCheck.notification();
     }
 }
