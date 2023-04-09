@@ -12,7 +12,7 @@ public class MeatBalls extends BrowserConfig {
     /**
      === XPath для клика на митбол ===
      */
-    private final SelenideElement meatBalls = $x("//div[@class='col-auto']//button[@data-toggle='dropdown']");
+    private final SelenideElement meatBalls = $x("//div[@class='row row_middle']//button[@aria-expanded='false']");
 
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\
 
@@ -21,7 +21,7 @@ public class MeatBalls extends BrowserConfig {
      */
     @Step(value = "Клик на кнопку \"митбол\"")
     public void serviceMeatBalls() {
-        meatBalls.should(exist, visible, enabled).click();
-        switchTo().activeElement();
+        sleep(1500);
+        meatBalls.should(visible, enabled).click();
     }
 }

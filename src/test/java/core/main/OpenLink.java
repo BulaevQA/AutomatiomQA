@@ -12,11 +12,13 @@ public class OpenLink {
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
     private String serviceGetLink(String link) {
-        return $x("//a[text()[normalize-space() = '"+link+"']]").should(exist, visible).getAttribute("href");
+        return $x("//a[text()[normalize-space() = '"+link+"']]")
+                .should(exist, visible).getAttribute("href");
     }
 
     private String serviceGetLink(String link, String index) {
-        return $x("(//a[text()[normalize-space() = '"+link+"']])["+index+"]").should(exist, visible).getAttribute("href");
+        return $x("(//a[text()[normalize-space() = '"+link+"']])["+index+"]")
+                .should(exist, visible).getAttribute("href");
     }
 
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\
@@ -34,7 +36,7 @@ public class OpenLink {
     /**
      === Открытие ссылки href ===
      * @param link - наименование элемента на странице
-     * @param index - порзиция жлемента в DOM
+     * @param index - позиция элемента в DOM
      */
     @Step(value = "Переход по ссылке \"{link}\"")
     public OpenLink openLink(String link, String index) {

@@ -31,6 +31,7 @@ public class ResumeConstructorTest extends BrowserConfig {
         myResumePage.pageTitle();
         myResumePage.statusWaitForModeration();
         // Открываем АРМ АДМ и находим наше резюме
+        switchWindow.openWindowType(testValues.newTab);
         openLink.openUrl(testValues.urlAdm);
         input.inputStringField("Имя пользователя", testValues.loginAdm);
         input.inputStringField("Пароль", testValues.passwordAdm);
@@ -45,9 +46,9 @@ public class ResumeConstructorTest extends BrowserConfig {
         click.clickButton("Модерация", "2");
         click.clickCheckboxes("Проводимые проверки");
         click.clickButton("Модерация", "3");
-        openLink.openUrl(testValues.url);
-        mainPage.pageTitle();
-        openLink.openLink("Резюме");
+        mainAdmPage.checkModerationObject(testValues.position);
+        switchWindow.switchBetweenWindows(0);
+        myResumePage.pageTitle();
         myResumePage.statusApproved();
         openLink.openLink(testValues.position);
         // Делаем ассерт для подтверждения корректности теста

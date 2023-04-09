@@ -3,8 +3,7 @@ package core.main;
 import helpers.other.ElementCollections;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.enabled;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$$x;
 
@@ -21,17 +20,17 @@ public class Click {
     }
 
     private void serviceCheckBox(String checkbox) {
-        $x("//*[normalize-space(text())='"+checkbox+"']/ancestor::label[@class='checkbox']").should(visible, enabled).click();
+        $x("//*[text()[normalize-space() = '"+checkbox+"']]/ancestor::label[@class='checkbox']").should(visible, enabled).click();
     }
 
     private void serviceClickCheckboxes(String titleName) {
-        $x("//*[normalize-space(text())='"+titleName+"']").should(visible);
+        $x("//*[text()[normalize-space() = '"+titleName+"']]").should(exist, visible);
         new ElementCollections().elementsCollectionsClick($$x("//*[normalize-space(text())='"+titleName+"']" +
                 "/following-sibling::div//label"));
     }
 
     private void serviceRadioButton(String radioButton) {
-        $x("//*[normalize-space(text())='"+radioButton+"']/ancestor::label[@class='radio']").should(visible, enabled).click();
+        $x("//*[text()[normalize-space() = '"+radioButton+"']]/ancestor::label[@class='radio']").should(visible, enabled).click();
     }
 
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\

@@ -13,7 +13,6 @@ public class DropDown {
 
     private void serviceInputDropDown(String select, String value) {
         $x("//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button").should(visible, enabled).click();
-        $x("//div[@class='dropdown-menu show']").should(appear, visible);
         $x("//div[@class='dropdown-menu show']//input").should(visible, editable).clear();
         $x("//div[@class='dropdown-menu show']//input").should(visible, editable).setValue(value);
         $x("//div[@class='dropdown-menu show']//div[@class='inner show']//a//span[text()='"+value+"']")
@@ -23,7 +22,6 @@ public class DropDown {
     private void serviceInputDropDown(String select, String value, String index) {
         $x("(//*[text()[normalize-space() = '"+select+"']]/ancestor::label//button)["+index+"]")
                 .should(visible, enabled).click();
-        $x("//div[@class='dropdown-menu show']").should(appear, visible);
         $x("//div[@class='dropdown-menu show']//input").should(visible, editable).clear();
         $x("//div[@class='dropdown-menu show']//input").should(visible, editable).setValue(value);
         $x("//div[@class='dropdown-menu show']//div[@class='inner show']//a//span[text()='"+value+"']")

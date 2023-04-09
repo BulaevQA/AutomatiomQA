@@ -16,8 +16,8 @@ public class Search {
      */
     @Step(value = "Поиск значения \"{value}\" в поисковой выдаче")
     public Search searchField(String value) {
-        search.should(exist, enabled).clear();
-        search.should(editable).setValue(value);
+        search.should(visible, editable).clear();
+        search.should(visible, editable).setValue(value);
         return this;
     }
 }

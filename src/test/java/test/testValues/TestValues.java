@@ -1,29 +1,33 @@
 package test.testValues;
 
 import com.github.javafaker.Faker;
+import org.openqa.selenium.WindowType;
 
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
 
 public class TestValues {
 
-            //Генерация данных
+    // Генерация данных
     private final String positionGenerator = Faker.instance().bothify("Автотест####");
 
     public final String
 
-            //Креды ПРР
-            url = System.getProperty("base_url", "https://web-stable-test01.k8s.trudvsem.ru/"),
+            // Креды ПРР
+            url = System.getProperty("base_url", "https://web-hotfix-test01.k8s.trudvsem.ru/"),
             login = System.getProperty("login", "abilimpiks@pbs.bftcom.com"),
             password = System.getProperty("password", "Ex3t8yh96mj!"),
 
-            //Креды АДМ легаси
-            urlAdm = System.getProperty("base_urlAdm", "https://hotfix-rtadm.show.pbs.bftcom.com/"),
+            // Креды АДМ легаси
+            urlAdm = System.getProperty("base_urlAdm", "http://admin.apps.test01.stable.trudvsem.ru/"),
             loginAdm = System.getProperty("loginAdm", "admin@trudvsem.ru"),
             passwordAdm = System.getProperty("passwordAdm", "Qwerty123"),
 
-            //Общие
+            // Общие
             myName = "Булаев Денис Сергеевич",
             position = positionGenerator,
             workSphere = "Домашний персонал",
@@ -33,9 +37,9 @@ public class TestValues {
                     .format(DateTimeFormatter.ofPattern("dd.MM.yyy")),
             unprotectedSocialGroup = "не указано",
 
-            //Соискатель
+            // Соискатель
             minProgressBar = "47",
-            regionCv = "Архангельская область",
+            regionCv = "г. Санкт-Петербург",
             email = "abilimpiks@pbs.bftcom.com",
             birthdayDate = "01.01.1977",
             gender = "Мужчщина",
@@ -44,58 +48,63 @@ public class TestValues {
             children = "не указано",
             house = "не указано",
 
-            //Работодатель
+            // Работодатель
             companyName = "ИП Булаев Д. С.",
             salaryManager = "«з/п по договоренности»",
-            regionManager = "г. Москва",
-            address = "г. Москва, 44",
+            regionManager = "г. Санкт-Петербург",
+            address = "г. Санкт-Петербург, 44",
             schedule = "Полный рабочий день",
             employmentType = "Полная занятость",
             amountWorkPlaces = "1",
             jobFields = "Тестовое значение",
             ogrn = "321774600790221";
 
-            //Мега-меню
-    public final String megaMenuArray =
-                    "[Работа с переездом по России, " +
-                    "Работа без границ, " +
-                    "Аналитическая информация, " +
-                    "Рейтинг регионов, " +
-                    "Справочник востребованных профессий, " +
-                    "Профессиональная ориентация, " +
-                    "Опросы для соискателя, " +
-                    "Опросы для работодателя, " +
-                    "Найм граждан Узбекистана, " +
-                    "Найм граждан Таджикистана, " +
-                    "О стажировках и практиках, " +
-                    "О портале, " +
-                    "Помощь и поддержка, " +
-                    "Государственные службы занятости, " +
-                    "Трудоустройство студентов, " +
-                    "Опытные кадры, " +
-                    "Частные агентства занятости, " +
-                    "Abilympics, " +
-                    "Worldskills, " +
-                    "Трудоустройство инвалидов, " +
-                    "Меры безопасности, " +
-                    "О Работе без границ, " +
-                    "Об Электронном кадровом документообороте, " +
-                    "Информационные страницы, " +
-                    "Открытые данные, " +
-                    "Мероприятия, " +
-                    "Ресурсы, использующие вакансии портала, " +
-                    "API, " +
-                    "Наборы данных, " +
-                    "Виджеты, " +
-                    "Социальная сеть SkillsNet, " +
-                    "О мобильном приложении, " +
-                    "Скачать на iPhone, " +
-                    "Скачать на Android, " +
-                    "Новое на портале, " +
-                    "Новости, " +
-                    "Статьи, " +
-                    "2021 год, " +
-                    "2022 год, " +
-                    "2023 год, " +
-                    "Список образовательных программ]";
+    // Переключение между вкладками / окнами браузера
+    public final WindowType
+            newTab = WindowType.TAB,
+            newWindow = WindowType.WINDOW;
+
+    // Мега-меню
+    public List<String> megaMenuList() {
+        return new ArrayList<String>() {{
+            add("Работа с переездом по России");
+            add("Работа без границ");
+            add("Аналитическая информация");
+            add("Рейтинг регионов");
+            add("Справочник востребованных профессий");
+            add("Профессиональная ориентация");
+            add("Опросы для соискателя");
+            add("Опросы для работодателя");
+            add("Найм граждан Узбекистана");
+            add("Найм граждан Таджикистана");
+            add("О стажировках и практиках");
+            add("О портале");
+            add("Помощь и поддержка");
+            add("Государственные службы занятости");
+            add("Трудоустройство студентов");
+            add("Частные агентства занятости");
+            add("Worldskills");
+            add("Abilympics");
+            add("Трудоустройство инвалидов");
+            add("Меры безопасности");
+            add("О Работе без границ");
+            add("Открытые данные");
+            add("Мероприятия");
+            add("API");
+            add("Наборы данных");
+            add("Виджеты");
+            add("О мобильном приложении");
+            add("Скачать на iPhone");
+            add("Скачать на Android");
+            add("Новое на портале");
+            add("Новости");
+            add("Статьи");
+            add("2021 год");
+            add("2022 год");
+            add("2023 год");
+            add("Образовательные программы");
+            add("Информационные страницы");
+            add("Социальная сеть Skillsnet");
+        }};
+    }
 }

@@ -1,9 +1,11 @@
 package core.classObjects;
 
+import core.constructor.SelectDoubleForms;
 import core.fields.DropDown;
 import core.fields.Input;
 import core.constructor.ToggleSwitch;
 import core.main.*;
+import helpers.other.ElementCollections;
 import helpers.status.InfoBlockHealth;
 import hashMaps.hashKeys.HashKeys;
 import hashMaps.actualHashMaps.auth.ActualAuth;
@@ -12,7 +14,6 @@ import hashMaps.expectedHashMaps.vacancy.ExpectedVacancy;
 import hashMaps.actualHashMaps.resume.ActualResume;
 import hashMaps.expectedHashMaps.auth.ExpectedAuth;
 import hashMaps.actualHashMaps.vacancy.ActualVacancy;
-import helpers.other.ElementCollections;
 import pages.admPages.MainAdmPage;
 import pages.trudvsemPages.mainPrrPage.MainPage;
 import pages.trudvsemPages.megaMenu.analytics.analyticsInformationPage.AnalyticInformationPage;
@@ -132,6 +133,7 @@ public class ClassObjects {
     public static Search search = new Search();
     public static Input input = new Input();
     public static DropDown dropDown = new DropDown();
+    public static SelectDoubleForms selectDoubleForms = new SelectDoubleForms();
     public static ToggleSwitch toggleSwitch = new ToggleSwitch();
     public static Click click = new Click();
     public static OpenLink openLink = new OpenLink();

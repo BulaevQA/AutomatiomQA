@@ -7,6 +7,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$x;
 import static core.classObjects.ClassObjects.meatBalls;
+import static core.classObjects.ClassObjects.switchWindow;
 
 public class MyVacancyPage extends BrowserConfig {
 
@@ -15,7 +16,8 @@ public class MyVacancyPage extends BrowserConfig {
             vacancyNameCheck = $x("(//a[@data-content='title'])[last()]"),
             statusWaitForModeration = $x("(//div[@class='status status_warning']//span[text()='Ожидает модерации '])[last()]"),
             statusApproved = $x("(//div[@class='status ']//span[text()='Одобрена '])[last()]"),
-            deleteVacancyModal = $x("(//div[@class='dropdown-menu dropdown-menu-right show']//button)[last()]"),
+            deleteModalWindow = $x("//div[@class='dropdown-menu dropdown-menu-right show' and @style]"),
+            deleteVacancyModal = $x("//div[@class='dropdown-menu dropdown-menu-right show']//button"),
             confirmDeleteVacancy = $x("(//div[@class='modal__content'])/..//button[text()='Удалить']"),
             foundCandidateQuestion = $x("//div[@class='modal__content']//button[text()='Да']");
 
@@ -57,8 +59,10 @@ public class MyVacancyPage extends BrowserConfig {
     @Step(value = "Удаляем вакансию")
     public void deleteVacancy() {
         meatBalls.serviceMeatBalls();
-        deleteVacancyModal.should(visible, enabled).click();
+        deleteVacancyModal.should(visible, enabled, appear).click();
+        switchWindow.switchToActiveWindow();
         confirmDeleteVacancy.should(visible, enabled).click();
         foundCandidateQuestion.should(visible, enabled).click();
+        switchWindow.switchToDefaultWindow();
     }
 }

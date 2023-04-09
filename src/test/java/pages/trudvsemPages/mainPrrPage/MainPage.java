@@ -1,12 +1,13 @@
 package pages.trudvsemPages.mainPrrPage;
 
+import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
-import static core.classObjects.ClassObjects.elementCollections;
+import static core.classObjects.ClassObjects.testValues;
 
 public class MainPage {
 
@@ -51,10 +52,10 @@ public class MainPage {
     }
 
     /**
-     === Получение актульных ссылок в мегаменю ===
+     * === Получение актульных ссылок в мегаменю ===
      */
     @Step(value = "Получение актуальных ссылок в мегаменю")
-    public String checkMegaMenu() {
-        return elementCollections.checkTextCollection(actualMegaMenu);
+    public ElementsCollection checkMegaMenu() {
+        return actualMegaMenu.should(CollectionCondition.texts(testValues.megaMenuList()));
     }
 }

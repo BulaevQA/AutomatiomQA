@@ -1,6 +1,7 @@
 package test.megaMenuTests.megaMenuLinks;
 
 import base.BrowserConfig;
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import net.bytebuddy.build.Plugin;
@@ -9,6 +10,8 @@ import org.junit.jupiter.api.*;
 
 import java.util.Arrays;
 
+import static com.codeborne.selenide.Selenide.$$x;
+import static com.codeborne.selenide.Selenide.$x;
 import static core.classObjects.ClassObjects.*;
 
 public class MegaMenuLinksTest extends BrowserConfig {
@@ -21,6 +24,6 @@ public class MegaMenuLinksTest extends BrowserConfig {
     public void megaMenuLinksTest() {
         openLink.openUrl(testValues.url);
         click.clickButton("Все сервисы");
-        Assertions.assertThat(mainPage.checkMegaMenu()).isEqualTo(testValues.megaMenuArray);
+        mainPage.checkMegaMenu();
     }
 }

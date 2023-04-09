@@ -2,66 +2,68 @@ package helpers.other;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selenide.open;
 
 public class ElementCollections {
 
     /**
      Клик на случайный элемент из коллеции элементов
-     * @param $$x - Указываем XPath на оллекцию элементов
+     * @param $$x - Указываем XPath на коллекцию элементов
      */
     public void randomElementCollectionClick(ElementsCollection $$x) {
-        $$x.get(new Random().nextInt($$x.size())).should(exist, enabled).click();
+        List<SelenideElement> list = new ArrayList<>($$x);
+        list.get(new Random().nextInt(list.size())).click();
     }
 
     /**
-    Клик на все эллементы из коллекции
-    * @param $$x - Указываем XPath на оллекцию элементов
-    */
+     Клик на все эллементы из коллекции
+     * @param $$x - Указываем XPath на коллекцию элементов
+     */
     public void elementsCollectionsClick(ElementsCollection $$x) {
-        for(int i = 0; i < $$x.size(); i++) {
-            $$x.get(i).should(exist, enabled).click();
-        }
+        List<SelenideElement> list = new ArrayList<>($$x);
+        list.forEach(SelenideElement::click);
+
     }
 
     /**
-    Перебор href ссылок
-     * @param $$x - Указываем XPath на оллекцию элементов
+     Перебор href ссылок
+     * @param $$x - Указываем XPath на коллекцию элементов
      */
     public void hrefCollection(ElementsCollection $$x) {
-        List<String> selectArray = new ArrayList<>();
-        for(int i = 0; i < $$x.size(); i++) {
-            selectArray.add($$x.get(i).should(exist).getAttribute("href"));
+        List<String> list = new ArrayList<>();
+        for(SelenideElement element : $$x) {
+            list.add(element.getAttribute("href"));
         }
-        selectArray.forEach(Selenide::open);
+        list.forEach(Selenide::open);
     }
 
     /**
-    Поулчение коллекции наименвоаний элементов
-     * @param $$x - Указываем XPath на оллекцию элементов
-    */
-    public String checkTextCollection(ElementsCollection $$x) {
-        List<String> selectArray = new ArrayList<>();
-        for(int i = 0; i < $$x.size(); i++) {
-            selectArray.add($$x.get(i).should(exist, visible).getText());
-        }
-        return selectArray.toString();
-    }
-
-    /**
-    Случайная href ссылка
-     * @param $$x - Указываем XPath на оллекцию элементов
+     Получение ссылок по коллекции элементов
+     * @param $$x - Указываем XPath на коллекцию элементов
      */
-    public void randomHref(ElementsCollection $$x) {
-        List<String> selectArray = new ArrayList<>();
-        for(int i = 0; i < $$x.size(); i++) {
-            selectArray.add($$x.get(i).should(exist).getAttribute("href"));
+    public List<String> getListLinks(ElementsCollection $$x) {
+        List<String> list = new ArrayList<>();
+        for(SelenideElement element : $$x) {
+            list.add(element.getAttribute("href"));
         }
-        Selenide.open(selectArray.get(new Random().nextInt(selectArray.size())));
+        return list;
+    }
+
+    /**
+     Случайная href ссылка
+     * @param $$x - Указываем XPath на коллекцию элементов
+     */
+    public void randomHref (ElementsCollection $$x) {
+        List<String> list = new ArrayList<>();
+        for(SelenideElement element : $$x) {
+            list.add(element.getAttribute("href"));
+        }
+        open(list.get(new Random().nextInt(list.size())));
     }
 }

@@ -11,11 +11,13 @@ public class OptionalBlock {
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
     private void serviceAddOptionalBlock(String block) {
-        $x("//button[normalize-space(text())='"+block+"'][@data-change='show-block']").should(visible, enabled).click();
+        $x("//button[normalize-space(text())='"+block+"'][@data-change='show-block']")
+                .should(visible, enabled).click();
     }
 
     private void serviceRemoveOptionalBlock(String block) {
-        $x("//h2[normalize-space(text())='"+block+"']/../following-sibling::div//button").should(visible, enabled).click();
+        $x("//h2[normalize-space(text())='"+block+"']/../following-sibling::div//button")
+                .should(visible, enabled).click();
     }
 
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\
