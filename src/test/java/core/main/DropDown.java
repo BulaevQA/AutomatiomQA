@@ -1,4 +1,4 @@
-package core.fields;
+package core.main;
 
 import io.qameta.allure.Step;
 

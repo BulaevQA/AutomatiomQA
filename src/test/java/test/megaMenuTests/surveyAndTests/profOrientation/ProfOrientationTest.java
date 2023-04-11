@@ -17,11 +17,11 @@ public class ProfOrientationTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void profOrientation() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Профессиональная ориентация");
+        open.openLink("Профессиональная ориентация");
         infoBlockHealth.errorInfoBlock();
         profOrientationPage.pageTitle();
     }

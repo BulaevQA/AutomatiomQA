@@ -18,11 +18,11 @@ public class AnalyticsTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void analyticsInformation() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Аналитическая информация");
+        open.openLink("Аналитическая информация");
         infoBlockHealth.errorInfoBlock();
         analyticInformationPage.pageTitle();
     }

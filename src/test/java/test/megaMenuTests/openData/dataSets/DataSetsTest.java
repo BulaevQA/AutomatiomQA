@@ -17,11 +17,11 @@ public class DataSetsTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void dataSets() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Наборы данных");
+        open.openLink("Наборы данных");
         infoBlockHealth.errorInfoBlock();
         dataSetsPage.pageTitle();
     }

@@ -17,11 +17,11 @@ public class UzbekistanTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void articlesData() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Найм граждан Узбекистана");
+        open.openLink("Найм граждан Узбекистана");
         infoBlockHealth.errorInfoBlock();
         uzbekistanPage.pageTitle();
     }

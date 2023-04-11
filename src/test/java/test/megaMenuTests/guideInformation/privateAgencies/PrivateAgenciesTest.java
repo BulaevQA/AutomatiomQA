@@ -17,11 +17,11 @@ public class PrivateAgenciesTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void privateAgencies() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Частные агентства занятости");
+        open.openLink("Частные агентства занятости");
         infoBlockHealth.errorInfoBlock();
         privateAgenciesPage.pageTitle();
     }

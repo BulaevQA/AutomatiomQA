@@ -5,6 +5,7 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$x;
+import static core.classObjects.ClassObjects.click;
 import static core.classObjects.ClassObjects.meatBalls;
 
 public class MyResumePage {
@@ -67,7 +68,7 @@ public class MyResumePage {
      */
     @Step(value = "Удаляем резюме")
     public void deleteResume() {
-        meatBalls.serviceMeatBalls();
+        click.clickMeatBalls();
         deleteResumeModal.should(visible, enabled).click();
         confirmDeleteResume.should(visible, enabled).click();
     }

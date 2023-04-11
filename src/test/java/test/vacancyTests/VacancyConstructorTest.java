@@ -22,7 +22,7 @@ public class VacancyConstructorTest extends BrowserConfig {
         // Авторизируемся на ПРР
         authTestManager.authTestManager();
         // Открываем конструктор вакансии
-        openLink.openLink("Добавить вакансию", "3");
+        open.openLink("Добавить вакансию", "3");
         vacancyConstructorPage.pageTitle();
         // Заполняем конструктор и подтверждаем создание вакансии
         dropDown.inputNewValueDropDown("Название вакансии", testValues.position);
@@ -36,7 +36,7 @@ public class VacancyConstructorTest extends BrowserConfig {
         myVacancyPage.statusWaitForModeration();
         // Открываем АРМ АДМ и переходим на страницу подерации
         switchWindow.openWindowType(testValues.newTab);
-        openLink.openUrl(testValues.urlAdm);
+        open.openUrl(testValues.urlAdm);
         input.inputStringField("Имя пользователя", testValues.loginAdm);
         input.inputStringField("Пароль", testValues.passwordAdm);
         click.clickButton("Вход", "2");
@@ -54,7 +54,7 @@ public class VacancyConstructorTest extends BrowserConfig {
         switchWindow.switchBetweenWindows(0);
         myVacancyPage.pageTitle();
         myVacancyPage.statusApproved();
-        openLink.openLink(testValues.position);
+        open.openLink(testValues.position);
         // Делаем ассерт для подтверждения корректности теста
         Assertions.assertThat(actualVacancy.actualValueVacancy()).isEqualTo(expectedVacancy.expectedVacancy());
         // Удаляем вакансию

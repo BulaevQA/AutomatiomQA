@@ -17,11 +17,11 @@ public class WorkForInvalidTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void workForInvalid() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Трудоустройство инвалидов");
+        open.openLink("Трудоустройство инвалидов");
         infoBlockHealth.errorInfoBlock();
         workForInvalidPage.pageTitle();
     }

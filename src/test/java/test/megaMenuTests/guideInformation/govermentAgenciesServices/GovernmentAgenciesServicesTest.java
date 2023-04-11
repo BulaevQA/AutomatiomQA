@@ -17,11 +17,11 @@ public class GovernmentAgenciesServicesTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void governmentAgenciesServices() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Государственные службы занятости");
+        open.openLink("Государственные службы занятости");
         infoBlockHealth.errorInfoBlock();
         governmentAgenciesServicePage.pageTitle();
     }

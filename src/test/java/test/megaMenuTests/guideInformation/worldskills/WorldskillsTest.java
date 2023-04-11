@@ -17,11 +17,11 @@ public class WorldskillsTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void worldskills() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Worldskills");
+        open.openLink("Worldskills");
         infoBlockHealth.errorInfoBlock();
         worldskillsPage.pageTitle();
     }

@@ -17,11 +17,11 @@ public class CalendarTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void calendar() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("2023 год");
+        open.openLink("2023 год");
         infoBlockHealth.errorInfoBlock();
         calendarPage.pageTitle();
     }

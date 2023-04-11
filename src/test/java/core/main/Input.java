@@ -1,5 +1,6 @@
-package core.fields;
+package core.main;
 
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
@@ -7,6 +8,8 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.switchTo;
 
 public class Input {
+
+    private final SelenideElement search = $x("//button[contains(@class, 'd-none')]/preceding-sibling::input");
 
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
@@ -79,6 +82,17 @@ public class Input {
     @Step(value = "Заполняем поле \"{field}\" значением \"{value}\"")
     public Input inputTextArea(String field, String value) {
         serviceInputTextArea(field, value);
+        return this;
+    }
+
+    /**
+     === Поисковая строка ===
+     * @param value - Искомое значение
+     */
+    @Step(value = "Поиск значения \"{value}\" в поисковой выдаче")
+    public Input searchField(String value) {
+        search.should(visible, editable).clear();
+        search.should(visible, editable).setValue(value);
         return this;
     }
 }

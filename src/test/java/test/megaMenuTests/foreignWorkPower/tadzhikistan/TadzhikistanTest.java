@@ -17,11 +17,11 @@ public class TadzhikistanTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void articlesData() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Найм граждан Таджикистана");
+        open.openLink("Найм граждан Таджикистана");
         infoBlockHealth.errorInfoBlock();
         tadzhikistanPage.pageTitle();
     }

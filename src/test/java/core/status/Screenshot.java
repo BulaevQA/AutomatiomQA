@@ -1,4 +1,4 @@
-package helpers.other;
+package core.status;
 
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Attachment;

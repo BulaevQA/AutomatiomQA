@@ -17,11 +17,11 @@ public class AboutMobileAppTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void aboutMobileApp() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("О мобильном приложении");
+        open.openLink("О мобильном приложении");
         infoBlockHealth.errorInfoBlock();
         aboutMobilePage.pageTitle();
     }

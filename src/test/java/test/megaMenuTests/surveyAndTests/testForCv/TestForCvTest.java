@@ -17,11 +17,11 @@ public class TestForCvTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void testForCv() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Опросы для соискателя");
+        open.openLink("Опросы для соискателя");
         infoBlockHealth.errorInfoBlock();
         testForCvPage.pageTitle();
     }

@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class OpenLink {
+public class Open {
 
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
@@ -28,7 +28,7 @@ public class OpenLink {
      * @param link - наименование элемента на странице
      */
     @Step(value = "Переход по ссылке \"{link}\"")
-    public OpenLink openLink(String link) {
+    public Open openLink(String link) {
         open(serviceGetLink(link));
         return this;
     }
@@ -39,7 +39,7 @@ public class OpenLink {
      * @param index - позиция элемента в DOM
      */
     @Step(value = "Переход по ссылке \"{link}\"")
-    public OpenLink openLink(String link, String index) {
+    public Open openLink(String link, String index) {
         open(serviceGetLink(link, index));
         return this;
     }
@@ -49,7 +49,7 @@ public class OpenLink {
      * @param url - https ссылка
      */
     @Step(value = "Открываем \"{url}\"")
-    public OpenLink openUrl (String url){
+    public Open openUrl (String url){
         open(url);
         return this;
     }

@@ -6,8 +6,7 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$x;
-import static core.classObjects.ClassObjects.meatBalls;
-import static core.classObjects.ClassObjects.switchWindow;
+import static core.classObjects.ClassObjects.*;
 
 public class MyVacancyPage extends BrowserConfig {
 
@@ -58,7 +57,7 @@ public class MyVacancyPage extends BrowserConfig {
      */
     @Step(value = "Удаляем вакансию")
     public void deleteVacancy() {
-        meatBalls.serviceMeatBalls();
+        click.clickMeatBalls();
         deleteVacancyModal.should(visible, enabled, appear).click();
         switchWindow.switchToActiveWindow();
         confirmDeleteVacancy.should(visible, enabled).click();

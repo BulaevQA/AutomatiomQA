@@ -17,11 +17,11 @@ public class NewsTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void news() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Новости");
+        open.openLink("Новости");
         infoBlockHealth.errorInfoBlock();
         newsPage.pageTitle();
     }

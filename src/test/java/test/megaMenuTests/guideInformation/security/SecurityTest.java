@@ -17,11 +17,11 @@ public class SecurityTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void security() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Меры безопасности");
+        open.openLink("Меры безопасности");
         infoBlockHealth.errorInfoBlock();
         securityPage.pageTitle();
     }

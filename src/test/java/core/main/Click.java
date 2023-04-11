@@ -1,6 +1,7 @@
 package core.main;
 
-import helpers.other.ElementCollections;
+import com.codeborne.selenide.SelenideElement;
+import helpers.collections.ElementCollections;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
@@ -8,6 +9,8 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$$x;
 
 public class Click {
+
+    private final SelenideElement meatBalls = $x("//div[@class='row row_middle']//button[@aria-expanded='false']");
 
     ///////////////// Генерация XPath \\\\\\\\\\\\\\\\\\\
 
@@ -31,6 +34,10 @@ public class Click {
 
     private void serviceRadioButton(String radioButton) {
         $x("//*[text()[normalize-space() = '"+radioButton+"']]/ancestor::label[@class='radio']").should(visible, enabled).click();
+    }
+
+    private void serviceToggle(String toggle) {
+        $x("//*[normalize-space(text())='"+toggle+"']/..").should(visible, enabled).click();
     }
 
     ///////////////// Логика взаимодействия cо страницей \\\\\\\\\\\\\\\\\\\
@@ -82,6 +89,26 @@ public class Click {
     @Step(value = "Активация радиобаттона \"{radioButton}\"")
     public Click clickRadioButton(String radioButton) {
         serviceRadioButton(radioButton);
+        return this;
+    }
+
+    /**
+     === Метод клика на митбол ===
+     */
+    @Step(value = "Клик на кнопку \"митбол\"")
+    public Click clickMeatBalls() {
+        sleep(1500);
+        meatBalls.should(visible, enabled).click();
+        return this;
+    }
+
+    /**
+     * === Переключатели в конструкторе резюме ===
+     * @param toggle - Имя переключателя
+     */
+    @Step(value = "Активируем/Деативируем переключатель \"{toggle}\"")
+    public Click clickToggle(String toggle) {
+        serviceToggle(toggle);
         return this;
     }
 }

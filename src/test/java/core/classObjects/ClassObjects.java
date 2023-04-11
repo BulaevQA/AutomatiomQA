@@ -1,12 +1,12 @@
 package core.classObjects;
 
-import core.constructor.SelectDoubleForms;
-import core.fields.DropDown;
-import core.fields.Input;
-import core.constructor.ToggleSwitch;
+import core.main.SelectDoubleForms;
+import core.main.DropDown;
+import core.main.Input;
 import core.main.*;
-import helpers.other.ElementCollections;
-import helpers.status.InfoBlockHealth;
+import core.status.NotificationCheck;
+import helpers.collections.ElementCollections;
+import core.status.InfoBlockHealth;
 import hashMaps.hashKeys.HashKeys;
 import hashMaps.actualHashMaps.auth.ActualAuth;
 import hashMaps.expectedHashMaps.resume.ExpectedResume;
@@ -67,15 +67,11 @@ public class ClassObjects {
     public static ActualResume actualResume = new ActualResume();
     public static ActualVacancy actualVacancy = new ActualVacancy();
 
-    //Экземпляры классов ожидаемых хэш карт
+    //Экземпляры классов эталонных хэш карт
     public static ExpectedAuth expectedAuth = new ExpectedAuth();
     public static ExpectedResume expectedResume = new ExpectedResume();
     public static ExpectedVacancy expectedVacancy = new ExpectedVacancy();
     public static HashKeys hashKeys = new HashKeys();
-
-    //Экземпляры классов получения информации со страницы
-    public static InfoBlockHealth infoBlockHealth = new InfoBlockHealth();
-    public static NotificationCheck notificationCheck = new NotificationCheck();
 
     //Экземпляры классов тестов
     public static AuthCvTest authTestCv = new AuthCvTest();
@@ -128,15 +124,14 @@ public class ClassObjects {
     public static CalendarPage calendarPage = new CalendarPage();
 
     //Экземпляры классов взаимодействий с порталом
+    public static InfoBlockHealth infoBlockHealth = new InfoBlockHealth();
+    public static NotificationCheck notificationCheck = new NotificationCheck();
     public static ElementCollections elementCollections = new ElementCollections();
     public static TestValues testValues = new TestValues();
-    public static Search search = new Search();
     public static Input input = new Input();
     public static DropDown dropDown = new DropDown();
     public static SelectDoubleForms selectDoubleForms = new SelectDoubleForms();
-    public static ToggleSwitch toggleSwitch = new ToggleSwitch();
     public static Click click = new Click();
-    public static OpenLink openLink = new OpenLink();
-    public static MeatBalls meatBalls = new MeatBalls();
+    public static Open open = new Open();
     public static SwitchWindow switchWindow = new SwitchWindow();
 }

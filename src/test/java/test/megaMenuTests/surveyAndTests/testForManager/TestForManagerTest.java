@@ -17,11 +17,11 @@ public class TestForManagerTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void testForManager() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Опросы для работодателя");
+        open.openLink("Опросы для работодателя");
         infoBlockHealth.errorInfoBlock();
         testForManagerPage.pageTitle();
     }

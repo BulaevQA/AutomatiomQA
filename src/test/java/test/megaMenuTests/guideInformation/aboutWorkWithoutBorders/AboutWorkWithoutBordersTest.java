@@ -17,11 +17,11 @@ public class AboutWorkWithoutBordersTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void aboutWorkWithoutBorders() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("О Работе без границ");
+        open.openLink("О Работе без границ");
         infoBlockHealth.errorInfoBlock();
         aboutWorkWithoutBordersPage.pageTitle();
     }

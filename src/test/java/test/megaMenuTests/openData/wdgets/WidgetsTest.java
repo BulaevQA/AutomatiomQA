@@ -17,11 +17,11 @@ public class WidgetsTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void widgets() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Виджеты");
+        open.openLink("Виджеты");
         infoBlockHealth.errorInfoBlock();
         widgetsPage.pageTitle();
     }

@@ -17,11 +17,11 @@ public class NewOnPortalTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void newOnPortal() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Новое на портале");
+        open.openLink("Новое на портале");
         infoBlockHealth.errorInfoBlock();
         newOnPortalPage.pageTitle();
     }

@@ -17,11 +17,11 @@ public class EkdInformationTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void ekdInformationTest() {
-            openLink.openUrl(testValues.url);
+            open.openUrl(testValues.url);
             click.clickButton("Согласен");
             click.clickButton("Все сервисы");
             switchWindow.switchToActiveWindow();
-            openLink.openLink("Об Электронном кадровом документообороте");
+            open.openLink("Об Электронном кадровом документообороте");
             infoBlockHealth.errorInfoBlock();
             ekdPage.pageTitle();
     }

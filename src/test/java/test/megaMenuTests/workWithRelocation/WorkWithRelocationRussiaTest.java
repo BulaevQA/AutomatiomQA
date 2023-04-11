@@ -17,11 +17,11 @@ public class WorkWithRelocationRussiaTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void workWithRelocationRussia() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Работа с переездом по России");
+        open.openLink("Работа с переездом по России");
         infoBlockHealth.errorInfoBlock();
         workWithRelocationRussiaPage.pageTitle();
     }

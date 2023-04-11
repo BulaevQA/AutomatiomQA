@@ -17,11 +17,11 @@ public class WorkForStudentsTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void workForStudents() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Трудоустройство студентов");
+        open.openLink("Трудоустройство студентов");
         infoBlockHealth.errorInfoBlock();
         workForStudentsPage.pageTitle();
     }

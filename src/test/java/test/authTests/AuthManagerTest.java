@@ -19,7 +19,7 @@ public class AuthManagerTest extends BrowserConfig {
     @DisplayName("Auth manager test")
     public void authTestManager() {
         // Открываем портал и авторизуемся
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Войти");
         click.clickButton("«Госуслуги»");

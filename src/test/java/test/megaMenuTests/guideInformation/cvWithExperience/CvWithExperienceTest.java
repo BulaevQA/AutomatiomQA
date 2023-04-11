@@ -17,11 +17,11 @@ public class CvWithExperienceTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void cvWithExperience() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Опытные кадры");
+        open.openLink("Опытные кадры");
         infoBlockHealth.errorInfoBlock();
         cvWithExperiencePage.pageTitle();
     }

@@ -17,11 +17,11 @@ public class EducationsProgramsTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void educationPrograms() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Список образовательных программ");
+        open.openLink("Список образовательных программ");
         infoBlockHealth.errorInfoBlock();
         switchWindow.switchToActiveWindow();
         dropDown.selectDropDown("Социальная категория", "Безработные граждане, " +

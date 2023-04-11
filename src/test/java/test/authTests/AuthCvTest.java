@@ -17,7 +17,7 @@ public class AuthCvTest extends BrowserConfig {
     @DisplayName("Auth cv test")
     public void authTestCv() {
         // Открываем портал
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Войти");
         click.clickButton("«Госуслуги»");

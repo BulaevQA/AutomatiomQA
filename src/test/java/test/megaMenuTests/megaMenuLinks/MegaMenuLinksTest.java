@@ -22,7 +22,7 @@ public class MegaMenuLinksTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void megaMenuLinksTest() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Все сервисы");
         mainPage.checkMegaMenu();
     }

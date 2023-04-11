@@ -21,18 +21,18 @@ public class ResumeConstructorTest extends BrowserConfig {
         //Авторизируемся на портал
         authTestCv.authTestCv();
         //Создаем резюме
-        openLink.openLink("Создать резюме");
+        open.openLink("Создать резюме");
         resumeConstructorPage.pageTitle();
         input.inputStringField("Желаемая должность", testValues.position);
         dropDown.selectDropDown("Сфера деятельности", testValues.workSphere);
         input.inputStringField("Заработная плата (руб.)", testValues.salary);
-        toggleSwitch.switchToggle("Есть опыт работы");
+        click.clickToggle("Есть опыт работы");
         click.clickButton("Сохранить и опубликовать");
         myResumePage.pageTitle();
         myResumePage.statusWaitForModeration();
         // Открываем АРМ АДМ и находим наше резюме
         switchWindow.openWindowType(testValues.newTab);
-        openLink.openUrl(testValues.urlAdm);
+        open.openUrl(testValues.urlAdm);
         input.inputStringField("Имя пользователя", testValues.loginAdm);
         input.inputStringField("Пароль", testValues.passwordAdm);
         click.clickButton("Вход", "2");
@@ -50,12 +50,12 @@ public class ResumeConstructorTest extends BrowserConfig {
         switchWindow.switchBetweenWindows(0);
         myResumePage.pageTitle();
         myResumePage.statusApproved();
-        openLink.openLink(testValues.position);
+        open.openLink(testValues.position);
         // Делаем ассерт для подтверждения корректности теста
         Assertions.assertThat(actualResume.actualValueResume()).isEqualTo(expectedResume.expectedResume());
         // Удаляем резюме
         click.clickButton("Мои резюме");
-        openLink.openLink("Список моих резюме");
+        open.openLink("Список моих резюме");
         myResumePage.pageTitle();
         myResumePage.deleteResume();
     }

@@ -17,11 +17,11 @@ public class OpenDataTest extends BrowserConfig {
     @Description(value = "Тест страницы мега-меню")
     @DisplayName("MegaMenuTest")
     public void openData() {
-        openLink.openUrl(testValues.url);
+        open.openUrl(testValues.url);
         click.clickButton("Согласен");
         click.clickButton("Все сервисы");
         switchWindow.switchToActiveWindow();
-        openLink.openLink("Открытые данные");
+        open.openLink("Открытые данные");
         infoBlockHealth.errorInfoBlock();
         openDataPage.pageTitle();
     }
