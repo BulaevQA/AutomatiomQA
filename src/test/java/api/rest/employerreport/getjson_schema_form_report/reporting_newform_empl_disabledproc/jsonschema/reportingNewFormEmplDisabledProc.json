@@ -1,0 +1,896 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "object",
+      "properties": {
+        "reportCode": {
+          "type": "string"
+        },
+        "reportName": {
+          "type": "string"
+        },
+        "jsonSchema": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "properties": {
+              "type": "object",
+              "properties": {
+                "ogrn": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "inn": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "kpp": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "company_professional_sphere": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "company_address": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "company_address_house": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "company_name": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "company_form": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "company_own_form": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "contact_phone": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "contact_email": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "company_factaddress_region": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "reportSubmitted": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "cznCity": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "averageNumberOfEmployeesWithHarmful": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "averageNumberOfEmployeesWithoutHarmful": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "sizeOfEstablishedQuotaForInvalids": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "sizeOfEstablishedQuotaForInvalidsInunits": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "numberOfEmployeesWorkedAtQuotaWorkplacesAnotherOrganization": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "notEmployedAtExpenseOfEstablishedQuota": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "numberOfEmployeesWorkedAtQuotaWorkplaces": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "totalNumberOfAvailableSpecialJobsForInvalids": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "numberOfSpecialJobsForWhichDisabledInvalids": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "numberOfAvailableSpecialJobsForInvalids": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "islocalRegulatoryAct": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "otherInfoSpecialJobsWorkplaces": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "localRegulatoryAct": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "properties": {
+                          "type": "object",
+                          "properties": {
+                            "nameOfLocalRegulatoryAct": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "title"
+                              ]
+                            },
+                            "dateOfAdoptionOfLocalRegulatoryAct": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "title"
+                              ]
+                            },
+                            "numberOfLocalRegulatoryAct": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "title"
+                              ]
+                            },
+                            "countPlace": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "title"
+                              ]
+                            },
+                            "professionDisOkpdtp": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "title"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "nameOfLocalRegulatoryAct",
+                            "dateOfAdoptionOfLocalRegulatoryAct",
+                            "numberOfLocalRegulatoryAct",
+                            "countPlace",
+                            "professionDisOkpdtp"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "properties"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title",
+                    "items"
+                  ]
+                },
+                "worksInExcessOfEstablishedQuotaAtPeriod": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "InfWorkingEmpWithDisabilities": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "properties": {
+                          "type": "object",
+                          "properties": {
+                            "fullNameEmpDis": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "title"
+                              ]
+                            },
+                            "snilsEmpDis": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "title"
+                              ]
+                            },
+                            "dateOfBirthEmpDis": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "title"
+                              ]
+                            },
+                            "professionDis": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "title"
+                              ]
+                            },
+                            "disabilityGroup": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "title"
+                              ]
+                            },
+                            "categoryOfDsability": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "title"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "fullNameEmpDis",
+                            "snilsEmpDis",
+                            "dateOfBirthEmpDis",
+                            "professionDis",
+                            "disabilityGroup",
+                            "categoryOfDsability"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "properties"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title",
+                    "items"
+                  ]
+                },
+                "agreementsWithAnotherOrganization": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "properties": {
+                          "type": "object",
+                          "properties": {
+                            "nameOfAnotherOrganization": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "title"
+                              ]
+                            },
+                            "innOfAnotherOrganization": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "title"
+                              ]
+                            },
+                            "docNumberOfAnotherOrganization": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "title"
+                              ]
+                            },
+                            "createDateDocOfAnotherOrganization": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "title"
+                              ]
+                            },
+                            "startDateDocOfAnotherOrganization": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "title"
+                              ]
+                            },
+                            "endDateDocOfAnotherOrganization": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "title"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "nameOfAnotherOrganization",
+                            "innOfAnotherOrganization",
+                            "docNumberOfAnotherOrganization",
+                            "createDateDocOfAnotherOrganization",
+                            "startDateDocOfAnotherOrganization",
+                            "endDateDocOfAnotherOrganization"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "properties"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title",
+                    "items"
+                  ]
+                },
+                "isInWorkingEmpWithDisabilities": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "isAgreementsWithAnotherOrganization": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                },
+                "companyStaff": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "title"
+                  ]
+                }
+              },
+              "required": [
+                "ogrn",
+                "inn",
+                "kpp",
+                "company_professional_sphere",
+                "company_address",
+                "company_address_house",
+                "company_name",
+                "company_form",
+                "company_own_form",
+                "contact_phone",
+                "contact_email",
+                "company_factaddress_region",
+                "reportSubmitted",
+                "cznCity",
+                "averageNumberOfEmployeesWithHarmful",
+                "averageNumberOfEmployeesWithoutHarmful",
+                "sizeOfEstablishedQuotaForInvalids",
+                "sizeOfEstablishedQuotaForInvalidsInunits",
+                "numberOfEmployeesWorkedAtQuotaWorkplacesAnotherOrganization",
+                "notEmployedAtExpenseOfEstablishedQuota",
+                "numberOfEmployeesWorkedAtQuotaWorkplaces",
+                "totalNumberOfAvailableSpecialJobsForInvalids",
+                "numberOfSpecialJobsForWhichDisabledInvalids",
+                "numberOfAvailableSpecialJobsForInvalids",
+                "islocalRegulatoryAct",
+                "otherInfoSpecialJobsWorkplaces",
+                "localRegulatoryAct",
+                "worksInExcessOfEstablishedQuotaAtPeriod",
+                "InfWorkingEmpWithDisabilities",
+                "agreementsWithAnotherOrganization",
+                "isInWorkingEmpWithDisabilities",
+                "isAgreementsWithAnotherOrganization",
+                "companyStaff"
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "title",
+            "properties"
+          ]
+        }
+      },
+      "required": [
+        "reportCode",
+        "reportName",
+        "jsonSchema"
+      ]
+    }
+  },
+  "required": [
+    "success"
+  ]
+}

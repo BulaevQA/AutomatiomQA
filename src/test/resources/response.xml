@@ -1,0 +1,30 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <ns2:getAllBenefitsResponse xmlns:ns2="com.bft.rusjob.integration.ks">
+            <getAllBenefits>
+                <resultCode>200</resultCode>
+                <businessMessage>OK</businessMessage>
+                <Total>4</Total>
+                <Count>4</Count>
+                <Benefits>
+                    <Element>
+                        <Id>ee681750-81cf-11e4-a6da-9be8de68eaf1</Id>
+                        <Name>Путевки в оздоровительные учреждения</Name>
+                    </Element>
+                    <Element>
+                        <Id>ee67a220-81cf-11e4-a6da-9be8de68eaf1</Id>
+                        <Name>ДМС</Name>
+                    </Element>
+                    <Element>
+                        <Id>ee681751-81cf-11e4-a6da-9be8de68eaf1</Id>
+                        <Name>Оплата питания</Name>
+                    </Element>
+                    <Element>
+                        <Id>ee681752-81cf-11e4-a6da-9be8de68eaf1</Id>
+                        <Name>Оплата занятий спортом</Name>
+                    </Element>
+                </Benefits>
+            </getAllBenefits>
+        </ns2:getAllBenefitsResponse>
+    </soap:Body>
+</soap:Envelope>

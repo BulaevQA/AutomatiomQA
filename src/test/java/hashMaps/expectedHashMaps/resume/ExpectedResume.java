@@ -8,7 +8,7 @@ import static core.classObjects.ClassObjects.testValues;
 
 public class ExpectedResume {
 
-    /*
+    /**
     === Hashmaps с ожидаемыми результатами отмодерированного резюме ===
     */
     public Map<String, Object> expectedResume() {

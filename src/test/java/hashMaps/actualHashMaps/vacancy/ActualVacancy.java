@@ -7,7 +7,7 @@ import static core.classObjects.ClassObjects.*;
 
 public class ActualVacancy {
 
-    /*
+    /**
     === HashMap с актуальными значениями вакансии ===
      */
     public Map<String, Object> actualValueVacancy() {

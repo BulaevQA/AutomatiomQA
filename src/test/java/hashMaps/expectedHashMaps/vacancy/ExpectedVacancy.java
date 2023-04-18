@@ -8,7 +8,7 @@ import static core.classObjects.ClassObjects.testValues;
 
 public class ExpectedVacancy {
 
-    /*
+    /**
     === Hashmaps с ожидаемыми результатами отмодерированной вакансии ===
     */
     public Map<String, Object> expectedVacancy() {

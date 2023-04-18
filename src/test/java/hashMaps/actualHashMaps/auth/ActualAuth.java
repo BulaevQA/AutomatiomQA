@@ -8,7 +8,7 @@ import static core.classObjects.ClassObjects.mainPage;
 
 public class ActualAuth {
 
-    /*
+    /**
     === HashMap с актуальными значениями главной страницы соискателя ===
     */
     public Map<String, Object> actualValueCv() {

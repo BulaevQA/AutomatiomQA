@@ -9,7 +9,7 @@ import static core.classObjects.ClassObjects.hashKeys;
 
 public class ExpectedAuth extends TestValues {
 
-    /*
+    /**
      === Hashmaps с ожидаемыми результатами главной соискателя ===
      */
     public Map<String, Object> expectedCvAuth() {

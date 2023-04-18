@@ -1,0 +1,96 @@
+{
+  "success": {
+    "reportCode": "reportingFormBankruptcyProcNF",
+    "reportName": "Новая форма Отчёт о несостоятельности  работодателя (банкротстве)",
+    "jsonSchema": {
+      "type": "object",
+      "title": "Новая форма Отчёт о несостоятельности  работодателя (банкротстве)",
+      "properties": {
+        "ogrn": {
+          "type": "string",
+          "title": "ОГРН"
+        },
+        "inn": {
+          "type": "string",
+          "title": "ИНН"
+        },
+        "kpp": {
+          "type": "string",
+          "title": "КПП"
+        },
+        "company_professional_sphere": {
+          "type": "string",
+          "title": "Вид экономической деятельности"
+        },
+        "company_address": {
+          "type": "string",
+          "title": "Район, населенный пункт, улица (фактический адрес)"
+        },
+        "company_address_house": {
+          "type": "string",
+          "title": "Дом, корпус, строение (фактический адрес)"
+        },
+        "company_name": {
+          "type": "string",
+          "title": "Полное наименование юридического лица/ фамилия, имя, отчество (при наличии) индивидуального предпринимателя"
+        },
+        "company_form": {
+          "type": "string",
+          "title": "Организационно-правовая форма юридического лица"
+        },
+        "company_own_form": {
+          "type": "string",
+          "title": "Форма собственности"
+        },
+        "contact_phone": {
+          "type": "string",
+          "title": "Телефон"
+        },
+        "contact_email": {
+          "type": "string",
+          "title": "Email"
+        },
+        "company_factaddress_region": {
+          "type": "string",
+          "title": "Регион фактического адреса"
+        },
+        "reportSubmitted": {
+          "type": "string",
+          "title": "Отчёт представлен"
+        },
+        "cznCity": {
+          "type": "string",
+          "title": "Населённый пункт"
+        },
+        "docNameInsolvency": {
+          "type": "string",
+          "title": "Наименование документа"
+        },
+        "docDateInsolvency": {
+          "type": "string",
+          "title": "Дата документа"
+        },
+        "docNumberInsolvency": {
+          "type": "string",
+          "title": "Номер документа"
+        },
+        "reportStartDate": {
+          "type": "string",
+          "title": "Дата начала"
+        },
+        "reportEndDate": {
+          "type": "string",
+          "title": "Дата окончания"
+        },
+        "procedureNameInsolvency": {
+          "type": "string",
+          "title": "Наименование процедуры"
+        },
+        "otherInfoInsolvency": {
+          "type": "string",
+          "title": "Иные сведения"
+        }
+      }
+    }
+  }
+}

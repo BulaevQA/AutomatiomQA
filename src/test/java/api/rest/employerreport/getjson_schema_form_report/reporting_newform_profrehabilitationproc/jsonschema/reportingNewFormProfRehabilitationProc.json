@@ -1,0 +1,100 @@
+{
+  "success": {
+    "reportCode": "reportingNewFormProfRehabilitationProc",
+    "reportName": "Новая форма Информация о профессиональной реабилитации и содействию занятости инвалидов",
+    "jsonSchema": {
+      "type": "object",
+      "title": "Новая форма Информация о профессиональной реабилитации и содействию занятости инвалидов",
+      "properties": {
+        "ogrn": {
+          "type": "string",
+          "title": "ОГРН"
+        },
+        "inn": {
+          "type": "string",
+          "title": "ИНН"
+        },
+        "kpp": {
+          "type": "string",
+          "title": "КПП"
+        },
+        "company_professional_sphere": {
+          "type": "string",
+          "title": "Вид экономической деятельности"
+        },
+        "company_address": {
+          "type": "string",
+          "title": "Район, населенный пункт, улица (фактический адрес)"
+        },
+        "company_address_house": {
+          "type": "string",
+          "title": "Дом, корпус, строение (фактический адрес)"
+        },
+        "company_name": {
+          "type": "string",
+          "title": "Полное наименование юридического лица/ фамилия, имя, отчество (при наличии) индивидуального предпринимателя"
+        },
+        "company_form": {
+          "type": "string",
+          "title": "Организационно-правовая форма юридического лица"
+        },
+        "company_own_form": {
+          "type": "string",
+          "title": "Форма собственности"
+        },
+        "contact_phone": {
+          "type": "string",
+          "title": "Телефон"
+        },
+        "contact_email": {
+          "type": "string",
+          "title": "Email"
+        },
+        "company_factaddress_region": {
+          "type": "string",
+          "title": "Регион фактического адреса"
+        },
+        "reportSubmitted": {
+          "type": "string",
+          "title": "Отчёт представлен"
+        },
+        "cznCity": {
+          "type": "string",
+          "title": "Населённый пункт"
+        },
+        "isEmployeesInvalids": {
+          "type": "boolean",
+          "title": "Наличие в отчетном месяце работников, имеющих инвалидность"
+        },
+        "OrganizationEmployeesTraining": {
+          "type": "string",
+          "title": "Организация обучения работников"
+        },
+        "isProfessionalAdaptation": {
+          "type": "boolean",
+          "title": "Проводится профессиональная адаптация"
+        },
+        "isSpeciallyWorkingConditions": {
+          "type": "string",
+          "title": "Наличие специально созданных условий труда"
+        },
+        "isSpeciallyWorkplace": {
+          "type": "string",
+          "title": "Создание специального рабочего места"
+        },
+        "isProvisionEquippedWorkplace": {
+          "type": "string",
+          "title": "Обеспечение оборудованным рабочим местом"
+        },
+        "isSocioSupportInProcessWorkplace": {
+          "type": "string",
+          "title": "Социально-психологическое и социально-трудовое сопровождение в процессе закрепления на рабочем месте"
+        },
+        "otherInfoProfessionalAdaptation": {
+          "type": "string",
+          "title": "Иные сведения"
+        }
+      }
+    }
+  }
+}

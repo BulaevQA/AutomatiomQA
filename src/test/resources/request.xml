@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="com.bft.rusjob.integration.ks">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <com:getAllBenefits>
+            <!--Optional:-->
+            <invocationContext>
+                <login>kadrovoe@pbs.bftcom.com</login>
+                <password>Qwerty123</password>
+            </invocationContext>
+        </com:getAllBenefits>
+    </soapenv:Body>
+</soapenv:Envelope>

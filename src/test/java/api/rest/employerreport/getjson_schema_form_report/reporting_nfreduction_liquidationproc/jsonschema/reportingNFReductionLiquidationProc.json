@@ -1,0 +1,180 @@
+{
+  "success": {
+    "reportCode": "reportingNFReductionLiquidationProc",
+    "reportName": "Новая форма Сокращение численности, ликвидация",
+    "jsonSchema": {
+      "type": "object",
+      "title": "Новая форма Сокращение численности, ликвидация",
+      "properties": {
+        "ogrn": {
+          "type": "string",
+          "title": "ОГРН"
+        },
+        "inn": {
+          "type": "string",
+          "title": "ИНН"
+        },
+        "kpp": {
+          "type": "string",
+          "title": "КПП"
+        },
+        "company_professional_sphere": {
+          "type": "string",
+          "title": "Вид экономической деятельности"
+        },
+        "company_address": {
+          "type": "string",
+          "title": "Район, населенный пункт, улица (фактический адрес)"
+        },
+        "company_address_house": {
+          "type": "string",
+          "title": "Дом, корпус, строение (фактический адрес)"
+        },
+        "company_name": {
+          "type": "string",
+          "title": "Полное наименование юридического лица/ фамилия, имя, отчество (при наличии) индивидуального предпринимателя"
+        },
+        "company_form": {
+          "type": "string",
+          "title": "Организационно-правовая форма юридического лица"
+        },
+        "company_own_form": {
+          "type": "string",
+          "title": "Форма собственности"
+        },
+        "contact_phone": {
+          "type": "string",
+          "title": "Телефон"
+        },
+        "contact_email": {
+          "type": "string",
+          "title": "Email"
+        },
+        "company_factaddress_region": {
+          "type": "string",
+          "title": "Регион фактического адреса"
+        },
+        "reportSubmitted": {
+          "type": "string",
+          "title": "Отчёт представлен"
+        },
+        "cznCity": {
+          "type": "string",
+          "title": "Населённый пункт"
+        },
+        "reportStartDate": {
+          "type": "string",
+          "title": "Дата начала"
+        },
+        "reportEndDate": {
+          "type": "string",
+          "title": "Дата окончания"
+        },
+        "liquidationPeople": {
+          "type": "number",
+          "title": "Общее количество работников, предполагаемых к увольнению"
+        },
+        "dismissBasic": {
+          "type": "string",
+          "title": "Основание для увольнения работников"
+        },
+        "dismissReasons": {
+          "type": "string",
+          "title": "Причины принятия решения об увольнении работников"
+        },
+        "liquidationWoman": {
+          "type": "number",
+          "title": "Женщины"
+        },
+        "liquidationTeens": {
+          "type": "number",
+          "title": "Граждане в возрасте от 16 до 35 лет"
+        },
+        "liquidationPreRetir": {
+          "type": "number",
+          "title": "Граждане предпенсионного возраста"
+        },
+        "numberOfPensionersDS": {
+          "type": "number",
+          "title": "Пенсионеры"
+        },
+        "liquidationDisabled": {
+          "type": "number",
+          "title": "Инвалиды"
+        },
+        "liquidationForeign": {
+          "type": "number",
+          "title": "Иностранные граждане"
+        },
+        "otherInfo": {
+          "type": "string",
+          "title": "Иные сведения"
+        },
+        "dataDismissal": {
+          "type": "array",
+          "title": "Сведения о работниках, подлежащих увольнению",
+          "items": {
+            "properties": {
+              "educationLevel": {
+                "type": "string",
+                "title": "Уровень образования (по ОКИН)"
+              },
+              "professionInfoEmployeesToDismissal": {
+                "type": "string",
+                "title": "Профессия (по ОКПДТР)"
+              },
+              "genderInfoEmployeesToDismissal": {
+                "type": "string",
+                "title": "Пол"
+              },
+              "birthdateInfoEmployeesToDismissal": {
+                "type": "string",
+                "title": "Дата рождения"
+              },
+              "termsOfPaymentInfoEmployeesToDismissal": {
+                "type": "number",
+                "title": "Средний размер заработной платы (за последние три месяца)"
+              },
+              "specialCatInfoEmployeesToDismissal": {
+                "type": "array",
+                "title": "Особые категории работников",
+                "items": {
+                  "properties": {
+                    "specialCatInfoEmployeesToDismissal": {
+                      "type": "string",
+                      "title": "Особые категории работников"
+                    }
+                  }
+                }
+              },
+              "specialCatInfoEmployeesString": {
+                "type": "string",
+                "title": "Особые категории работников"
+              },
+              "fioInfoEmployeesToDismissal": {
+                "type": "string",
+                "title": "ФИО"
+              },
+              "SNILS": {
+                "type": "string",
+                "title": "СНИЛС"
+              },
+              "contact_phone": {
+                "type": "string",
+                "title": "Телефон"
+              }
+            }
+          }
+        },
+        "companyStaff": {
+          "type": "number",
+          "title": "Всего"
+        },
+        "companyStaffForeign": {
+          "type": "number",
+          "title": "Из них иностранных работников"
+        }
+      }
+    }
+  }
+}

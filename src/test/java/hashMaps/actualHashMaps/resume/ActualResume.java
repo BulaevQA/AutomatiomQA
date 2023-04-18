@@ -7,7 +7,7 @@ import static core.classObjects.ClassObjects.*;
 
 public class ActualResume {
 
-    /*
+    /**
     === HashMap с актуальными значениями резюме ===
      */
     public Map<String, Object> actualValueResume() {

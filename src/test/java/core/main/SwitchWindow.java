@@ -3,8 +3,7 @@ package core.main;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WindowType;
 
-import static com.codeborne.selenide.Selenide.refresh;
-import static com.codeborne.selenide.Selenide.switchTo;
+import static com.codeborne.selenide.Selenide.*;
 
 public class SwitchWindow {
 
@@ -30,6 +29,7 @@ public class SwitchWindow {
 
     /**
      === Переключение между вкладками ===
+     * Это один и тот же экземпляр драйвера, только новое окно (при вызове window)
      * @param windowType - принимает в себя два значения "TAB" и "WINDOW"
      */
     @Step(value = "Переключение на новый \"{windowType}\"")
